@@ -1,0 +1,416 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    height: 100vh;
+    color: #495057;
+}
+
+div#app {
+    width: 100vw;
+    height: 100vh;
+    /* display: flex; */
+}
+
+.IsPassWord>.p-inputtext {
+    height: 48px !important;
+    background-color: rgb(204 204 204 / 30%);
+    border: none;
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.IsPassWord i {
+    color: #fff !important;
+}
+
+.v-sidebar-menu {
+    position: unset !important;
+    float: left;
+}
+
+.p-toolbar.custoolbar {
+    background-color: transparent;
+    border: transparent;
+    padding: 5px;
+}
+
+.main-layout {
+    background-color: #eee;
+}
+
+.mainflex-content {
+    background-color: #fff;
+}
+
+.ip36 {
+    height: 36px;
+}
+
+.redsao {
+    color: red;
+}
+
+input[disabled] {
+    background-color: #eee;
+}
+
+#app .v-sidebar-menu.vsm_expanded,
+#app .vsm--menu {
+    max-width: 250px !important;
+}
+
+#app .v-sidebar-menu.vsm_white-theme .vsm--dropdown {
+    background-color: #36363b !important;
+}
+
+#app .v-sidebar-menu .vsm--header {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px;
+    color: #fff;
+}
+
+#app .v-sidebar-menu.vsm_white-theme {
+    background-color: #4285f4;
+}
+
+#app .v-sidebar-menu.vsm_white-theme .vsm--link_level-1 .vsm--icon {
+    background-color: transparent;
+    color: #fff;
+    font-size: 18pt;
+}
+
+#app .v-sidebar-menu.vsm_white-theme .vsm--link {
+    color: #fff;
+}
+
+#app .v-sidebar-menu.vsm_white-theme .vsm--badge_default,
+#app .v-sidebar-menu.vsm_white-theme .vsm--toggle-btn {
+    background-color: #4285f4;
+    color: #fff;
+}
+
+#app .v-sidebar-menu .vsm--link_active,
+#app .v-sidebar-menu .vsm--link_active .vsm--icon {
+    font-weight: 600;
+    color: #fbc02d !important;
+}
+
+#app .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+    background: #4285f4;
+    border-color: #4285f4;
+    color: #f8f9fa;
+}
+
+#app .p-galleria-thumbnail-container {
+    padding: 200px !important;
+}
+
+#app .p-button.p-button-secondary:hover {
+    background-color: #c4c4c4;
+}
+
+.w-full>input {
+    width: 100% !important;
+}
+
+.main-layout {
+    max-height: calc(100% - 50px);
+    overflow: hidden;
+}
+
+#app .p-dataview-content {
+    background-color: #eee;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+#app .ovegrid .p-dataview-content {
+    max-width: 100%;
+}
+
+#app .ovegrid {
+    width: max-content;
+}
+
+.p-avatar img {
+    object-fit: cover;
+}
+
+.Trangthaifalse {
+    color: red;
+}
+
+tr.error>td {
+    background-color: #ffcdd2;
+}
+
+tr.success>td {
+    background-color: #C8E6C9;
+}
+
+tr.orange>td {
+    background-color: #fcd574;
+}
+
+tr.green>td {
+    background-color: #22C55E;
+    color: #000;
+}
+
+.h-full.htable90 {
+    height: calc(100% - 1rem) !important;
+}
+
+.e-sm .p-dataview-header,
+.e-sm .p-treetable-header,
+.e-sm .p-datatable-header {
+    padding: 0.5rem 0.5rem !important;
+}
+
+.p-dataview.ptable .p-dataview-header {
+    background-color: transparent !important;
+    padding: 0 !important;
+    border: none;
+}
+
+.e-sm .p-inputtext {
+    padding: 0.4rem;
+}
+
+.e-sm .p-button.p-button-sm .p-button-icon {
+    font-size: 0.875rem !important;
+}
+
+.e-sm .p-button {
+    font-size: 0.875rem !important;
+    padding: 0.4375rem 0.875rem !important;
+}
+
+.p-chips .p-chips-multiple-container {
+    padding: 0.25rem 0.5rem;
+    width: 100%;
+}
+
+.p-column-filter-constraint {
+    max-width: 400px;
+}
+
+.module-title {
+    color: #005a9e;
+    font-weight: 500;
+}
+
+#app .p-paginator .p-paginator-current {
+    background-color: #4285f4;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.textoneline {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    /* number of lines to show */
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+#app .p-tooltip {
+    font-size: 0.875rem !important;
+}
+
+li.p-chips-token {
+    margin-bottom: 5px;
+}
+
+.info-duan .p-tabview .p-tabview-nav,
+.info-duan .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link .info-duan .p-tabview .p-tabview-panels,
+.info-duan .p-tabview .p-tabview-nav li .p-tabview-nav-link,
+.info-duan .p-tabview .p-tabview-panels {
+    background: transparent !important;
+}
+
+.info-duan .p-tabview .p-tabview-nav li .p-tabview-nav-link:not(.p-disabled):focus {
+    box-shadow: unset !important;
+}
+
+.info-duan {
+    height: 100%;
+}
+
+.info-duan .p-tabview-panels,
+.info-duan .p-tabview-panel {
+    padding: 0 !important;
+    flex-grow: 1;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.p-inputtext {
+    max-width: 100%;
+}
+
+.p-card.nopadd .p-card-footer {
+    padding: 0;
+}
+
+.slidebar-custom .p-sidebar-header {
+    display: none;
+}
+
+.slidebar-custom .p-sidebar-content {
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.no-paddcontent .p-card-content {
+    padding: 0 !important;
+}
+
+.p-fileupload .p-fileupload-row>div {
+    padding: 5px!important;
+    width: auto;
+}
+
+.p-fileupload-filename {
+    flex: 1 !important;
+}
+
+#app .bgWhite .p-dataview-content {
+    background-color: #fff;
+}
+
+
+/* .p-galleria-item-wrapper {
+    height: calc(100vh - 112px);
+} */
+
+.p-galleria .p-galleria-close {
+    z-index: 1;
+}
+
+
+/*Chọn user*/
+
+.user-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.user-item-value {
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    margin-right: 0.5rem;
+    background-color: var(--primary-color);
+    color: var(--primary-color-text);
+}
+
+.multiselect-thuchien .user-item-value {
+    background-color: var(--primary-color);
+}
+
+.multiselect-quanly .user-item-value {
+    background-color: #15803d;
+}
+
+.multiselect-theodoi .user-item-value {
+    background-color: #64748b;
+}
+
+.nobg {
+    background-color: #eee !important;
+    box-shadow: unset !important;
+}
+
+*:focus {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: unset !important;
+}
+
+.w-full legend {
+    width: calc(100% - 4px) !important;
+}
+
+.no-pad,
+.no-pad legend {
+    padding: 0 !important;
+    border: none !important;
+}
+
+.hover-none:hover {
+    background-color: transparent !important;
+    color: inherit !important;
+}
+
+.p-submenu-list {
+    z-index: 1000 !important;
+}
+
+
+/*Dock*/
+
+.appdock .p-datatable-flex-scrollable {
+    overflow: hidden;
+}
+
+.appdock .p-dataview .p-dataview-content {
+    background-color: #eee;
+}
+
+.p-dialog.appdock .p-dialog-content {
+    padding: 0;
+    background-color: #eee;
+    min-height: 50vh;
+}
+
+.p-dialog.appdock .p-dialog-header {
+    padding: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.appdock .main-layout {
+    max-height: 100%;
+}
+
+
+/*Dock*/
+
+
+/*scroolbar*/
+
+::-webkit-scrollbar {
+    width: 16px;
+    /* display: none; */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f5f5f5;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    border: 5px solid transparent;
+    background-clip: content-box;
+    background-color: transparent;
+}
+
+.p-virtualscroller:hover::-webkit-scrollbar-thumb,
+.overflow-x-auto:hover::-webkit-scrollbar-thumb,
+.overflow-y-auto:hover::-webkit-scrollbar-thumb,
+#app .p-dataview-content:hover::-webkit-scrollbar-thumb {
+    background-color: #bbb;
+}

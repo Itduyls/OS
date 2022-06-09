@@ -1,0 +1,8 @@
+﻿{
+  "debug": true,
+  "logCongtent": "Có lỗi xảy ra, vui lòng thử lại!",
+  "wlog": true,
+  "milisec": 1000,
+  "timeout": 1440,
+  "cache": 1
+}

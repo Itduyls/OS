@@ -1,0 +1,1832 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="soeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ca_places">
+    <Key>
+      <PropertyRef Name="place_id" />
+    </Key>
+    <Property Name="place_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="parent_id" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Boolean" Nullable="false" />
+    <Property Name="is_order" Type="Int32" Nullable="false" />
+    <Property Name="grade" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ca_positions">
+    <Key>
+      <PropertyRef Name="position_id" />
+    </Key>
+    <Property Name="position_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="position_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="is_order" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Boolean" Nullable="false" />
+    <Property Name="modified_date" Type="DateTime" Precision="3" />
+    <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modified_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="token_modified_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cms_lang">
+    <Key>
+      <PropertyRef Name="lang_id" />
+    </Key>
+    <Property Name="lang_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="icon" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="is_order" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Boolean" Nullable="false" />
+    <Property Name="is_main" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="cms_logs">
+    <Key>
+      <PropertyRef Name="log_id" />
+    </Key>
+    <Property Name="log_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="log_title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="log_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="log_module" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="id_key" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ip_update" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="user_created" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="date_created" Type="DateTime" Precision="3" />
+    <Property Name="token_created_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cms_news">
+    <Key>
+      <PropertyRef Name="news_id" />
+    </Key>
+    <Property Name="news_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="topic_id" Type="Int32" />
+    <Property Name="unit_id" Type="Int32" />
+    <Property Name="relate_id" Type="String" MaxLength="2500" FixedLength="false" Unicode="false" />
+    <Property Name="lang_id" Type="Int32" />
+    <Property Name="news_type" Type="Int32" />
+    <Property Name="is_hot" Type="Boolean" />
+    <Property Name="news_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="image" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="author" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="start_date" Type="DateTime" Precision="3" />
+    <Property Name="end_date" Type="DateTime" Precision="3" />
+    <Property Name="create_date" Type="DateTime" Precision="3" />
+    <Property Name="create_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="create_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="is_visitor" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="is_order" Type="Int32" />
+    <Property Name="modified_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modified_date" Type="DateTime" Precision="3" />
+    <Property Name="token_modified_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="censor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="date_censor" Type="DateTime" Precision="3" />
+    <Property Name="ip_censor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="cms_topic" Relationship="Self.FK_CMS_News_CMS_Topic" FromRole="cms_news" ToRole="cms_topic" />
+    <NavigationProperty Name="cms_news_users" Relationship="Self.FK_CMS_NewsUser_CMS_News" FromRole="cms_news" ToRole="cms_news_users" />
+  </EntityType>
+  <EntityType Name="cms_news_users">
+    <Key>
+      <PropertyRef Name="news_users_id" />
+    </Key>
+    <Property Name="news_users_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="news_id" Type="Int32" Nullable="false" />
+    <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="views" Type="Int32" />
+    <Property Name="start_date" Type="DateTime" Precision="3" />
+    <Property Name="end_date" Type="DateTime" Precision="3" />
+    <Property Name="ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="cms_news" Relationship="Self.FK_CMS_NewsUser_CMS_News" FromRole="cms_news_users" ToRole="cms_news" />
+  </EntityType>
+  <EntityType Name="cms_slideshow">
+    <Key>
+      <PropertyRef Name="slideshow_id" />
+    </Key>
+    <Property Name="slideshow_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="topic_id" Type="Int32" />
+    <Property Name="unit_id" Type="Int32" />
+    <Property Name="slideshow_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="is_type" Type="Int32" />
+    <Property Name="lang_id" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Boolean" Nullable="false" />
+    <Property Name="keywords" Type="String" MaxLength="2500" FixedLength="false" Unicode="true" />
+    <Property Name="is_order" Type="Int32" Nullable="false" />
+    <Property Name="modified_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modified_date" Type="DateTime" Precision="3" />
+    <Property Name="token_modified_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="cms_topic" Relationship="Self.FK_cms_slideshow_topic_id" FromRole="cms_slideshow" ToRole="cms_topic" />
+    <NavigationProperty Name="cms_slideshow_image" Relationship="Self.FK_CMS_SlideShowImage_CMS_SlideShow" FromRole="cms_slideshow" ToRole="cms_slideshow_image" />
+  </EntityType>
+  <EntityType Name="cms_slideshow_image">
+    <Key>
+      <PropertyRef Name="image_id" />
+    </Key>
+    <Property Name="image_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="slideshow_id" Type="Int32" Nullable="false" />
+    <Property Name="image_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="des" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="is_filepath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="is_link" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Boolean" Nullable="false" />
+    <Property Name="is_video" Type="Boolean" />
+    <Property Name="is_order" Type="Int32" Nullable="false" />
+    <Property Name="modified_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modified_date" Type="DateTime" Precision="3" />
+    <Property Name="token_update_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="is_poster" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="cms_slideshow" Relationship="Self.FK_CMS_SlideShowImage_CMS_SlideShow" FromRole="cms_slideshow_image" ToRole="cms_slideshow" />
+  </EntityType>
+  <EntityType Name="cms_topic">
+    <Key>
+      <PropertyRef Name="topic_id" />
+    </Key>
+    <Property Name="topic_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="lang_id" Type="Int32" Nullable="false" />
+    <Property Name="topic_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="parent_id" Type="Int32" />
+    <Property Name="topic_flag_id" Type="Int32" />
+    <Property Name="url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="is_target" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="is_menu" Type="Int32" />
+    <Property Name="is_order" Type="Int32" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modified_date" Type="DateTime" Precision="3" />
+    <Property Name="token_modified_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modified_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="token_created_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="created_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="unit_id" Type="Int32" />
+    <NavigationProperty Name="cms_news" Relationship="Self.FK_CMS_News_CMS_Topic" FromRole="cms_topic" ToRole="cms_news" />
+    <NavigationProperty Name="cms_slideshow" Relationship="Self.FK_cms_slideshow_topic_id" FromRole="cms_topic" ToRole="cms_slideshow" />
+  </EntityType>
+  <EntityType Name="cms_topic_flag">
+    <Key>
+      <PropertyRef Name="topic_flag_id" />
+    </Key>
+    <Property Name="topic_flag_id" Type="Int32" Nullable="false" />
+    <Property Name="topic_flag_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="group_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="des" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="is_order" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="doc_ca_dispatch_books">
+    <Key>
+      <PropertyRef Name="dispatch_book_id" />
+    </Key>
+    <Property Name="dispatch_book_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dispatch_book_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="year" Type="Int32" />
+    <Property Name="current_num" Type="Double" />
+    <Property Name="tracking_place" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="open_date" Type="DateTime" Precision="0" />
+    <Property Name="end_date" Type="DateTime" Precision="0" />
+    <Property Name="department_id" Type="Int32" />
+    <Property Name="is_order" Type="Int32" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="organization_id" Type="Int32" />
+    <Property Name="nav_type" Type="Int32" />
+  </EntityType>
+  <EntityType Name="doc_ca_email_groups">
+    <Key>
+      <PropertyRef Name="email_group_id" />
+    </Key>
+    <Property Name="email_group_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="email_group_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="is_order" Type="Int32" />
+    <Property Name="organization_id" Type="Int32" />
+    <Property Name="status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="doc_ca_emails">
+    <Key>
+      <PropertyRef Name="email_id" />
+    </Key>
+    <Property Name="email_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="email_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="full_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="is_order" Type="Int32" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="organization_id" Type="Int32" />
+    <Property Name="email_group_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="doc_ca_fields">
+    <Key>
+      <PropertyRef Name="field_id" />
+    </Key>
+    <Property Name="field_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="field_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="is_order" Type="Int32" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="organization_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="doc_ca_groups">
+    <Key>
+      <PropertyRef Name="doc_group_id" />
+    </Key>
+    <Property Name="doc_group_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="doc_group_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="doc_group_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="is_order" Type="Int32" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="organization_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="year" Type="Int32" />
+    <Property Name="current_num" Type="Double" />
+  </EntityType>
+  <EntityType Name="doc_ca_issue_places">
+    <Key>
+      <PropertyRef Name="issue_place_id" />
+    </Key>
+    <Property Name="issue_place_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="issue_place_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="is_order" Type="Int32" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="organization_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="doc_ca_positions">
+    <Key>
+      <PropertyRef Name="position_id" />
+    </Key>
+    <Property Name="position_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="position_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="is_order" Type="Int32" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="organization_id" Type="Int32" />
+    <Property Name="position_type" Type="Int32" />
+  </EntityType>
+  <EntityType Name="doc_ca_receive_places">
+    <Key>
+      <PropertyRef Name="receive_place_id" />
+    </Key>
+    <Property Name="receive_place_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="receive_place_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="is_order" Type="Int32" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="organization_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="doc_ca_security">
+    <Key>
+      <PropertyRef Name="security_id" />
+    </Key>
+    <Property Name="security_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="security_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="is_order" Type="Int32" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="organization_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="doc_ca_send_ways">
+    <Key>
+      <PropertyRef Name="send_way_id" />
+    </Key>
+    <Property Name="send_way_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="send_way_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="is_order" Type="Int32" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="organization_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="doc_ca_signers">
+    <Key>
+      <PropertyRef Name="signer_id" />
+    </Key>
+    <Property Name="signer_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="signer_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="position" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="department_id" Type="Int32" />
+    <Property Name="is_order" Type="Int32" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="organization_id" Type="Int32" />
+    <Property Name="nav_type" Type="Int32" />
+  </EntityType>
+  <EntityType Name="doc_ca_stamps">
+    <Key>
+      <PropertyRef Name="stamp_id" />
+    </Key>
+    <Property Name="stamp_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="organization_id" Type="Int32" />
+    <Property Name="stamp_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="image" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="is_order" Type="Int32" />
+    <Property Name="is_default" Type="Boolean" />
+    <Property Name="status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="doc_ca_status">
+    <Key>
+      <PropertyRef Name="status_id" />
+    </Key>
+    <Property Name="status_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="status_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="background_color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="main_color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="is_order" Type="Int32" />
+    <Property Name="is_handle" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="doc_ca_tags">
+    <Key>
+      <PropertyRef Name="tag_id" />
+    </Key>
+    <Property Name="tag_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tag_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="is_order" Type="Int32" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="organization_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="doc_ca_types">
+    <Key>
+      <PropertyRef Name="doc_type_id" />
+    </Key>
+    <Property Name="doc_type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="doc_type_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="doc_type_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nav_type" Type="Int32" />
+    <Property Name="is_order" Type="Int32" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="organization_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="doc_ca_urgency">
+    <Key>
+      <PropertyRef Name="urgency_id" />
+    </Key>
+    <Property Name="urgency_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="urgency_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="is_order" Type="Int32" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="organization_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="doc_codes">
+    <Key>
+      <PropertyRef Name="code_id" />
+    </Key>
+    <Property Name="code_id" Type="Int32" Nullable="false" />
+    <Property Name="organization_id" Type="Int32" />
+    <Property Name="idkey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="is_order" Type="Int32" />
+    <Property Name="info_col" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="is_used" Type="Boolean" />
+    <Property Name="separator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="auto_gen" Type="Boolean" />
+    <Property Name="nav_type" Type="Int32" />
+    <Property Name="num_by_group" Type="Boolean" />
+    <NavigationProperty Name="sys_organization_" Relationship="Self.FK_doc_codes_organization_id" FromRole="doc_codes" ToRole="sys_organization_" />
+  </EntityType>
+  <EntityType Name="doc_completed_confirms">
+    <Key>
+      <PropertyRef Name="completed_confirm_id" />
+    </Key>
+    <Property Name="completed_confirm_id" Type="Int32" Nullable="false" />
+    <Property Name="doc_master_id" Type="Int32" />
+    <Property Name="follow_id" Type="Int32" />
+    <Property Name="sent_by" Type="Int32" />
+    <Property Name="sent_date" Type="DateTime" Precision="3" />
+    <Property Name="sent_message" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="approved_by" Type="Int32" />
+    <Property Name="approved_date" Type="DateTime" Precision="3" />
+    <Property Name="approved_message" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="is_agreed" Type="Boolean" />
+    <Property Name="is_order" Type="Int32" />
+    <NavigationProperty Name="doc_master" Relationship="Self.FK_doc_completed_confirms_doc_master" FromRole="doc_completed_confirms" ToRole="doc_master" />
+  </EntityType>
+  <EntityType Name="doc_decision_form_views">
+    <Key>
+      <PropertyRef Name="decision_form_view_id" />
+    </Key>
+    <Property Name="decision_form_view_id" Type="Int32" Nullable="false" />
+    <Property Name="decision_form_id" Type="Int32" />
+    <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="view_date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="doc_decision_forms" Relationship="Self.FK_doc_decision_form_views_doc_decision_forms" FromRole="doc_decision_form_views" ToRole="doc_decision_forms" />
+  </EntityType>
+  <EntityType Name="doc_decision_forms">
+    <Key>
+      <PropertyRef Name="decision_form_id" />
+    </Key>
+    <Property Name="decision_form_id" Type="Int32" Nullable="false" />
+    <Property Name="organization_id" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="Int32" />
+    <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="signed_date" Type="DateTime" Precision="0" />
+    <Property Name="signer" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="file_path" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="file_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="file_size" Type="Double" />
+    <Property Name="file_type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="is_order" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="doc_decision_form_views" Relationship="Self.FK_doc_decision_form_views_doc_decision_forms" FromRole="doc_decision_forms" ToRole="doc_decision_form_views" />
+    <NavigationProperty Name="sys_organization_" Relationship="Self.FK_doc_decision_forms_organization_id" FromRole="doc_decision_forms" ToRole="sys_organization_" />
+  </EntityType>
+  <EntityType Name="doc_email_sent">
+    <Key>
+      <PropertyRef Name="email_sent_id" />
+    </Key>
+    <Property Name="email_sent_id" Type="Int32" Nullable="false" />
+    <Property Name="email_name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="doc_master_id" Type="Int32" />
+    <Property Name="title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="content" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="sent_date" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="doc_master" Relationship="Self.FK_doc_email_sent_doc_master" FromRole="doc_email_sent" ToRole="doc_master" />
+  </EntityType>
+  <EntityType Name="doc_file_search">
+    <Key>
+      <PropertyRef Name="file_search_id" />
+    </Key>
+    <Property Name="file_search_id" Type="Int32" Nullable="false" />
+    <Property Name="doc_master_id" Type="Int32" />
+    <Property Name="file_content_text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="doc_master" Relationship="Self.FK_doc_file_search_doc_master" FromRole="doc_file_search" ToRole="doc_master" />
+  </EntityType>
+  <EntityType Name="doc_files">
+    <Key>
+      <PropertyRef Name="file_id" />
+    </Key>
+    <Property Name="file_id" Type="Int32" Nullable="false" />
+    <Property Name="doc_master_id" Type="Int32" />
+    <Property Name="follow_id" Type="Int32" />
+    <Property Name="file_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="file_path" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="file_path_temp" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="file_size" Type="Double" />
+    <Property Name="file_type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="doc_file_type" Type="Int32" />
+    <Property Name="is_order" Type="Int32" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="is_drafted" Type="Boolean" />
+    <Property Name="message" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="doc_master" Relationship="Self.FK_doc_files_doc_master" FromRole="doc_files" ToRole="doc_master" />
+  </EntityType>
+  <EntityType Name="doc_follows">
+    <Key>
+      <PropertyRef Name="follow_id" />
+    </Key>
+    <Property Name="follow_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="unit_id" Type="Int32" />
+    <Property Name="doc_master_id" Type="Int32" />
+    <Property Name="send_by" Type="Int32" />
+    <Property Name="send_by_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="send_date" Type="DateTime" Precision="3" />
+    <Property Name="receive_by" Type="Int32" />
+    <Property Name="receive_by_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="receive_type" Type="Int32" />
+    <Property Name="view_date" Type="DateTime" Precision="3" />
+    <Property Name="deadline_date" Type="DateTime" Precision="0" />
+    <Property Name="follow_parent_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="level" Type="Int32" />
+    <Property Name="is_inworkflow" Type="Boolean" />
+    <Property Name="workflow_id" Type="Int32" Nullable="false" />
+    <Property Name="workflow_group_id" Type="Int32" />
+    <Property Name="doc_status_id" Type="Int32" />
+    <Property Name="parent_doc_status_id" Type="Int32" />
+    <Property Name="message" Type="String" MaxLength="2500" FixedLength="false" Unicode="true" />
+    <Property Name="flash_sign" Type="Boolean" />
+    <Property Name="esim_sign" Type="Boolean" />
+    <Property Name="is_stamped" Type="Boolean" />
+    <Property Name="is_recall" Type="Boolean" />
+    <Property Name="recall_message" Type="String" MaxLength="2500" FixedLength="false" Unicode="true" />
+    <Property Name="recall_date" Type="DateTime" Precision="3" />
+    <Property Name="is_signed" Type="Boolean" />
+    <Property Name="is_completed" Type="Boolean" />
+    <Property Name="is_order" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="doc_master" Relationship="Self.FK_doc_follows_doc_master" FromRole="doc_follows" ToRole="doc_master" />
+  </EntityType>
+  <EntityType Name="doc_logs">
+    <Key>
+      <PropertyRef Name="log_id" />
+    </Key>
+    <Property Name="log_id" Type="Int32" Nullable="false" />
+    <Property Name="doc_master_id" Type="Int32" />
+    <Property Name="doc_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="unit_id" Type="Int32" />
+    <Property Name="message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="receiver" Type="Int32" />
+    <Property Name="log_type" Type="Int32" />
+    <Property Name="is_view" Type="Boolean" />
+    <NavigationProperty Name="doc_master" Relationship="Self.FK_doc_logs_doc_master" FromRole="doc_logs" ToRole="doc_master" />
+  </EntityType>
+  <EntityType Name="doc_master">
+    <Key>
+      <PropertyRef Name="doc_master_id" />
+    </Key>
+    <Property Name="doc_master_id" Type="Int32" Nullable="false" />
+    <Property Name="compendium" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="nav_type" Type="Int32" />
+    <Property Name="doc_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="doc_date" Type="DateTime" Precision="0" />
+    <Property Name="unit_id" Type="Int32" />
+    <Property Name="receive_date" Type="DateTime" Precision="0" />
+    <Property Name="doc_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="doc_group" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="urgency" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="security" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="issue_place" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="field" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="receive_place" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="send_way" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="signer" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="position" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="tags" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="num_of_pages" Type="Int32" />
+    <Property Name="num_of_copies" Type="Int32" />
+    <Property Name="deadline_date" Type="DateTime" Precision="0" />
+    <Property Name="dispatch_book_num" Type="Double" />
+    <Property Name="dispatch_book_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="is_auto_num" Type="Boolean" />
+    <Property Name="created_by" Type="Int32" />
+    <Property Name="sent_by" Type="Int32" />
+    <Property Name="handle_by" Type="Int32" />
+    <Property Name="handle_date" Type="DateTime" Precision="0" />
+    <Property Name="is_drafted" Type="Boolean" />
+    <Property Name="department_id" Type="Int32" />
+    <Property Name="file_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="file_path" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="file_path_temp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="file_size" Type="Double" />
+    <Property Name="file_type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="first_doc_status_id" Type="Int32" />
+    <Property Name="doc_status_id" Type="Int32" />
+    <Property Name="follow_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="effective_date" Type="DateTime" Precision="0" />
+    <Property Name="expiration_date" Type="DateTime" Precision="0" />
+    <Property Name="workflow_id" Type="Int32" />
+    <Property Name="workflow_group_id" Type="Int32" />
+    <Property Name="is_inworkflow" Type="Boolean" />
+    <Property Name="workflow_last_person" Type="Int32" />
+    <Property Name="group_id" Type="Int32" />
+    <Property Name="leader" Type="Int32" />
+    <Property Name="warehouse" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="cabinet" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="shelf" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="box" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="message" Type="String" MaxLength="2500" FixedLength="false" Unicode="true" />
+    <Property Name="ldt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="saodv" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="related_unit" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="composing_unit" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="num_of_saved" Type="Int32" />
+    <Property Name="num_of_issue" Type="Int32" />
+    <Property Name="drafter" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="is_approved" Type="Boolean" />
+    <NavigationProperty Name="doc_completed_confirms" Relationship="Self.FK_doc_completed_confirms_doc_master" FromRole="doc_master" ToRole="doc_completed_confirms" />
+    <NavigationProperty Name="doc_email_sent" Relationship="Self.FK_doc_email_sent_doc_master" FromRole="doc_master" ToRole="doc_email_sent" />
+    <NavigationProperty Name="doc_file_search" Relationship="Self.FK_doc_file_search_doc_master" FromRole="doc_master" ToRole="doc_file_search" />
+    <NavigationProperty Name="doc_files" Relationship="Self.FK_doc_files_doc_master" FromRole="doc_master" ToRole="doc_files" />
+    <NavigationProperty Name="doc_follows" Relationship="Self.FK_doc_follows_doc_master" FromRole="doc_master" ToRole="doc_follows" />
+    <NavigationProperty Name="doc_logs" Relationship="Self.FK_doc_logs_doc_master" FromRole="doc_master" ToRole="doc_logs" />
+    <NavigationProperty Name="doc_sign_approval" Relationship="Self.FK_doc_sign_approval_doc_master" FromRole="doc_master" ToRole="doc_sign_approval" />
+    <NavigationProperty Name="doc_tags" Relationship="Self.FK_doc_tags_doc_master" FromRole="doc_master" ToRole="doc_tags" />
+    <NavigationProperty Name="doc_views" Relationship="Self.FK_doc_views_doc_master" FromRole="doc_master" ToRole="doc_views" />
+  </EntityType>
+  <EntityType Name="doc_sign_approval">
+    <Key>
+      <PropertyRef Name="sign_approval_id" />
+    </Key>
+    <Property Name="sign_approval_id" Type="Int32" Nullable="false" />
+    <Property Name="doc_master_id" Type="Int32" />
+    <Property Name="follow_id" Type="Int32" />
+    <Property Name="file_id" Type="Int32" />
+    <Property Name="file_path" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="flash_sign" Type="Boolean" />
+    <NavigationProperty Name="doc_master" Relationship="Self.FK_doc_sign_approval_doc_master" FromRole="doc_sign_approval" ToRole="doc_master" />
+  </EntityType>
+  <EntityType Name="doc_tags">
+    <Key>
+      <PropertyRef Name="doc_tag_id" />
+    </Key>
+    <Property Name="doc_tag_id" Type="Int32" Nullable="false" />
+    <Property Name="doc_master_id" Type="Int32" />
+    <Property Name="tag_id" Type="Int32" />
+    <Property Name="is_order" Type="Int32" />
+    <NavigationProperty Name="doc_master" Relationship="Self.FK_doc_tags_doc_master" FromRole="doc_tags" ToRole="doc_master" />
+  </EntityType>
+  <EntityType Name="doc_title_docs">
+    <Key>
+      <PropertyRef Name="title_doc_id" />
+    </Key>
+    <Property Name="title_doc_id" Type="Int32" Nullable="false" />
+    <Property Name="title_id" Type="Int32" />
+    <Property Name="doc_master_id" Type="Int32" />
+    <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="doc_titles" Relationship="Self.FK_doc_title_docs_doc_titles" FromRole="doc_title_docs" ToRole="doc_titles" />
+  </EntityType>
+  <EntityType Name="doc_title_users">
+    <Key>
+      <PropertyRef Name="title_user_id" />
+    </Key>
+    <Property Name="title_user_id" Type="Int32" Nullable="false" />
+    <Property Name="title_id" Type="Int32" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="created_by" Type="Int32" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="is_order" Type="Int32" />
+    <NavigationProperty Name="doc_titles" Relationship="Self.FK_doc_title_users_doc_titles" FromRole="doc_title_users" ToRole="doc_titles" />
+  </EntityType>
+  <EntityType Name="doc_titles">
+    <Key>
+      <PropertyRef Name="title_id" />
+    </Key>
+    <Property Name="title_id" Type="Int32" Nullable="false" />
+    <Property Name="unit_id" Type="Int32" />
+    <Property Name="title_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="title_parent_id" Type="Int32" />
+    <Property Name="is_order" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="level" Type="Int32" />
+    <NavigationProperty Name="doc_title_docs" Relationship="Self.FK_doc_title_docs_doc_titles" FromRole="doc_titles" ToRole="doc_title_docs" />
+    <NavigationProperty Name="doc_title_users" Relationship="Self.FK_doc_title_users_doc_titles" FromRole="doc_titles" ToRole="doc_title_users" />
+  </EntityType>
+  <EntityType Name="doc_views">
+    <Key>
+      <PropertyRef Name="view_id" />
+    </Key>
+    <Property Name="view_id" Type="Int32" Nullable="false" />
+    <Property Name="doc_master_id" Type="Int32" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="viewed_date" Type="DateTime" Precision="3" />
+    <Property Name="is_app_viewed" Type="Boolean" />
+    <NavigationProperty Name="doc_master" Relationship="Self.FK_doc_views_doc_master" FromRole="doc_views" ToRole="doc_master" />
+  </EntityType>
+  <EntityType Name="doc_workflow_groups">
+    <Key>
+      <PropertyRef Name="workflow_group_id" />
+    </Key>
+    <Property Name="workflow_group_id" Type="Int32" Nullable="false" />
+    <Property Name="workflow_id" Type="Int32" />
+    <Property Name="group_id" Type="Int32" />
+    <Property Name="return_group_id" Type="Int32" />
+    <Property Name="return_type" Type="Int32" />
+    <Property Name="foward_type" Type="Int32" />
+    <NavigationProperty Name="doc_workflows" Relationship="Self.FK_doc_workflow_groups_doc_workflows" FromRole="doc_workflow_groups" ToRole="doc_workflows" />
+  </EntityType>
+  <EntityType Name="doc_workflows">
+    <Key>
+      <PropertyRef Name="workflow_id" />
+    </Key>
+    <Property Name="workflow_id" Type="Int32" Nullable="false" />
+    <Property Name="workflow_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="workflow_type" Type="Int32" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="unit_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="department_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="is_order" Type="Int32" />
+    <NavigationProperty Name="doc_workflow_groups" Relationship="Self.FK_doc_workflow_groups_doc_workflows" FromRole="doc_workflows" ToRole="doc_workflow_groups" />
+  </EntityType>
+  <EntityType Name="file_folder">
+    <Key>
+      <PropertyRef Name="folder_id" />
+    </Key>
+    <Property Name="folder_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="parent_id" Type="Int32" />
+    <Property Name="folder_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="des" Type="String" MaxLength="2500" FixedLength="false" Unicode="true" />
+    <Property Name="keywords" Type="String" MaxLength="2500" FixedLength="false" Unicode="true" />
+    <Property Name="is_public" Type="Boolean" Nullable="false" />
+    <Property Name="is_sub" Type="Boolean" />
+    <Property Name="is_upload" Type="Boolean" />
+    <Property Name="status" Type="Boolean" Nullable="false" />
+    <Property Name="is_order" Type="Int32" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="created_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="token_created_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="file_number" Type="Int32" />
+    <Property Name="views" Type="Int32" />
+    <Property Name="capacity" Type="Double" />
+    <NavigationProperty Name="file_info" Relationship="Self.FK_file_infor_folder_id" FromRole="file_folder" ToRole="file_info" />
+  </EntityType>
+  <EntityType Name="file_info">
+    <Key>
+      <PropertyRef Name="file_id" />
+    </Key>
+    <Property Name="file_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="folder_id" Type="Int32" Nullable="false" />
+    <Property Name="file_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="is_filepath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="capacity" Type="Double" />
+    <Property Name="is_public" Type="Boolean" Nullable="false" />
+    <Property Name="is_order" Type="Int32" Nullable="false" />
+    <Property Name="is_image" Type="Boolean" Nullable="false" />
+    <Property Name="keywords" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Boolean" Nullable="false" />
+    <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="created_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="token_created_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="views" Type="Int32" />
+    <Property Name="download" Type="Int32" />
+    <NavigationProperty Name="file_folder" Relationship="Self.FK_file_infor_folder_id" FromRole="file_info" ToRole="file_folder" />
+  </EntityType>
+  <EntityType Name="file_log">
+    <Key>
+      <PropertyRef Name="file_log_id" />
+    </Key>
+    <Property Name="file_log_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="file_id" Type="Int32" />
+    <Property Name="folder_id" Type="Int32" />
+    <Property Name="contents" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="users_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="log_type" Type="Int32" Nullable="false" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="created_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="token_created_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="is_view" Type="Boolean" />
+    <Property Name="date_view" Type="DateTime" Precision="3" />
+    <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="file_share">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="file_id" Type="Int32" />
+    <Property Name="folder_id" Type="Int32" />
+    <Property Name="users_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Boolean" Nullable="false" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="created_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="token_created_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="is_view" Type="Boolean" />
+    <Property Name="date_view" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="sql_log">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="controller" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="log_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="start_date" Type="DateTime" Precision="3" />
+    <Property Name="end_date" Type="DateTime" Precision="3" />
+    <Property Name="milliseconds" Type="Int32" />
+    <Property Name="full_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="token_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="created_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="search_name" Type="String" MaxLength="403" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="sys_app_menus">
+    <Key>
+      <PropertyRef Name="app_menu_id" />
+    </Key>
+    <Property Name="app_menu_id" Type="Int32" Nullable="false" />
+    <Property Name="app_menu_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="icon" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="link" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="is_order" Type="Int32" />
+    <NavigationProperty Name="sys_organization_app_menus" Relationship="Self.FK_sys_unit_app_menus_sys_app_menus" FromRole="sys_app_menus" ToRole="sys_organization_app_menus" />
+  </EntityType>
+  <EntityType Name="sys_fire_base">
+    <Key>
+      <PropertyRef Name="id_key" />
+    </Key>
+    <Property Name="id_key" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="users_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="token_cm_id" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="token_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="date_add" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="d_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="f_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="is_type" Type="Int32" />
+    <NavigationProperty Name="sys_users" Relationship="Self.FK_sys_fire_base_sys_users" FromRole="sys_fire_base" ToRole="sys_users" />
+  </EntityType>
+  <EntityType Name="sys_group">
+    <Key>
+      <PropertyRef Name="group_id" />
+    </Key>
+    <Property Name="group_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="group_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="des" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="is_system" Type="Boolean" />
+    <Property Name="unit_ID" Type="Int32" />
+    <Property Name="group_type_id" Type="Int32" />
+    <Property Name="action_type" Type="Int32" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="is_order" Type="Int32" />
+    <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modified_date" Type="DateTime" Precision="3" />
+    <Property Name="token_modified_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modified_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="sys_group_users" Relationship="Self.FK_sys_group_users_group_id" FromRole="sys_group" ToRole="sys_group_users" />
+  </EntityType>
+  <EntityType Name="sys_group_type">
+    <Key>
+      <PropertyRef Name="group_type_id" />
+    </Key>
+    <Property Name="group_type_id" Type="Int32" Nullable="false" />
+    <Property Name="type_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="background_color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="main_color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="is_order" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sys_group_users">
+    <Key>
+      <PropertyRef Name="group_users_id" />
+    </Key>
+    <Property Name="group_users_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="group_id" Type="Int32" Nullable="false" />
+    <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="is_order" Type="Int32" />
+    <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modified_date" Type="DateTime" Precision="3" />
+    <Property Name="token_modified_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modified_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="sys_group" Relationship="Self.FK_sys_group_users_group_id" FromRole="sys_group_users" ToRole="sys_group" />
+  </EntityType>
+  <EntityType Name="sys_logs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="controller" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="log_date" Type="DateTime" Precision="3" />
+    <Property Name="log_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="full_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="token_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modified_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="is_type" Type="Int32" />
+    <Property Name="module" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="modified_date" Type="DateTime" Precision="3" />
+    <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="search_name" Type="String" MaxLength="853" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="sys_modules">
+    <Key>
+      <PropertyRef Name="module_id" />
+    </Key>
+    <Property Name="module_id" Type="Int32" Nullable="false" />
+    <Property Name="parent_id" Type="Int32" />
+    <Property Name="module_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="image" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="icon" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="is_link" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="is_filepath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="is_stand" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="is_target" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="is_order" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Boolean" Nullable="false" />
+    <Property Name="is_admin" Type="Boolean" Nullable="false" />
+    <Property Name="modified_date" Type="DateTime" Precision="3" />
+    <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modified_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="token_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="organization_id" Type="Int32" />
+    <Property Name="is_size" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="sys_organization_" Relationship="Self.FK_sys_modules_organization_id" FromRole="sys_modules" ToRole="sys_organization_" />
+  </EntityType>
+  <EntityType Name="sys_organization">
+    <Key>
+      <PropertyRef Name="organization_id" />
+    </Key>
+    <Property Name="organization_id" Type="Int32" Nullable="false" />
+    <Property Name="parent_id" Type="Int32" />
+    <Property Name="unit_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="logo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="background_image" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="is_url" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="is_order" Type="Int32" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="unit_type" Type="Int32" />
+    <Property Name="text_color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="background_color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="short_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="coord_x" Type="Double" />
+    <Property Name="coord_y" Type="Double" />
+    <Property Name="place_id" Type="Int32" />
+    <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="token_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="doc_codes" Relationship="Self.FK_doc_codes_organization_id" FromRole="sys_organization_" ToRole="doc_codes" />
+    <NavigationProperty Name="doc_decision_forms" Relationship="Self.FK_doc_decision_forms_organization_id" FromRole="sys_organization_" ToRole="doc_decision_forms" />
+    <NavigationProperty Name="sys_modules" Relationship="Self.FK_sys_modules_organization_id" FromRole="sys_organization_" ToRole="sys_modules" />
+  </EntityType>
+  <EntityType Name="sys_organization_app_menus">
+    <Key>
+      <PropertyRef Name="unit_app_menu_id" />
+    </Key>
+    <Property Name="unit_app_menu_id" Type="Int32" Nullable="false" />
+    <Property Name="organization_id" Type="Int32" />
+    <Property Name="app_menu_id" Type="Int32" />
+    <Property Name="status" Type="Boolean" />
+    <NavigationProperty Name="sys_app_menus" Relationship="Self.FK_sys_unit_app_menus_sys_app_menus" FromRole="sys_organization_app_menus" ToRole="sys_app_menus" />
+  </EntityType>
+  <EntityType Name="sys_organization_config_group">
+    <Key>
+      <PropertyRef Name="organization_config_group_id" />
+    </Key>
+    <Property Name="organization_config_group_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="group_type_id" Type="Int32" />
+    <Property Name="organization_id" Type="Int32" />
+    <Property Name="is_approved" Type="Boolean" />
+    <Property Name="is_order" Type="Int32" />
+    <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modified_date" Type="DateTime" Precision="3" />
+    <Property Name="token_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sys_role_modules">
+    <Key>
+      <PropertyRef Name="role_module_id" />
+    </Key>
+    <Property Name="role_module_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="role_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="module_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="is_grade" Type="Int32" Nullable="false" />
+    <Property Name="is_authorities" Type="Int32" />
+    <Property Name="modified_date" Type="DateTime" Precision="3" />
+    <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modified_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="token_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="sys_roles" Relationship="Self.FK_sys_role_modules_sys_roles" FromRole="sys_role_modules" ToRole="sys_roles" />
+  </EntityType>
+  <EntityType Name="sys_roles">
+    <Key>
+      <PropertyRef Name="role_id" />
+    </Key>
+    <Property Name="role_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="role_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="is_order" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Boolean" Nullable="false" />
+    <Property Name="main_color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="background_color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="sys_role_modules" Relationship="Self.FK_sys_role_modules_sys_roles" FromRole="sys_roles" ToRole="sys_role_modules" />
+    <NavigationProperty Name="sys_users" Relationship="Self.FK_sys_users_Role_ID" FromRole="sys_roles" ToRole="sys_users" />
+  </EntityType>
+  <EntityType Name="sys_sendhub">
+    <Key>
+      <PropertyRef Name="senhub_id" />
+    </Key>
+    <Property Name="senhub_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="user_send" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="receiver" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="icon" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="contents" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <Property Name="is_type" Type="Int32" Nullable="false" />
+    <Property Name="date_send" Type="DateTime" Precision="3" />
+    <Property Name="seen" Type="Boolean" Nullable="false" />
+    <Property Name="date_seen" Type="DateTime" Precision="3" />
+    <Property Name="id_key" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="group_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="token_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="sys_users" Relationship="Self.FK_sys_sendhub_sys_users" FromRole="sys_sendhub" ToRole="sys_users" />
+  </EntityType>
+  <EntityType Name="sys_table_des">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="db_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="table_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="des" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="is_pag" Type="Boolean" />
+    <Property Name="is_formdata" Type="Boolean" />
+    <Property Name="template" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="config" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="code_vue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="code_api" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="code_sql" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="code_flutter_view" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="code_flutter_controller" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="sys_tables">
+    <Key>
+      <PropertyRef Name="col_id" />
+    </Key>
+    <Property Name="col_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="db_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="table_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="des" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="c_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="c_length" Type="Int32" />
+    <Property Name="is_null" Type="Boolean" />
+    <Property Name="required" Type="Boolean" Nullable="false" />
+    <Property Name="is_key" Type="Boolean" />
+    <Property Name="is_value" Type="Boolean" />
+    <Property Name="show" Type="Boolean" Nullable="false" />
+    <Property Name="show_form" Type="Boolean" Nullable="false" />
+    <Property Name="is_identity" Type="Boolean" />
+    <Property Name="search" Type="Boolean" />
+    <Property Name="input" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="re_table" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="re_col" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="css" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="is_order" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sys_token">
+    <Key>
+      <PropertyRef Name="token_id" />
+    </Key>
+    <Property Name="token_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="users_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="full_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="date" Type="DateTime" Precision="3" />
+    <Property Name="date_end" Type="DateTime" Precision="3" />
+    <Property Name="from_device" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="sys_users" Relationship="Self.FK_sys_token_sys_users" FromRole="sys_token" ToRole="sys_users" />
+  </EntityType>
+  <EntityType Name="sys_users">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="user_key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="unit_id" Type="Int32" />
+    <Property Name="department_id" Type="Int32" />
+    <Property Name="avatar" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="is_password" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="full_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="key_encript" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="wrong_pass_count" Type="Int32" />
+    <Property Name="position_id" Type="Int32" />
+    <Property Name="is_order" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="modify_date" Type="DateTime" Precision="3" />
+    <Property Name="modify_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="token_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="role_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="is_admin" Type="Boolean" Nullable="false" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="created_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="created_token_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="app_modules" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="sys_fire_base" Relationship="Self.FK_sys_fire_base_sys_users" FromRole="sys_users" ToRole="sys_fire_base" />
+    <NavigationProperty Name="sys_roles" Relationship="Self.FK_sys_users_Role_ID" FromRole="sys_users" ToRole="sys_roles" />
+    <NavigationProperty Name="sys_sendhub" Relationship="Self.FK_sys_sendhub_sys_users" FromRole="sys_users" ToRole="sys_sendhub" />
+    <NavigationProperty Name="sys_token" Relationship="Self.FK_sys_token_sys_users" FromRole="sys_users" ToRole="sys_token" />
+    <NavigationProperty Name="sys_web_acess" Relationship="Self.FK_sys_web_acess_sys_users" FromRole="sys_users" ToRole="sys_web_acess" />
+  </EntityType>
+  <EntityType Name="sys_web_acess">
+    <Key>
+      <PropertyRef Name="web_acess_id" />
+    </Key>
+    <Property Name="web_acess_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="full_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="is_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="is_endtime" Type="DateTime" Precision="3" />
+    <Property Name="from_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="from_device" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="search_name" Type="String" MaxLength="403" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="sys_users" Relationship="Self.FK_sys_web_acess_sys_users" FromRole="sys_web_acess" ToRole="sys_users" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="test_case">
+    <Key>
+      <PropertyRef Name="case_id" />
+    </Key>
+    <Property Name="case_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="case_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="project_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="work_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="keywords" Type="String" MaxLength="2500" FixedLength="false" Unicode="true" />
+    <Property Name="des" Type="String" MaxLength="2500" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="is_order" Type="Int32" />
+    <Property Name="is_pass" Type="Boolean" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="created_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="token_created_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modified_date" Type="DateTime" Precision="3" />
+    <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modified_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="token_modified_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="test_number" Type="Int32" />
+    <Property Name="number_completed" Type="Int32" />
+    <Property Name="is_pass_step" Type="Int32" />
+    <Property Name="file_test" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="code_test" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="date_test" Type="DateTime" Precision="3" />
+    <Property Name="is_url" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="show_chrome" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="test_times" Relationship="Self.FK_Test_Lan_Test_Case" FromRole="test_case" ToRole="test_times" />
+  </EntityType>
+  <EntityType Name="test_step">
+    <Key>
+      <PropertyRef Name="step_id" />
+    </Key>
+    <Property Name="step_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="step_name" Type="String" MaxLength="2500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="is_order" Type="Int32" />
+    <Property Name="times_id" Type="Int32" Nullable="false" />
+    <Property Name="case_id" Type="Int32" Nullable="false" />
+    <Property Name="des" Type="String" MaxLength="2500" FixedLength="false" Unicode="true" />
+    <Property Name="is_pass" Type="Boolean" />
+    <Property Name="date_start" Type="DateTime" Precision="3" />
+    <Property Name="date_end" Type="DateTime" Precision="3" />
+    <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modified_date" Type="DateTime" Precision="3" />
+    <Property Name="modified_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="token_modified_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="test_times" Relationship="Self.FK_test_step_times_id" FromRole="test_step" ToRole="test_times" />
+  </EntityType>
+  <EntityType Name="test_times">
+    <Key>
+      <PropertyRef Name="times_id" />
+    </Key>
+    <Property Name="times_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="case_id" Type="Int32" Nullable="false" />
+    <Property Name="des" Type="String" MaxLength="2500" FixedLength="false" Unicode="true" />
+    <Property Name="is_pass" Type="Boolean" />
+    <Property Name="is_pass_step" Type="Int32" />
+    <Property Name="date_start" Type="DateTime" Precision="3" />
+    <Property Name="date_end" Type="DateTime" Precision="3" />
+    <Property Name="modified_date" Type="DateTime" Precision="3" />
+    <Property Name="modified_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modified_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="token_modified_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="test_case" Relationship="Self.FK_Test_Lan_Test_Case" FromRole="test_times" ToRole="test_case" />
+    <NavigationProperty Name="test_step" Relationship="Self.FK_test_step_times_id" FromRole="test_times" ToRole="test_step" />
+  </EntityType>
+  <EntityType Name="trace">
+    <Key>
+      <PropertyRef Name="row_number" />
+    </Key>
+    <Property Name="row_number" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="event_class" Type="Int32" />
+    <Property Name="application_name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="nt_username" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="login_name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="cpu" Type="Int32" />
+    <Property Name="reads" Type="Int64" />
+    <Property Name="writes" Type="Int64" />
+    <Property Name="duration" Type="Int64" />
+    <Property Name="client_process_id" Type="Int32" />
+    <Property Name="spid" Type="Int32" />
+    <Property Name="start_time" Type="DateTime" Precision="3" />
+    <Property Name="end_time" Type="DateTime" Precision="3" />
+    <Property Name="binary_data" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_CMS_News_CMS_Topic">
+    <End Role="cms_topic" Type="Self.cms_topic" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="cms_news" Type="Self.cms_news" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cms_topic">
+        <PropertyRef Name="topic_id" />
+      </Principal>
+      <Dependent Role="cms_news">
+        <PropertyRef Name="topic_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CMS_NewsUser_CMS_News">
+    <End Role="cms_news" Type="Self.cms_news" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="cms_news_users" Type="Self.cms_news_users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cms_news">
+        <PropertyRef Name="news_id" />
+      </Principal>
+      <Dependent Role="cms_news_users">
+        <PropertyRef Name="news_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cms_slideshow_topic_id">
+    <End Role="cms_topic" Type="Self.cms_topic" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="cms_slideshow" Type="Self.cms_slideshow" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cms_topic">
+        <PropertyRef Name="topic_id" />
+      </Principal>
+      <Dependent Role="cms_slideshow">
+        <PropertyRef Name="topic_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CMS_SlideShowImage_CMS_SlideShow">
+    <End Role="cms_slideshow" Type="Self.cms_slideshow" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="cms_slideshow_image" Type="Self.cms_slideshow_image" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cms_slideshow">
+        <PropertyRef Name="slideshow_id" />
+      </Principal>
+      <Dependent Role="cms_slideshow_image">
+        <PropertyRef Name="slideshow_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_codes_organization_id">
+    <End Role="sys_organization_" Type="soeModel.sys_organization" Multiplicity="0..1" />
+    <End Role="doc_codes" Type="Self.doc_codes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sys_organization_">
+        <PropertyRef Name="organization_id" />
+      </Principal>
+      <Dependent Role="doc_codes">
+        <PropertyRef Name="organization_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_completed_confirms_doc_master">
+    <End Role="doc_master" Type="Self.doc_master" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="doc_completed_confirms" Type="Self.doc_completed_confirms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doc_master">
+        <PropertyRef Name="doc_master_id" />
+      </Principal>
+      <Dependent Role="doc_completed_confirms">
+        <PropertyRef Name="doc_master_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_decision_form_views_doc_decision_forms">
+    <End Role="doc_decision_forms" Type="Self.doc_decision_forms" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="doc_decision_form_views" Type="Self.doc_decision_form_views" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doc_decision_forms">
+        <PropertyRef Name="decision_form_id" />
+      </Principal>
+      <Dependent Role="doc_decision_form_views">
+        <PropertyRef Name="decision_form_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_decision_forms_organization_id">
+    <End Role="sys_organization_" Type="soeModel.sys_organization" Multiplicity="0..1" />
+    <End Role="doc_decision_forms" Type="Self.doc_decision_forms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sys_organization_">
+        <PropertyRef Name="organization_id" />
+      </Principal>
+      <Dependent Role="doc_decision_forms">
+        <PropertyRef Name="organization_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_email_sent_doc_master">
+    <End Role="doc_master" Type="Self.doc_master" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="doc_email_sent" Type="Self.doc_email_sent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doc_master">
+        <PropertyRef Name="doc_master_id" />
+      </Principal>
+      <Dependent Role="doc_email_sent">
+        <PropertyRef Name="doc_master_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_file_search_doc_master">
+    <End Role="doc_master" Type="Self.doc_master" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="doc_file_search" Type="Self.doc_file_search" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doc_master">
+        <PropertyRef Name="doc_master_id" />
+      </Principal>
+      <Dependent Role="doc_file_search">
+        <PropertyRef Name="doc_master_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_files_doc_master">
+    <End Role="doc_master" Type="Self.doc_master" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="doc_files" Type="Self.doc_files" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doc_master">
+        <PropertyRef Name="doc_master_id" />
+      </Principal>
+      <Dependent Role="doc_files">
+        <PropertyRef Name="doc_master_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_follows_doc_master">
+    <End Role="doc_master" Type="Self.doc_master" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="doc_follows" Type="Self.doc_follows" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doc_master">
+        <PropertyRef Name="doc_master_id" />
+      </Principal>
+      <Dependent Role="doc_follows">
+        <PropertyRef Name="doc_master_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_logs_doc_master">
+    <End Role="doc_master" Type="Self.doc_master" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="doc_logs" Type="Self.doc_logs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doc_master">
+        <PropertyRef Name="doc_master_id" />
+      </Principal>
+      <Dependent Role="doc_logs">
+        <PropertyRef Name="doc_master_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_sign_approval_doc_master">
+    <End Role="doc_master" Type="Self.doc_master" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="doc_sign_approval" Type="Self.doc_sign_approval" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doc_master">
+        <PropertyRef Name="doc_master_id" />
+      </Principal>
+      <Dependent Role="doc_sign_approval">
+        <PropertyRef Name="doc_master_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_tags_doc_master">
+    <End Role="doc_master" Type="Self.doc_master" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="doc_tags" Type="Self.doc_tags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doc_master">
+        <PropertyRef Name="doc_master_id" />
+      </Principal>
+      <Dependent Role="doc_tags">
+        <PropertyRef Name="doc_master_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_views_doc_master">
+    <End Role="doc_master" Type="Self.doc_master" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="doc_views" Type="Self.doc_views" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doc_master">
+        <PropertyRef Name="doc_master_id" />
+      </Principal>
+      <Dependent Role="doc_views">
+        <PropertyRef Name="doc_master_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_title_docs_doc_titles">
+    <End Role="doc_titles" Type="Self.doc_titles" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="doc_title_docs" Type="Self.doc_title_docs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doc_titles">
+        <PropertyRef Name="title_id" />
+      </Principal>
+      <Dependent Role="doc_title_docs">
+        <PropertyRef Name="title_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_title_users_doc_titles">
+    <End Role="doc_titles" Type="Self.doc_titles" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="doc_title_users" Type="Self.doc_title_users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doc_titles">
+        <PropertyRef Name="title_id" />
+      </Principal>
+      <Dependent Role="doc_title_users">
+        <PropertyRef Name="title_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_workflow_groups_doc_workflows">
+    <End Role="doc_workflows" Type="Self.doc_workflows" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="doc_workflow_groups" Type="Self.doc_workflow_groups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doc_workflows">
+        <PropertyRef Name="workflow_id" />
+      </Principal>
+      <Dependent Role="doc_workflow_groups">
+        <PropertyRef Name="workflow_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_file_infor_folder_id">
+    <End Role="file_folder" Type="Self.file_folder" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="file_info" Type="Self.file_info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="file_folder">
+        <PropertyRef Name="folder_id" />
+      </Principal>
+      <Dependent Role="file_info">
+        <PropertyRef Name="folder_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sys_unit_app_menus_sys_app_menus">
+    <End Role="sys_app_menus" Type="Self.sys_app_menus" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sys_organization_app_menus" Type="Self.sys_organization_app_menus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sys_app_menus">
+        <PropertyRef Name="app_menu_id" />
+      </Principal>
+      <Dependent Role="sys_organization_app_menus">
+        <PropertyRef Name="app_menu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sys_fire_base_sys_users">
+    <End Role="sys_users" Type="Self.sys_users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sys_fire_base" Type="Self.sys_fire_base" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sys_users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="sys_fire_base">
+        <PropertyRef Name="users_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sys_group_users_group_id">
+    <End Role="sys_group" Type="Self.sys_group" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sys_group_users" Type="Self.sys_group_users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sys_group">
+        <PropertyRef Name="group_id" />
+      </Principal>
+      <Dependent Role="sys_group_users">
+        <PropertyRef Name="group_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sys_modules_organization_id">
+    <End Role="sys_organization_" Type="soeModel.sys_organization" Multiplicity="0..1" />
+    <End Role="sys_modules" Type="Self.sys_modules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sys_organization_">
+        <PropertyRef Name="organization_id" />
+      </Principal>
+      <Dependent Role="sys_modules">
+        <PropertyRef Name="organization_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sys_role_modules_sys_roles">
+    <End Role="sys_roles" Type="Self.sys_roles" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sys_role_modules" Type="Self.sys_role_modules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sys_roles">
+        <PropertyRef Name="role_id" />
+      </Principal>
+      <Dependent Role="sys_role_modules">
+        <PropertyRef Name="role_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sys_users_Role_ID">
+    <End Role="sys_roles" Type="Self.sys_roles" Multiplicity="0..1" />
+    <End Role="sys_users" Type="Self.sys_users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sys_roles">
+        <PropertyRef Name="role_id" />
+      </Principal>
+      <Dependent Role="sys_users">
+        <PropertyRef Name="role_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sys_sendhub_sys_users">
+    <End Role="sys_users" Type="Self.sys_users" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sys_sendhub" Type="Self.sys_sendhub" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sys_users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="sys_sendhub">
+        <PropertyRef Name="user_send" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sys_token_sys_users">
+    <End Role="sys_users" Type="Self.sys_users" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sys_token" Type="Self.sys_token" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sys_users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="sys_token">
+        <PropertyRef Name="users_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sys_web_acess_sys_users">
+    <End Role="sys_users" Type="Self.sys_users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sys_web_acess" Type="Self.sys_web_acess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sys_users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="sys_web_acess">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Test_Lan_Test_Case">
+    <End Role="test_case" Type="Self.test_case" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="test_times" Type="Self.test_times" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="test_case">
+        <PropertyRef Name="case_id" />
+      </Principal>
+      <Dependent Role="test_times">
+        <PropertyRef Name="case_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_test_step_times_id">
+    <End Role="test_times" Type="Self.test_times" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="test_step" Type="Self.test_step" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="test_times">
+        <PropertyRef Name="times_id" />
+      </Principal>
+      <Dependent Role="test_step">
+        <PropertyRef Name="times_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ca_places" EntityType="Self.ca_places" />
+    <EntitySet Name="ca_positions" EntityType="Self.ca_positions" />
+    <EntitySet Name="cms_lang" EntityType="Self.cms_lang" />
+    <EntitySet Name="cms_logs" EntityType="Self.cms_logs" />
+    <EntitySet Name="cms_news" EntityType="Self.cms_news" />
+    <EntitySet Name="cms_news_users" EntityType="Self.cms_news_users" />
+    <EntitySet Name="cms_slideshow" EntityType="Self.cms_slideshow" />
+    <EntitySet Name="cms_slideshow_image" EntityType="Self.cms_slideshow_image" />
+    <EntitySet Name="cms_topic" EntityType="Self.cms_topic" />
+    <EntitySet Name="cms_topic_flag" EntityType="Self.cms_topic_flag" />
+    <EntitySet Name="doc_ca_dispatch_books" EntityType="Self.doc_ca_dispatch_books" />
+    <EntitySet Name="doc_ca_email_groups" EntityType="Self.doc_ca_email_groups" />
+    <EntitySet Name="doc_ca_emails" EntityType="Self.doc_ca_emails" />
+    <EntitySet Name="doc_ca_fields" EntityType="Self.doc_ca_fields" />
+    <EntitySet Name="doc_ca_groups" EntityType="Self.doc_ca_groups" />
+    <EntitySet Name="doc_ca_issue_places" EntityType="Self.doc_ca_issue_places" />
+    <EntitySet Name="doc_ca_positions" EntityType="Self.doc_ca_positions" />
+    <EntitySet Name="doc_ca_receive_places" EntityType="Self.doc_ca_receive_places" />
+    <EntitySet Name="doc_ca_security" EntityType="Self.doc_ca_security" />
+    <EntitySet Name="doc_ca_send_ways" EntityType="Self.doc_ca_send_ways" />
+    <EntitySet Name="doc_ca_signers" EntityType="Self.doc_ca_signers" />
+    <EntitySet Name="doc_ca_stamps" EntityType="Self.doc_ca_stamps" />
+    <EntitySet Name="doc_ca_status" EntityType="Self.doc_ca_status" />
+    <EntitySet Name="doc_ca_tags" EntityType="Self.doc_ca_tags" />
+    <EntitySet Name="doc_ca_types" EntityType="Self.doc_ca_types" />
+    <EntitySet Name="doc_ca_urgency" EntityType="Self.doc_ca_urgency" />
+    <EntitySet Name="doc_codes" EntityType="Self.doc_codes" />
+    <EntitySet Name="doc_completed_confirms" EntityType="Self.doc_completed_confirms" />
+    <EntitySet Name="doc_decision_form_views" EntityType="Self.doc_decision_form_views" />
+    <EntitySet Name="doc_decision_forms" EntityType="Self.doc_decision_forms" />
+    <EntitySet Name="doc_email_sent" EntityType="Self.doc_email_sent" />
+    <EntitySet Name="doc_file_search" EntityType="Self.doc_file_search" />
+    <EntitySet Name="doc_files" EntityType="Self.doc_files" />
+    <EntitySet Name="doc_follows" EntityType="Self.doc_follows" />
+    <EntitySet Name="doc_logs" EntityType="Self.doc_logs" />
+    <EntitySet Name="doc_master" EntityType="Self.doc_master" />
+    <EntitySet Name="doc_sign_approval" EntityType="Self.doc_sign_approval" />
+    <EntitySet Name="doc_tags" EntityType="Self.doc_tags" />
+    <EntitySet Name="doc_title_docs" EntityType="Self.doc_title_docs" />
+    <EntitySet Name="doc_title_users" EntityType="Self.doc_title_users" />
+    <EntitySet Name="doc_titles" EntityType="Self.doc_titles" />
+    <EntitySet Name="doc_views" EntityType="Self.doc_views" />
+    <EntitySet Name="doc_workflow_groups" EntityType="Self.doc_workflow_groups" />
+    <EntitySet Name="doc_workflows" EntityType="Self.doc_workflows" />
+    <EntitySet Name="file_folder" EntityType="Self.file_folder" />
+    <EntitySet Name="file_info" EntityType="Self.file_info" />
+    <EntitySet Name="file_log" EntityType="Self.file_log" />
+    <EntitySet Name="file_share" EntityType="Self.file_share" />
+    <EntitySet Name="sql_log" EntityType="Self.sql_log" />
+    <EntitySet Name="sys_app_menus" EntityType="Self.sys_app_menus" />
+    <EntitySet Name="sys_fire_base" EntityType="Self.sys_fire_base" />
+    <EntitySet Name="sys_group" EntityType="Self.sys_group" />
+    <EntitySet Name="sys_group_type" EntityType="Self.sys_group_type" />
+    <EntitySet Name="sys_group_users" EntityType="Self.sys_group_users" />
+    <EntitySet Name="sys_logs" EntityType="Self.sys_logs" />
+    <EntitySet Name="sys_modules" EntityType="Self.sys_modules" />
+    <EntitySet Name="sys_organization_" EntityType="soeModel.sys_organization" />
+    <EntitySet Name="sys_organization_app_menus" EntityType="Self.sys_organization_app_menus" />
+    <EntitySet Name="sys_organization_config_group" EntityType="Self.sys_organization_config_group" />
+    <EntitySet Name="sys_role_modules" EntityType="Self.sys_role_modules" />
+    <EntitySet Name="sys_roles" EntityType="Self.sys_roles" />
+    <EntitySet Name="sys_sendhub" EntityType="Self.sys_sendhub" />
+    <EntitySet Name="sys_table_des" EntityType="Self.sys_table_des" />
+    <EntitySet Name="sys_tables" EntityType="Self.sys_tables" />
+    <EntitySet Name="sys_token" EntityType="Self.sys_token" />
+    <EntitySet Name="sys_users" EntityType="Self.sys_users" />
+    <EntitySet Name="sys_web_acess" EntityType="Self.sys_web_acess" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="test_case" EntityType="Self.test_case" />
+    <EntitySet Name="test_step" EntityType="Self.test_step" />
+    <EntitySet Name="test_times" EntityType="Self.test_times" />
+    <EntitySet Name="traces" EntityType="Self.trace" />
+    <AssociationSet Name="FK_CMS_News_CMS_Topic" Association="Self.FK_CMS_News_CMS_Topic">
+      <End Role="cms_topic" EntitySet="cms_topic" />
+      <End Role="cms_news" EntitySet="cms_news" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CMS_NewsUser_CMS_News" Association="Self.FK_CMS_NewsUser_CMS_News">
+      <End Role="cms_news" EntitySet="cms_news" />
+      <End Role="cms_news_users" EntitySet="cms_news_users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cms_slideshow_topic_id" Association="Self.FK_cms_slideshow_topic_id">
+      <End Role="cms_topic" EntitySet="cms_topic" />
+      <End Role="cms_slideshow" EntitySet="cms_slideshow" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CMS_SlideShowImage_CMS_SlideShow" Association="Self.FK_CMS_SlideShowImage_CMS_SlideShow">
+      <End Role="cms_slideshow" EntitySet="cms_slideshow" />
+      <End Role="cms_slideshow_image" EntitySet="cms_slideshow_image" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_codes_organization_id" Association="Self.FK_doc_codes_organization_id">
+      <End Role="sys_organization_" EntitySet="sys_organization_" />
+      <End Role="doc_codes" EntitySet="doc_codes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_completed_confirms_doc_master" Association="Self.FK_doc_completed_confirms_doc_master">
+      <End Role="doc_master" EntitySet="doc_master" />
+      <End Role="doc_completed_confirms" EntitySet="doc_completed_confirms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_decision_form_views_doc_decision_forms" Association="Self.FK_doc_decision_form_views_doc_decision_forms">
+      <End Role="doc_decision_forms" EntitySet="doc_decision_forms" />
+      <End Role="doc_decision_form_views" EntitySet="doc_decision_form_views" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_decision_forms_organization_id" Association="Self.FK_doc_decision_forms_organization_id">
+      <End Role="sys_organization_" EntitySet="sys_organization_" />
+      <End Role="doc_decision_forms" EntitySet="doc_decision_forms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_email_sent_doc_master" Association="Self.FK_doc_email_sent_doc_master">
+      <End Role="doc_master" EntitySet="doc_master" />
+      <End Role="doc_email_sent" EntitySet="doc_email_sent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_file_search_doc_master" Association="Self.FK_doc_file_search_doc_master">
+      <End Role="doc_master" EntitySet="doc_master" />
+      <End Role="doc_file_search" EntitySet="doc_file_search" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_files_doc_master" Association="Self.FK_doc_files_doc_master">
+      <End Role="doc_master" EntitySet="doc_master" />
+      <End Role="doc_files" EntitySet="doc_files" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_follows_doc_master" Association="Self.FK_doc_follows_doc_master">
+      <End Role="doc_master" EntitySet="doc_master" />
+      <End Role="doc_follows" EntitySet="doc_follows" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_logs_doc_master" Association="Self.FK_doc_logs_doc_master">
+      <End Role="doc_master" EntitySet="doc_master" />
+      <End Role="doc_logs" EntitySet="doc_logs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_sign_approval_doc_master" Association="Self.FK_doc_sign_approval_doc_master">
+      <End Role="doc_master" EntitySet="doc_master" />
+      <End Role="doc_sign_approval" EntitySet="doc_sign_approval" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_tags_doc_master" Association="Self.FK_doc_tags_doc_master">
+      <End Role="doc_master" EntitySet="doc_master" />
+      <End Role="doc_tags" EntitySet="doc_tags" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_views_doc_master" Association="Self.FK_doc_views_doc_master">
+      <End Role="doc_master" EntitySet="doc_master" />
+      <End Role="doc_views" EntitySet="doc_views" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_title_docs_doc_titles" Association="Self.FK_doc_title_docs_doc_titles">
+      <End Role="doc_titles" EntitySet="doc_titles" />
+      <End Role="doc_title_docs" EntitySet="doc_title_docs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_title_users_doc_titles" Association="Self.FK_doc_title_users_doc_titles">
+      <End Role="doc_titles" EntitySet="doc_titles" />
+      <End Role="doc_title_users" EntitySet="doc_title_users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_workflow_groups_doc_workflows" Association="Self.FK_doc_workflow_groups_doc_workflows">
+      <End Role="doc_workflows" EntitySet="doc_workflows" />
+      <End Role="doc_workflow_groups" EntitySet="doc_workflow_groups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_file_infor_folder_id" Association="Self.FK_file_infor_folder_id">
+      <End Role="file_folder" EntitySet="file_folder" />
+      <End Role="file_info" EntitySet="file_info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sys_unit_app_menus_sys_app_menus" Association="Self.FK_sys_unit_app_menus_sys_app_menus">
+      <End Role="sys_app_menus" EntitySet="sys_app_menus" />
+      <End Role="sys_organization_app_menus" EntitySet="sys_organization_app_menus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sys_fire_base_sys_users" Association="Self.FK_sys_fire_base_sys_users">
+      <End Role="sys_users" EntitySet="sys_users" />
+      <End Role="sys_fire_base" EntitySet="sys_fire_base" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sys_group_users_group_id" Association="Self.FK_sys_group_users_group_id">
+      <End Role="sys_group" EntitySet="sys_group" />
+      <End Role="sys_group_users" EntitySet="sys_group_users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sys_modules_organization_id" Association="Self.FK_sys_modules_organization_id">
+      <End Role="sys_organization_" EntitySet="sys_organization_" />
+      <End Role="sys_modules" EntitySet="sys_modules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sys_role_modules_sys_roles" Association="Self.FK_sys_role_modules_sys_roles">
+      <End Role="sys_roles" EntitySet="sys_roles" />
+      <End Role="sys_role_modules" EntitySet="sys_role_modules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sys_users_Role_ID" Association="Self.FK_sys_users_Role_ID">
+      <End Role="sys_roles" EntitySet="sys_roles" />
+      <End Role="sys_users" EntitySet="sys_users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sys_sendhub_sys_users" Association="Self.FK_sys_sendhub_sys_users">
+      <End Role="sys_users" EntitySet="sys_users" />
+      <End Role="sys_sendhub" EntitySet="sys_sendhub" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sys_token_sys_users" Association="Self.FK_sys_token_sys_users">
+      <End Role="sys_users" EntitySet="sys_users" />
+      <End Role="sys_token" EntitySet="sys_token" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sys_web_acess_sys_users" Association="Self.FK_sys_web_acess_sys_users">
+      <End Role="sys_users" EntitySet="sys_users" />
+      <End Role="sys_web_acess" EntitySet="sys_web_acess" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Test_Lan_Test_Case" Association="Self.FK_Test_Lan_Test_Case">
+      <End Role="test_case" EntitySet="test_case" />
+      <End Role="test_times" EntitySet="test_times" />
+    </AssociationSet>
+    <AssociationSet Name="FK_test_step_times_id" Association="Self.FK_test_step_times_id">
+      <End Role="test_times" EntitySet="test_times" />
+      <End Role="test_step" EntitySet="test_step" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

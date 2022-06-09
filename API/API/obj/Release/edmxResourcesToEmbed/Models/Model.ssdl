@@ -1,0 +1,2407 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="soeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="api_category">
+    <Key>
+      <PropertyRef Name="category_id" />
+    </Key>
+    <Property Name="category_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="project_id" Type="int" />
+    <Property Name="category_name" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="is_order" Type="int" Nullable="false" />
+    <Property Name="parent_id" Type="int" />
+    <Property Name="status" Type="bit" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="api_col">
+    <Key>
+      <PropertyRef Name="col_id" />
+    </Key>
+    <Property Name="col_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="table_id" Type="int" Nullable="false" />
+    <Property Name="col_name" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="col_type" Type="varchar" MaxLength="500" />
+    <Property Name="is_null" Type="bit" />
+    <Property Name="is_key" Type="bit" />
+    <Property Name="is_identity" Type="bit" />
+    <Property Name="des" Type="nvarchar(max)" />
+    <Property Name="is_order" Type="int" Nullable="false" />
+    <Property Name="status" Type="bit" />
+    <Property Name="table_forenkey_id" Type="int" />
+    <Property Name="col_forenkey_id" Type="int" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="api_parameters">
+    <Key>
+      <PropertyRef Name="parameters_id" />
+    </Key>
+    <Property Name="parameters_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="service_id" Type="int" Nullable="false" />
+    <Property Name="table_id" Type="int" />
+    <Property Name="parameters_type" Type="varchar" MaxLength="50" />
+    <Property Name="parameters_name" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="des" Type="nvarchar(max)" />
+    <Property Name="example_value" Type="nvarchar" MaxLength="250" />
+    <Property Name="is_order" Type="int" Nullable="false" />
+    <Property Name="status" Type="bit" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="api_plugin">
+    <Key>
+      <PropertyRef Name="plugin_id" />
+    </Key>
+    <Property Name="plugin_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="category_id" Type="int" Nullable="false" />
+    <Property Name="plugin_name" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="des" Type="nvarchar(max)" />
+    <Property Name="images" Type="varchar(max)" />
+    <Property Name="file_url" Type="varchar" MaxLength="500" />
+    <Property Name="keywords" Type="nvarchar" MaxLength="2500" />
+    <Property Name="is_url" Type="varchar" MaxLength="500" />
+    <Property Name="is_app" Type="bit" />
+    <Property Name="is_order" Type="int" Nullable="false" />
+    <Property Name="status" Type="bit" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="api_project">
+    <Key>
+      <PropertyRef Name="project_id" />
+    </Key>
+    <Property Name="project_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="parent_id" Type="int" />
+    <Property Name="db_name" Type="varchar" MaxLength="50" />
+    <Property Name="project_name" Type="nvarchar" MaxLength="500" />
+    <Property Name="project_logo" Type="varchar" MaxLength="500" />
+    <Property Name="project_des" Type="nvarchar(max)" />
+    <Property Name="keyword" Type="nvarchar" MaxLength="2500" />
+    <Property Name="status" Type="int" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+    <Property Name="is_order" Type="int" />
+  </EntityType>
+  <EntityType Name="api_service">
+    <Key>
+      <PropertyRef Name="service_id" />
+    </Key>
+    <Property Name="service_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="category_id" Type="int" Nullable="false" />
+    <Property Name="service_name" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="des" Type="nvarchar(max)" />
+    <Property Name="is_app" Type="bit" />
+    <Property Name="is_order" Type="int" Nullable="false" />
+    <Property Name="status" Type="bit" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="data" Type="nvarchar(max)" />
+    <Property Name="url_file" Type="nvarchar" MaxLength="300" />
+    <Property Name="proc_name" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="api_table">
+    <Key>
+      <PropertyRef Name="table_id" />
+    </Key>
+    <Property Name="table_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="project_id" Type="int" Nullable="false" />
+    <Property Name="table_name" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="group_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="des" Type="nvarchar(max)" />
+    <Property Name="is_order" Type="int" Nullable="false" />
+    <Property Name="status" Type="bit" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ca_places">
+    <Key>
+      <PropertyRef Name="place_id" />
+    </Key>
+    <Property Name="place_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="parent_id" Type="int" />
+    <Property Name="name" Type="nvarchar" MaxLength="500" />
+    <Property Name="status" Type="bit" Nullable="false" />
+    <Property Name="is_order" Type="int" Nullable="false" />
+    <Property Name="is_level" Type="int" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ca_positions">
+    <Key>
+      <PropertyRef Name="position_id" />
+    </Key>
+    <Property Name="position_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="position_name" Type="nvarchar" MaxLength="500" />
+    <Property Name="is_order" Type="int" Nullable="false" />
+    <Property Name="status" Type="bit" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cms_lang">
+    <Key>
+      <PropertyRef Name="lang_id" />
+    </Key>
+    <Property Name="lang_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="code" Type="varchar" MaxLength="50" />
+    <Property Name="icon" Type="varchar" MaxLength="500" />
+    <Property Name="is_order" Type="int" Nullable="false" />
+    <Property Name="status" Type="bit" Nullable="false" />
+    <Property Name="is_main" Type="bit" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cms_logs">
+    <Key>
+      <PropertyRef Name="log_id" />
+    </Key>
+    <Property Name="log_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="log_title" Type="nvarchar" MaxLength="500" />
+    <Property Name="log_content" Type="nvarchar(max)" />
+    <Property Name="log_module" Type="nvarchar" MaxLength="500" />
+    <Property Name="id_key" Type="varchar" MaxLength="50" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cms_news">
+    <Key>
+      <PropertyRef Name="news_id" />
+    </Key>
+    <Property Name="news_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="topic_id" Type="int" />
+    <Property Name="organization_id" Type="int" />
+    <Property Name="relate_id" Type="varchar" MaxLength="2500" />
+    <Property Name="lang_id" Type="int" />
+    <Property Name="news_type" Type="int" />
+    <Property Name="is_hot" Type="bit" />
+    <Property Name="news_name" Type="nvarchar" MaxLength="500" />
+    <Property Name="image" Type="varchar" MaxLength="500" />
+    <Property Name="contents" Type="nvarchar(max)" />
+    <Property Name="details" Type="nvarchar(max)" />
+    <Property Name="keywords" Type="nvarchar(max)" />
+    <Property Name="author" Type="nvarchar" MaxLength="500" />
+    <Property Name="start_date" Type="datetime" />
+    <Property Name="end_date" Type="datetime" />
+    <Property Name="is_visitor" Type="int" />
+    <Property Name="status" Type="int" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="censor" Type="varchar" MaxLength="50" />
+    <Property Name="date_censor" Type="datetime" />
+    <Property Name="ip_censor" Type="varchar" MaxLength="50" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cms_news_users">
+    <Key>
+      <PropertyRef Name="news_user_id" />
+    </Key>
+    <Property Name="news_user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="news_id" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="varchar" MaxLength="50" />
+    <Property Name="views" Type="int" />
+    <Property Name="start_date" Type="datetime" />
+    <Property Name="end_date" Type="datetime" />
+    <Property Name="ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cms_slideshow">
+    <Key>
+      <PropertyRef Name="slideshow_id" />
+    </Key>
+    <Property Name="slideshow_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="topic_id" Type="int" />
+    <Property Name="organization_id" Type="int" />
+    <Property Name="slideshow_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="is_type" Type="int" />
+    <Property Name="lang_id" Type="int" Nullable="false" />
+    <Property Name="status" Type="bit" Nullable="false" />
+    <Property Name="keywords" Type="nvarchar" MaxLength="2500" />
+    <Property Name="is_order" Type="int" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cms_slideshow_image">
+    <Key>
+      <PropertyRef Name="image_id" />
+    </Key>
+    <Property Name="image_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="slideshow_id" Type="int" Nullable="false" />
+    <Property Name="image_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="des" Type="nvarchar" MaxLength="500" />
+    <Property Name="is_filepath" Type="varchar" MaxLength="500" />
+    <Property Name="is_link" Type="nvarchar" MaxLength="500" />
+    <Property Name="status" Type="bit" Nullable="false" />
+    <Property Name="is_video" Type="bit" />
+    <Property Name="is_order" Type="int" Nullable="false" />
+    <Property Name="is_poster" Type="varchar" MaxLength="500" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cms_topic">
+    <Key>
+      <PropertyRef Name="topic_id" />
+    </Key>
+    <Property Name="topic_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="lang_id" Type="int" Nullable="false" />
+    <Property Name="topic_name" Type="nvarchar" MaxLength="500" />
+    <Property Name="parent_id" Type="int" />
+    <Property Name="topic_flag_id" Type="int" />
+    <Property Name="url" Type="nvarchar" MaxLength="500" />
+    <Property Name="is_target" Type="varchar" MaxLength="50" />
+    <Property Name="is_menu" Type="int" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="status" Type="bit" />
+    <Property Name="organization_id" Type="int" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cms_topic_flag">
+    <Key>
+      <PropertyRef Name="topic_flag_id" />
+    </Key>
+    <Property Name="topic_flag_id" Type="int" Nullable="false" />
+    <Property Name="topic_flag_name" Type="nvarchar" MaxLength="500" />
+    <Property Name="group_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="des" Type="nvarchar" MaxLength="500" />
+    <Property Name="url" Type="nvarchar" MaxLength="500" />
+    <Property Name="is_order" Type="int" Nullable="false" />
+    <Property Name="status" Type="bit" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="doc_ca_dispatch_books">
+    <Key>
+      <PropertyRef Name="dispatch_book_id" />
+    </Key>
+    <Property Name="dispatch_book_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dispatch_book_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="year" Type="int" />
+    <Property Name="current_num" Type="float" />
+    <Property Name="tracking_place" Type="nvarchar" MaxLength="250" />
+    <Property Name="open_date" Type="datetime" />
+    <Property Name="end_date" Type="datetime" />
+    <Property Name="department_id" Type="int" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="status" Type="bit" />
+    <Property Name="organization_id" Type="int" />
+    <Property Name="nav_type" Type="int" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="doc_ca_email_groups">
+    <Key>
+      <PropertyRef Name="email_group_id" />
+    </Key>
+    <Property Name="email_group_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="email_group_name" Type="nvarchar" MaxLength="500" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="organization_id" Type="int" />
+    <Property Name="status" Type="bit" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="doc_ca_emails">
+    <Key>
+      <PropertyRef Name="email_id" />
+    </Key>
+    <Property Name="email_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="email_name" Type="varchar" MaxLength="50" />
+    <Property Name="full_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="description" Type="nvarchar(max)" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="status" Type="bit" />
+    <Property Name="organization_id" Type="int" />
+    <Property Name="email_group_id" Type="int" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="doc_ca_fields">
+    <Key>
+      <PropertyRef Name="field_id" />
+    </Key>
+    <Property Name="field_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="field_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="status" Type="bit" />
+    <Property Name="organization_id" Type="int" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="doc_ca_groups">
+    <Key>
+      <PropertyRef Name="doc_group_id" />
+    </Key>
+    <Property Name="doc_group_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="doc_group_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="doc_group_code" Type="varchar" MaxLength="50" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="status" Type="bit" />
+    <Property Name="organization_id" Type="varchar" MaxLength="50" />
+    <Property Name="year" Type="int" />
+    <Property Name="current_num" Type="float" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="doc_ca_issue_places">
+    <Key>
+      <PropertyRef Name="issue_place_id" />
+    </Key>
+    <Property Name="issue_place_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="issue_place_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="status" Type="bit" />
+    <Property Name="organization_id" Type="int" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="doc_ca_positions">
+    <Key>
+      <PropertyRef Name="position_id" />
+    </Key>
+    <Property Name="position_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="position_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="status" Type="bit" />
+    <Property Name="organization_id" Type="int" />
+    <Property Name="position_type" Type="int" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="doc_ca_receive_places">
+    <Key>
+      <PropertyRef Name="receive_place_id" />
+    </Key>
+    <Property Name="receive_place_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="receive_place_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="status" Type="bit" />
+    <Property Name="organization_id" Type="int" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="doc_ca_security">
+    <Key>
+      <PropertyRef Name="security_id" />
+    </Key>
+    <Property Name="security_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="security_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="status" Type="bit" />
+    <Property Name="organization_id" Type="int" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="doc_ca_send_ways">
+    <Key>
+      <PropertyRef Name="send_way_id" />
+    </Key>
+    <Property Name="send_way_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="send_way_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="status" Type="bit" />
+    <Property Name="organization_id" Type="int" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="doc_ca_signers">
+    <Key>
+      <PropertyRef Name="signer_id" />
+    </Key>
+    <Property Name="signer_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="signer_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="position" Type="nvarchar" MaxLength="250" />
+    <Property Name="department_id" Type="int" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="status" Type="bit" />
+    <Property Name="organization_id" Type="int" />
+    <Property Name="nav_type" Type="int" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="doc_ca_stamps">
+    <Key>
+      <PropertyRef Name="stamp_id" />
+    </Key>
+    <Property Name="stamp_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="organization_id" Type="int" />
+    <Property Name="stamp_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="image" Type="nvarchar" MaxLength="500" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="is_default" Type="bit" />
+    <Property Name="status" Type="bit" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="doc_ca_status">
+    <Key>
+      <PropertyRef Name="status_id" />
+    </Key>
+    <Property Name="status_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="status_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="background_color" Type="varchar" MaxLength="50" />
+    <Property Name="text_color" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="bit" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="is_handle" Type="bit" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="doc_ca_tags">
+    <Key>
+      <PropertyRef Name="tag_id" />
+    </Key>
+    <Property Name="tag_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tag_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="status" Type="bit" />
+    <Property Name="organization_id" Type="int" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="doc_ca_types">
+    <Key>
+      <PropertyRef Name="doc_type_id" />
+    </Key>
+    <Property Name="doc_type_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="doc_type_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="doc_type_code" Type="varchar" MaxLength="50" />
+    <Property Name="nav_type" Type="int" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="status" Type="bit" />
+    <Property Name="organization_id" Type="int" />
+  </EntityType>
+  <EntityType Name="doc_ca_urgency">
+    <Key>
+      <PropertyRef Name="urgency_id" />
+    </Key>
+    <Property Name="urgency_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="urgency_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="status" Type="bit" />
+    <Property Name="organization_id" Type="int" />
+  </EntityType>
+  <EntityType Name="doc_codes">
+    <Key>
+      <PropertyRef Name="code_id" />
+    </Key>
+    <Property Name="code_id" Type="int" Nullable="false" />
+    <Property Name="organization_id" Type="int" />
+    <Property Name="idkey" Type="varchar" MaxLength="50" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="info_col" Type="nvarchar" MaxLength="50" />
+    <Property Name="is_used" Type="bit" />
+    <Property Name="separator" Type="varchar" MaxLength="50" />
+    <Property Name="auto_gen" Type="bit" />
+    <Property Name="nav_type" Type="int" />
+    <Property Name="num_by_group" Type="bit" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="doc_completed_confirms">
+    <Key>
+      <PropertyRef Name="completed_confirm_id" />
+    </Key>
+    <Property Name="completed_confirm_id" Type="int" Nullable="false" />
+    <Property Name="doc_master_id" Type="int" />
+    <Property Name="follow_id" Type="int" />
+    <Property Name="sent_by" Type="int" />
+    <Property Name="sent_date" Type="datetime" />
+    <Property Name="sent_message" Type="nvarchar" MaxLength="500" />
+    <Property Name="approved_by" Type="int" />
+    <Property Name="approved_date" Type="datetime" />
+    <Property Name="approved_message" Type="nvarchar" MaxLength="500" />
+    <Property Name="is_agreed" Type="bit" />
+    <Property Name="is_order" Type="int" />
+  </EntityType>
+  <EntityType Name="doc_decision_form_views">
+    <Key>
+      <PropertyRef Name="decision_form_view_id" />
+    </Key>
+    <Property Name="decision_form_view_id" Type="int" Nullable="false" />
+    <Property Name="decision_form_id" Type="int" />
+    <Property Name="user_id" Type="varchar" MaxLength="50" />
+    <Property Name="view_date" Type="datetime" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="doc_decision_forms">
+    <Key>
+      <PropertyRef Name="decision_form_id" />
+    </Key>
+    <Property Name="decision_form_id" Type="int" Nullable="false" />
+    <Property Name="organization_id" Type="int" />
+    <Property Name="name" Type="nvarchar" MaxLength="250" />
+    <Property Name="type" Type="int" />
+    <Property Name="code" Type="nvarchar" MaxLength="50" />
+    <Property Name="signed_date" Type="date" />
+    <Property Name="signer" Type="nvarchar" MaxLength="250" />
+    <Property Name="file_path" Type="nvarchar" MaxLength="500" />
+    <Property Name="file_name" Type="nvarchar" MaxLength="500" />
+    <Property Name="file_size" Type="float" />
+    <Property Name="file_type" Type="varchar" MaxLength="10" />
+    <Property Name="is_order" Type="int" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="doc_email_sent">
+    <Key>
+      <PropertyRef Name="email_sent_id" />
+    </Key>
+    <Property Name="email_sent_id" Type="int" Nullable="false" />
+    <Property Name="email_name" Type="varchar" MaxLength="250" />
+    <Property Name="doc_master_id" Type="int" />
+    <Property Name="title" Type="nvarchar" MaxLength="500" />
+    <Property Name="content" Type="nvarchar" MaxLength="500" />
+    <Property Name="sent_date" Type="datetime" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="doc_file_search">
+    <Key>
+      <PropertyRef Name="file_search_id" />
+    </Key>
+    <Property Name="file_search_id" Type="int" Nullable="false" />
+    <Property Name="doc_master_id" Type="int" />
+    <Property Name="file_content_text" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="doc_files">
+    <Key>
+      <PropertyRef Name="file_id" />
+    </Key>
+    <Property Name="file_id" Type="int" Nullable="false" />
+    <Property Name="doc_master_id" Type="int" />
+    <Property Name="follow_id" Type="int" />
+    <Property Name="file_name" Type="nvarchar" MaxLength="500" />
+    <Property Name="file_path" Type="nvarchar" MaxLength="500" />
+    <Property Name="file_path_temp" Type="nvarchar" MaxLength="500" />
+    <Property Name="file_size" Type="float" />
+    <Property Name="file_type" Type="varchar" MaxLength="10" />
+    <Property Name="doc_file_type" Type="int" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="is_drafted" Type="bit" />
+    <Property Name="message" Type="nvarchar" MaxLength="500" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="doc_follows">
+    <Key>
+      <PropertyRef Name="follow_id" />
+    </Key>
+    <Property Name="follow_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="organization_id" Type="int" />
+    <Property Name="doc_master_id" Type="int" />
+    <Property Name="send_by" Type="int" />
+    <Property Name="send_by_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="send_date" Type="datetime" />
+    <Property Name="receive_by" Type="int" />
+    <Property Name="receive_by_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="receive_type" Type="int" />
+    <Property Name="view_date" Type="datetime" />
+    <Property Name="deadline_date" Type="date" />
+    <Property Name="follow_parent_id" Type="varchar" MaxLength="50" />
+    <Property Name="level" Type="int" />
+    <Property Name="is_inworkflow" Type="bit" />
+    <Property Name="workflow_id" Type="int" Nullable="false" />
+    <Property Name="workflow_group_id" Type="int" />
+    <Property Name="doc_status_id" Type="int" />
+    <Property Name="parent_doc_status_id" Type="int" />
+    <Property Name="message" Type="nvarchar" MaxLength="2500" />
+    <Property Name="flash_sign" Type="bit" />
+    <Property Name="esim_sign" Type="bit" />
+    <Property Name="is_stamped" Type="bit" />
+    <Property Name="is_recall" Type="bit" />
+    <Property Name="recall_message" Type="nvarchar" MaxLength="2500" />
+    <Property Name="recall_date" Type="datetime" />
+    <Property Name="is_signed" Type="bit" />
+    <Property Name="is_completed" Type="bit" />
+    <Property Name="is_order" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="doc_logs">
+    <Key>
+      <PropertyRef Name="log_id" />
+    </Key>
+    <Property Name="log_id" Type="int" Nullable="false" />
+    <Property Name="doc_master_id" Type="int" />
+    <Property Name="doc_name" Type="nvarchar" MaxLength="500" />
+    <Property Name="organization_id" Type="int" />
+    <Property Name="message" Type="nvarchar(max)" />
+    <Property Name="receiver" Type="int" />
+    <Property Name="log_type" Type="int" />
+    <Property Name="is_view" Type="bit" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="doc_master">
+    <Key>
+      <PropertyRef Name="doc_master_id" />
+    </Key>
+    <Property Name="doc_master_id" Type="int" Nullable="false" />
+    <Property Name="compendium" Type="nvarchar" MaxLength="500" />
+    <Property Name="nav_type" Type="int" />
+    <Property Name="doc_code" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="doc_date" Type="datetime" />
+    <Property Name="organization_id" Type="int" />
+    <Property Name="receive_date" Type="datetime" />
+    <Property Name="doc_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="doc_group" Type="nvarchar" MaxLength="50" />
+    <Property Name="urgency" Type="nvarchar" MaxLength="250" />
+    <Property Name="security" Type="nvarchar" MaxLength="250" />
+    <Property Name="issue_place" Type="nvarchar" MaxLength="250" />
+    <Property Name="field" Type="nvarchar" MaxLength="250" />
+    <Property Name="receive_place" Type="nvarchar" MaxLength="250" />
+    <Property Name="send_way" Type="nvarchar" MaxLength="50" />
+    <Property Name="signer" Type="nvarchar" MaxLength="250" />
+    <Property Name="position" Type="nvarchar" MaxLength="250" />
+    <Property Name="tags" Type="nvarchar(max)" />
+    <Property Name="num_of_pages" Type="int" />
+    <Property Name="num_of_copies" Type="int" />
+    <Property Name="deadline_date" Type="datetime" />
+    <Property Name="dispatch_book_num" Type="float" />
+    <Property Name="dispatch_book_code" Type="nvarchar" MaxLength="50" />
+    <Property Name="is_auto_num" Type="bit" />
+    <Property Name="created_by" Type="int" />
+    <Property Name="sent_by" Type="int" />
+    <Property Name="handle_by" Type="int" />
+    <Property Name="handle_date" Type="datetime" />
+    <Property Name="is_drafted" Type="bit" />
+    <Property Name="department_id" Type="int" />
+    <Property Name="file_name" Type="nvarchar" MaxLength="500" />
+    <Property Name="file_path" Type="nvarchar(max)" />
+    <Property Name="file_path_temp" Type="nvarchar(max)" />
+    <Property Name="file_size" Type="float" />
+    <Property Name="file_type" Type="varchar" MaxLength="10" />
+    <Property Name="first_doc_status_id" Type="int" />
+    <Property Name="doc_status_id" Type="int" />
+    <Property Name="follow_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="effective_date" Type="datetime" />
+    <Property Name="expiration_date" Type="datetime" />
+    <Property Name="workflow_id" Type="int" />
+    <Property Name="workflow_group_id" Type="int" />
+    <Property Name="is_inworkflow" Type="bit" />
+    <Property Name="workflow_last_person" Type="int" />
+    <Property Name="group_id" Type="int" />
+    <Property Name="leader" Type="int" />
+    <Property Name="warehouse" Type="nvarchar" MaxLength="250" />
+    <Property Name="cabinet" Type="nvarchar" MaxLength="250" />
+    <Property Name="shelf" Type="nvarchar" MaxLength="250" />
+    <Property Name="box" Type="nvarchar" MaxLength="250" />
+    <Property Name="notes" Type="nvarchar(max)" />
+    <Property Name="message" Type="nvarchar" MaxLength="2500" />
+    <Property Name="ldt" Type="nvarchar(max)" />
+    <Property Name="saodv" Type="nvarchar(max)" />
+    <Property Name="related_unit" Type="nvarchar" MaxLength="500" />
+    <Property Name="composing_unit" Type="nvarchar" MaxLength="500" />
+    <Property Name="num_of_saved" Type="int" />
+    <Property Name="num_of_issue" Type="int" />
+    <Property Name="drafter" Type="nvarchar" MaxLength="50" />
+    <Property Name="is_approved" Type="bit" />
+  </EntityType>
+  <EntityType Name="doc_sign_approval">
+    <Key>
+      <PropertyRef Name="sign_approval_id" />
+    </Key>
+    <Property Name="sign_approval_id" Type="int" Nullable="false" />
+    <Property Name="doc_master_id" Type="int" />
+    <Property Name="follow_id" Type="int" />
+    <Property Name="file_id" Type="int" />
+    <Property Name="file_path" Type="nvarchar" MaxLength="500" />
+    <Property Name="flash_sign" Type="bit" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="doc_tags">
+    <Key>
+      <PropertyRef Name="doc_tag_id" />
+    </Key>
+    <Property Name="doc_tag_id" Type="int" Nullable="false" />
+    <Property Name="doc_master_id" Type="int" />
+    <Property Name="tag_id" Type="int" />
+    <Property Name="is_order" Type="int" />
+  </EntityType>
+  <EntityType Name="doc_title_docs">
+    <Key>
+      <PropertyRef Name="title_doc_id" />
+    </Key>
+    <Property Name="title_doc_id" Type="int" Nullable="false" />
+    <Property Name="title_id" Type="int" />
+    <Property Name="doc_master_id" Type="int" />
+    <Property Name="code" Type="nvarchar" MaxLength="50" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="doc_title_users">
+    <Key>
+      <PropertyRef Name="title_user_id" />
+    </Key>
+    <Property Name="title_user_id" Type="int" Nullable="false" />
+    <Property Name="title_id" Type="int" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="doc_titles">
+    <Key>
+      <PropertyRef Name="title_id" />
+    </Key>
+    <Property Name="title_id" Type="int" Nullable="false" />
+    <Property Name="organization_id" Type="int" />
+    <Property Name="title_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="title_parent_id" Type="int" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="status" Type="int" />
+    <Property Name="level" Type="int" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="doc_views">
+    <Key>
+      <PropertyRef Name="view_id" />
+    </Key>
+    <Property Name="view_id" Type="int" Nullable="false" />
+    <Property Name="doc_master_id" Type="int" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="viewed_date" Type="datetime" />
+    <Property Name="is_app_viewed" Type="bit" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="doc_workflow_groups">
+    <Key>
+      <PropertyRef Name="workflow_group_id" />
+    </Key>
+    <Property Name="workflow_group_id" Type="int" Nullable="false" />
+    <Property Name="workflow_id" Type="int" />
+    <Property Name="group_id" Type="int" />
+    <Property Name="return_group_id" Type="int" />
+    <Property Name="return_type" Type="int" />
+    <Property Name="foward_type" Type="int" />
+  </EntityType>
+  <EntityType Name="doc_workflows">
+    <Key>
+      <PropertyRef Name="workflow_id" />
+    </Key>
+    <Property Name="workflow_id" Type="int" Nullable="false" />
+    <Property Name="workflow_name" Type="nvarchar" MaxLength="500" />
+    <Property Name="workflow_type" Type="int" />
+    <Property Name="description" Type="nvarchar(max)" />
+    <Property Name="organization_id" Type="int" />
+    <Property Name="department_id" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="bit" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="file_folder">
+    <Key>
+      <PropertyRef Name="folder_id" />
+    </Key>
+    <Property Name="folder_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="parent_id" Type="int" />
+    <Property Name="folder_name" Type="nvarchar" MaxLength="500" />
+    <Property Name="des" Type="nvarchar" MaxLength="2500" />
+    <Property Name="keywords" Type="nvarchar" MaxLength="2500" />
+    <Property Name="is_public" Type="bit" Nullable="false" />
+    <Property Name="is_sub" Type="bit" />
+    <Property Name="is_upload" Type="bit" />
+    <Property Name="status" Type="bit" Nullable="false" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="file_number" Type="int" />
+    <Property Name="views" Type="int" />
+    <Property Name="capacity" Type="float" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="file_info">
+    <Key>
+      <PropertyRef Name="file_id" />
+    </Key>
+    <Property Name="file_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="folder_id" Type="int" Nullable="false" />
+    <Property Name="file_name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="is_filepath" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="capacity" Type="float" />
+    <Property Name="is_public" Type="bit" Nullable="false" />
+    <Property Name="is_order" Type="int" Nullable="false" />
+    <Property Name="is_image" Type="bit" Nullable="false" />
+    <Property Name="keywords" Type="nvarchar" MaxLength="500" />
+    <Property Name="status" Type="bit" Nullable="false" />
+    <Property Name="views" Type="int" />
+    <Property Name="download" Type="int" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="file_log">
+    <Key>
+      <PropertyRef Name="file_log_id" />
+    </Key>
+    <Property Name="file_log_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="file_id" Type="int" />
+    <Property Name="folder_id" Type="int" />
+    <Property Name="contents" Type="nvarchar" MaxLength="500" />
+    <Property Name="user_id" Type="varchar" MaxLength="50" />
+    <Property Name="log_type" Type="int" Nullable="false" />
+    <Property Name="is_view" Type="bit" />
+    <Property Name="date_view" Type="datetime" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="file_share">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="file_id" Type="int" />
+    <Property Name="folder_id" Type="int" />
+    <Property Name="user_id" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="bit" Nullable="false" />
+    <Property Name="is_view" Type="bit" />
+    <Property Name="date_view" Type="datetime" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sql_log">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" />
+    <Property Name="controller" Type="varchar" MaxLength="250" />
+    <Property Name="log_content" Type="nvarchar(max)" />
+    <Property Name="start_date" Type="datetime" />
+    <Property Name="end_date" Type="datetime" />
+    <Property Name="milliseconds" Type="int" />
+    <Property Name="full_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="user_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="token_id" Type="varchar" MaxLength="50" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="search_name" Type="nvarchar" MaxLength="403" StoreGeneratedPattern="Computed" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sys_app_menus">
+    <Key>
+      <PropertyRef Name="app_menu_id" />
+    </Key>
+    <Property Name="app_menu_id" Type="int" Nullable="false" />
+    <Property Name="app_menu_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="icon" Type="nvarchar" MaxLength="250" />
+    <Property Name="link" Type="nvarchar" MaxLength="500" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sys_fire_base">
+    <Key>
+      <PropertyRef Name="id_key" />
+    </Key>
+    <Property Name="id_key" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="user_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="token_cm_id" Type="varchar" MaxLength="500" />
+    <Property Name="token_id" Type="varchar" MaxLength="50" />
+    <Property Name="date_add" Type="datetime" Nullable="false" />
+    <Property Name="d_name" Type="nvarchar" MaxLength="500" />
+    <Property Name="f_name" Type="nvarchar" MaxLength="500" />
+    <Property Name="is_type" Type="int" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sys_group">
+    <Key>
+      <PropertyRef Name="group_id" />
+    </Key>
+    <Property Name="group_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="group_name" Type="nvarchar" MaxLength="500" />
+    <Property Name="des" Type="nvarchar" MaxLength="500" />
+    <Property Name="is_system" Type="bit" />
+    <Property Name="organization_id" Type="int" />
+    <Property Name="group_type_id" Type="int" />
+    <Property Name="action_type" Type="int" />
+    <Property Name="status" Type="bit" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sys_group_type">
+    <Key>
+      <PropertyRef Name="group_type_id" />
+    </Key>
+    <Property Name="group_type_id" Type="int" Nullable="false" />
+    <Property Name="type_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="background_color" Type="varchar" MaxLength="50" />
+    <Property Name="text_color" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="bit" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sys_group_users">
+    <Key>
+      <PropertyRef Name="group_user_id" />
+    </Key>
+    <Property Name="group_user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="group_id" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="bit" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sys_logs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="500" />
+    <Property Name="controller" Type="varchar" MaxLength="250" />
+    <Property Name="log_date" Type="datetime" />
+    <Property Name="log_content" Type="nvarchar(max)" />
+    <Property Name="full_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="user_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+    <Property Name="is_type" Type="int" />
+    <Property Name="module" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="int" />
+    <Property Name="note" Type="nvarchar(max)" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="search_name" Type="nvarchar" MaxLength="853" StoreGeneratedPattern="Computed" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sys_modules">
+    <Key>
+      <PropertyRef Name="module_id" />
+    </Key>
+    <Property Name="module_id" Type="int" Nullable="false" />
+    <Property Name="parent_id" Type="int" />
+    <Property Name="module_name" Type="nvarchar" MaxLength="500" />
+    <Property Name="image" Type="varchar" MaxLength="250" />
+    <Property Name="icon" Type="varchar" MaxLength="250" />
+    <Property Name="is_link" Type="nvarchar" MaxLength="500" />
+    <Property Name="is_filepath" Type="varchar" MaxLength="500" />
+    <Property Name="is_stand" Type="varchar" MaxLength="50" />
+    <Property Name="is_target" Type="varchar" MaxLength="50" />
+    <Property Name="is_order" Type="int" Nullable="false" />
+    <Property Name="status" Type="bit" Nullable="false" />
+    <Property Name="is_admin" Type="bit" Nullable="false" />
+    <Property Name="organization_id" Type="int" />
+    <Property Name="is_size" Type="varchar" MaxLength="50" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sys_organization">
+    <Key>
+      <PropertyRef Name="organization_id" />
+    </Key>
+    <Property Name="organization_id" Type="int" Nullable="false" />
+    <Property Name="parent_id" Type="int" />
+    <Property Name="organization_name" Type="nvarchar" MaxLength="500" />
+    <Property Name="logo" Type="varchar" MaxLength="500" />
+    <Property Name="background_image" Type="nvarchar" MaxLength="500" />
+    <Property Name="is_url" Type="varchar" MaxLength="500" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="status" Type="bit" />
+    <Property Name="organization_type" Type="int" />
+    <Property Name="text_color" Type="varchar" MaxLength="50" />
+    <Property Name="background_color" Type="varchar" MaxLength="50" />
+    <Property Name="short_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="address" Type="nvarchar" MaxLength="500" />
+    <Property Name="coord_x" Type="float" />
+    <Property Name="coord_y" Type="float" />
+    <Property Name="place_id" Type="int" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+    <Property Name="api_link" Type="varchar" MaxLength="250" />
+    <Property Name="file_link" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="sys_organization_app_menus">
+    <Key>
+      <PropertyRef Name="organization_app_menu_id" />
+    </Key>
+    <Property Name="organization_app_menu_id" Type="int" Nullable="false" />
+    <Property Name="organization_id" Type="int" />
+    <Property Name="app_menu_id" Type="int" />
+    <Property Name="status" Type="bit" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sys_organization_config_group">
+    <Key>
+      <PropertyRef Name="organization_config_group_id" />
+    </Key>
+    <Property Name="organization_config_group_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="group_type_id" Type="int" />
+    <Property Name="organization_id" Type="int" />
+    <Property Name="is_approved" Type="bit" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sys_role_modules">
+    <Key>
+      <PropertyRef Name="role_module_id" />
+    </Key>
+    <Property Name="role_module_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="role_id" Type="varchar" MaxLength="50" />
+    <Property Name="user_id" Type="varchar" MaxLength="50" />
+    <Property Name="module_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="is_level" Type="int" Nullable="false" />
+    <Property Name="is_permission" Type="int" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sys_roles">
+    <Key>
+      <PropertyRef Name="role_id" />
+    </Key>
+    <Property Name="role_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="role_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="is_order" Type="int" Nullable="false" />
+    <Property Name="status" Type="bit" Nullable="false" />
+    <Property Name="text_color" Type="varchar" MaxLength="50" />
+    <Property Name="background_color" Type="varchar" MaxLength="50" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sys_sendhub">
+    <Key>
+      <PropertyRef Name="senhub_id" />
+    </Key>
+    <Property Name="senhub_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="user_send" Type="varchar" MaxLength="50" />
+    <Property Name="receiver" Type="varchar" MaxLength="50" />
+    <Property Name="icon" Type="nvarchar" MaxLength="500" />
+    <Property Name="title" Type="nvarchar" MaxLength="500" />
+    <Property Name="contents" Type="nvarchar" MaxLength="500" />
+    <Property Name="note" Type="nvarchar" MaxLength="500" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="is_type" Type="int" Nullable="false" />
+    <Property Name="date_send" Type="datetime" />
+    <Property Name="seen" Type="bit" Nullable="false" />
+    <Property Name="date_seen" Type="datetime" />
+    <Property Name="id_key" Type="varchar" MaxLength="50" />
+    <Property Name="group_id" Type="varchar" MaxLength="50" />
+    <Property Name="token_id" Type="varchar" MaxLength="50" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sys_table_des">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="db_name" Type="varchar" MaxLength="50" />
+    <Property Name="table_name" Type="varchar" MaxLength="50" />
+    <Property Name="title" Type="nvarchar" MaxLength="500" />
+    <Property Name="des" Type="nvarchar" MaxLength="500" />
+    <Property Name="is_pag" Type="bit" />
+    <Property Name="is_formdata" Type="bit" />
+    <Property Name="template" Type="varchar" MaxLength="50" />
+    <Property Name="config" Type="nvarchar(max)" />
+    <Property Name="code_vue" Type="nvarchar(max)" />
+    <Property Name="code_api" Type="nvarchar(max)" />
+    <Property Name="code_sql" Type="nvarchar(max)" />
+    <Property Name="code_flutter_view" Type="nvarchar(max)" />
+    <Property Name="code_flutter_controller" Type="nvarchar(max)" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sys_tables">
+    <Key>
+      <PropertyRef Name="col_id" />
+    </Key>
+    <Property Name="col_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="db_name" Type="varchar" MaxLength="50" />
+    <Property Name="table_name" Type="varchar" MaxLength="50" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="title" Type="nvarchar" MaxLength="500" />
+    <Property Name="des" Type="nvarchar" MaxLength="500" />
+    <Property Name="c_type" Type="varchar" MaxLength="50" />
+    <Property Name="c_length" Type="int" />
+    <Property Name="is_null" Type="bit" />
+    <Property Name="required" Type="bit" Nullable="false" />
+    <Property Name="is_key" Type="bit" />
+    <Property Name="is_value" Type="bit" />
+    <Property Name="show" Type="bit" Nullable="false" />
+    <Property Name="show_form" Type="bit" Nullable="false" />
+    <Property Name="is_identity" Type="bit" />
+    <Property Name="search" Type="bit" />
+    <Property Name="input" Type="varchar" MaxLength="50" />
+    <Property Name="re_table" Type="varchar" MaxLength="50" />
+    <Property Name="re_col" Type="varchar" MaxLength="50" />
+    <Property Name="css" Type="varchar" MaxLength="250" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sys_token">
+    <Key>
+      <PropertyRef Name="token_id" />
+    </Key>
+    <Property Name="token_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="user_id" Type="varchar" MaxLength="50" />
+    <Property Name="full_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="date" Type="datetime" />
+    <Property Name="date_end" Type="datetime" />
+    <Property Name="from_device" Type="varchar" MaxLength="50" />
+    <Property Name="ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sys_users">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="user_key" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="organization_id" Type="int" />
+    <Property Name="department_id" Type="int" />
+    <Property Name="avatar" Type="varchar" MaxLength="500" />
+    <Property Name="is_password" Type="varchar" MaxLength="25" />
+    <Property Name="full_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="phone" Type="varchar" MaxLength="20" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="key_encript" Type="varchar" MaxLength="50" />
+    <Property Name="wrong_pass_count" Type="int" />
+    <Property Name="position_id" Type="int" />
+    <Property Name="is_order" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="ip" Type="varchar" MaxLength="50" />
+    <Property Name="token_id" Type="varchar" MaxLength="50" />
+    <Property Name="role_id" Type="varchar" MaxLength="50" />
+    <Property Name="is_admin" Type="bit" Nullable="false" />
+    <Property Name="app_modules" Type="varchar" MaxLength="250" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sys_web_acess">
+    <Key>
+      <PropertyRef Name="web_acess_id" />
+    </Key>
+    <Property Name="web_acess_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="full_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="is_time" Type="datetime" Nullable="false" />
+    <Property Name="is_endtime" Type="datetime" />
+    <Property Name="from_ip" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="from_device" Type="varchar" MaxLength="50" />
+    <Property Name="search_name" Type="nvarchar" MaxLength="403" StoreGeneratedPattern="Computed" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="test_case">
+    <Key>
+      <PropertyRef Name="case_id" />
+    </Key>
+    <Property Name="case_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="case_name" Type="nvarchar" MaxLength="500" />
+    <Property Name="project_id" Type="varchar" MaxLength="50" />
+    <Property Name="work_id" Type="varchar" MaxLength="50" />
+    <Property Name="keywords" Type="nvarchar" MaxLength="2500" />
+    <Property Name="des" Type="nvarchar" MaxLength="2500" />
+    <Property Name="status" Type="bit" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="is_pass" Type="bit" />
+    <Property Name="test_number" Type="int" />
+    <Property Name="number_completed" Type="int" />
+    <Property Name="is_pass_step" Type="int" />
+    <Property Name="file_test" Type="varchar" MaxLength="500" />
+    <Property Name="code_test" Type="nvarchar(max)" />
+    <Property Name="date_test" Type="datetime" />
+    <Property Name="is_url" Type="varchar" MaxLength="500" />
+    <Property Name="show_chrome" Type="bit" Nullable="false" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="test_step">
+    <Key>
+      <PropertyRef Name="step_id" />
+    </Key>
+    <Property Name="step_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="step_name" Type="nvarchar" MaxLength="2500" Nullable="false" />
+    <Property Name="is_order" Type="int" />
+    <Property Name="times_id" Type="int" Nullable="false" />
+    <Property Name="case_id" Type="int" Nullable="false" />
+    <Property Name="des" Type="nvarchar" MaxLength="2500" />
+    <Property Name="is_pass" Type="bit" />
+    <Property Name="date_start" Type="datetime" />
+    <Property Name="date_end" Type="datetime" />
+    <Property Name="image" Type="varchar(max)" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="test_times">
+    <Key>
+      <PropertyRef Name="times_id" />
+    </Key>
+    <Property Name="times_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="case_id" Type="int" Nullable="false" />
+    <Property Name="des" Type="nvarchar" MaxLength="2500" />
+    <Property Name="is_pass" Type="bit" />
+    <Property Name="is_pass_step" Type="int" />
+    <Property Name="date_start" Type="datetime" />
+    <Property Name="date_end" Type="datetime" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="created_ip" Type="varchar" MaxLength="50" />
+    <Property Name="created_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modified_token_id" Type="varchar" MaxLength="50" />
+    <Property Name="modified_ip" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="trace">
+    <Key>
+      <PropertyRef Name="row_number" />
+    </Key>
+    <Property Name="row_number" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="event_class" Type="int" />
+    <Property Name="application_name" Type="nvarchar" MaxLength="128" />
+    <Property Name="nt_username" Type="nvarchar" MaxLength="128" />
+    <Property Name="login_name" Type="nvarchar" MaxLength="128" />
+    <Property Name="cpu" Type="int" />
+    <Property Name="reads" Type="bigint" />
+    <Property Name="writes" Type="bigint" />
+    <Property Name="duration" Type="bigint" />
+    <Property Name="client_process_id" Type="int" />
+    <Property Name="spid" Type="int" />
+    <Property Name="start_time" Type="datetime" />
+    <Property Name="end_time" Type="datetime" />
+    <Property Name="binary_data" Type="image" />
+  </EntityType>
+  <Association Name="FK_api_category_api_project">
+    <End Role="api_project" Type="Self.api_project" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="api_category" Type="Self.api_category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="api_project">
+        <PropertyRef Name="project_id" />
+      </Principal>
+      <Dependent Role="api_category">
+        <PropertyRef Name="project_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_api_col_api_table">
+    <End Role="api_table" Type="Self.api_table" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="api_col" Type="Self.api_col" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="api_table">
+        <PropertyRef Name="table_id" />
+      </Principal>
+      <Dependent Role="api_col">
+        <PropertyRef Name="table_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_api_parameters_api_service">
+    <End Role="api_service" Type="Self.api_service" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="api_parameters" Type="Self.api_parameters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="api_service">
+        <PropertyRef Name="service_id" />
+      </Principal>
+      <Dependent Role="api_parameters">
+        <PropertyRef Name="service_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_api_plugin_api_category">
+    <End Role="api_category" Type="Self.api_category" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="api_plugin" Type="Self.api_plugin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="api_category">
+        <PropertyRef Name="category_id" />
+      </Principal>
+      <Dependent Role="api_plugin">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_api_service_api_category">
+    <End Role="api_category" Type="Self.api_category" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="api_service" Type="Self.api_service" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="api_category">
+        <PropertyRef Name="category_id" />
+      </Principal>
+      <Dependent Role="api_service">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_api_table_api_project">
+    <End Role="api_project" Type="Self.api_project" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="api_table" Type="Self.api_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="api_project">
+        <PropertyRef Name="project_id" />
+      </Principal>
+      <Dependent Role="api_table">
+        <PropertyRef Name="project_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CMS_News_CMS_Topic">
+    <End Role="cms_topic" Type="Self.cms_topic" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="cms_news" Type="Self.cms_news" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cms_topic">
+        <PropertyRef Name="topic_id" />
+      </Principal>
+      <Dependent Role="cms_news">
+        <PropertyRef Name="topic_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CMS_NewsUser_CMS_News">
+    <End Role="cms_news" Type="Self.cms_news" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="cms_news_users" Type="Self.cms_news_users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cms_news">
+        <PropertyRef Name="news_id" />
+      </Principal>
+      <Dependent Role="cms_news_users">
+        <PropertyRef Name="news_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cms_slideshow_topic_id">
+    <End Role="cms_topic" Type="Self.cms_topic" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="cms_slideshow" Type="Self.cms_slideshow" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cms_topic">
+        <PropertyRef Name="topic_id" />
+      </Principal>
+      <Dependent Role="cms_slideshow">
+        <PropertyRef Name="topic_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CMS_SlideShowImage_CMS_SlideShow">
+    <End Role="cms_slideshow" Type="Self.cms_slideshow" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="cms_slideshow_image" Type="Self.cms_slideshow_image" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cms_slideshow">
+        <PropertyRef Name="slideshow_id" />
+      </Principal>
+      <Dependent Role="cms_slideshow_image">
+        <PropertyRef Name="slideshow_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_codes_organization_id">
+    <End Role="sys_organization" Type="Self.sys_organization" Multiplicity="0..1" />
+    <End Role="doc_codes" Type="Self.doc_codes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sys_organization">
+        <PropertyRef Name="organization_id" />
+      </Principal>
+      <Dependent Role="doc_codes">
+        <PropertyRef Name="organization_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_completed_confirms_doc_master">
+    <End Role="doc_master" Type="Self.doc_master" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="doc_completed_confirms" Type="Self.doc_completed_confirms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doc_master">
+        <PropertyRef Name="doc_master_id" />
+      </Principal>
+      <Dependent Role="doc_completed_confirms">
+        <PropertyRef Name="doc_master_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_decision_form_views_doc_decision_forms">
+    <End Role="doc_decision_forms" Type="Self.doc_decision_forms" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="doc_decision_form_views" Type="Self.doc_decision_form_views" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doc_decision_forms">
+        <PropertyRef Name="decision_form_id" />
+      </Principal>
+      <Dependent Role="doc_decision_form_views">
+        <PropertyRef Name="decision_form_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_decision_forms_organization_id">
+    <End Role="sys_organization" Type="Self.sys_organization" Multiplicity="0..1" />
+    <End Role="doc_decision_forms" Type="Self.doc_decision_forms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sys_organization">
+        <PropertyRef Name="organization_id" />
+      </Principal>
+      <Dependent Role="doc_decision_forms">
+        <PropertyRef Name="organization_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_email_sent_doc_master">
+    <End Role="doc_master" Type="Self.doc_master" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="doc_email_sent" Type="Self.doc_email_sent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doc_master">
+        <PropertyRef Name="doc_master_id" />
+      </Principal>
+      <Dependent Role="doc_email_sent">
+        <PropertyRef Name="doc_master_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_file_search_doc_master">
+    <End Role="doc_master" Type="Self.doc_master" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="doc_file_search" Type="Self.doc_file_search" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doc_master">
+        <PropertyRef Name="doc_master_id" />
+      </Principal>
+      <Dependent Role="doc_file_search">
+        <PropertyRef Name="doc_master_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_files_doc_master">
+    <End Role="doc_master" Type="Self.doc_master" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="doc_files" Type="Self.doc_files" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doc_master">
+        <PropertyRef Name="doc_master_id" />
+      </Principal>
+      <Dependent Role="doc_files">
+        <PropertyRef Name="doc_master_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_follows_doc_master">
+    <End Role="doc_master" Type="Self.doc_master" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="doc_follows" Type="Self.doc_follows" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doc_master">
+        <PropertyRef Name="doc_master_id" />
+      </Principal>
+      <Dependent Role="doc_follows">
+        <PropertyRef Name="doc_master_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_logs_doc_master">
+    <End Role="doc_master" Type="Self.doc_master" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="doc_logs" Type="Self.doc_logs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doc_master">
+        <PropertyRef Name="doc_master_id" />
+      </Principal>
+      <Dependent Role="doc_logs">
+        <PropertyRef Name="doc_master_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_sign_approval_doc_master">
+    <End Role="doc_master" Type="Self.doc_master" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="doc_sign_approval" Type="Self.doc_sign_approval" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doc_master">
+        <PropertyRef Name="doc_master_id" />
+      </Principal>
+      <Dependent Role="doc_sign_approval">
+        <PropertyRef Name="doc_master_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_tags_doc_master">
+    <End Role="doc_master" Type="Self.doc_master" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="doc_tags" Type="Self.doc_tags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doc_master">
+        <PropertyRef Name="doc_master_id" />
+      </Principal>
+      <Dependent Role="doc_tags">
+        <PropertyRef Name="doc_master_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_title_docs_doc_titles">
+    <End Role="doc_titles" Type="Self.doc_titles" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="doc_title_docs" Type="Self.doc_title_docs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doc_titles">
+        <PropertyRef Name="title_id" />
+      </Principal>
+      <Dependent Role="doc_title_docs">
+        <PropertyRef Name="title_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_title_users_doc_titles">
+    <End Role="doc_titles" Type="Self.doc_titles" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="doc_title_users" Type="Self.doc_title_users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doc_titles">
+        <PropertyRef Name="title_id" />
+      </Principal>
+      <Dependent Role="doc_title_users">
+        <PropertyRef Name="title_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_views_doc_master">
+    <End Role="doc_master" Type="Self.doc_master" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="doc_views" Type="Self.doc_views" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doc_master">
+        <PropertyRef Name="doc_master_id" />
+      </Principal>
+      <Dependent Role="doc_views">
+        <PropertyRef Name="doc_master_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doc_workflow_groups_doc_workflows">
+    <End Role="doc_workflows" Type="Self.doc_workflows" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="doc_workflow_groups" Type="Self.doc_workflow_groups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doc_workflows">
+        <PropertyRef Name="workflow_id" />
+      </Principal>
+      <Dependent Role="doc_workflow_groups">
+        <PropertyRef Name="workflow_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_file_infor_folder_id">
+    <End Role="file_folder" Type="Self.file_folder" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="file_info" Type="Self.file_info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="file_folder">
+        <PropertyRef Name="folder_id" />
+      </Principal>
+      <Dependent Role="file_info">
+        <PropertyRef Name="folder_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sys_fire_base_sys_users">
+    <End Role="sys_users" Type="Self.sys_users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sys_fire_base" Type="Self.sys_fire_base" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sys_users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="sys_fire_base">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sys_group_users_group_id">
+    <End Role="sys_group" Type="Self.sys_group" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sys_group_users" Type="Self.sys_group_users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sys_group">
+        <PropertyRef Name="group_id" />
+      </Principal>
+      <Dependent Role="sys_group_users">
+        <PropertyRef Name="group_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sys_modules_organization_id">
+    <End Role="sys_organization" Type="Self.sys_organization" Multiplicity="0..1" />
+    <End Role="sys_modules" Type="Self.sys_modules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sys_organization">
+        <PropertyRef Name="organization_id" />
+      </Principal>
+      <Dependent Role="sys_modules">
+        <PropertyRef Name="organization_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sys_role_modules_sys_roles">
+    <End Role="sys_roles" Type="Self.sys_roles" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sys_role_modules" Type="Self.sys_role_modules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sys_roles">
+        <PropertyRef Name="role_id" />
+      </Principal>
+      <Dependent Role="sys_role_modules">
+        <PropertyRef Name="role_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sys_sendhub_sys_users">
+    <End Role="sys_users" Type="Self.sys_users" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sys_sendhub" Type="Self.sys_sendhub" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sys_users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="sys_sendhub">
+        <PropertyRef Name="user_send" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sys_token_sys_users">
+    <End Role="sys_users" Type="Self.sys_users" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sys_token" Type="Self.sys_token" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sys_users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="sys_token">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sys_unit_app_menus_sys_app_menus">
+    <End Role="sys_app_menus" Type="Self.sys_app_menus" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sys_organization_app_menus" Type="Self.sys_organization_app_menus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sys_app_menus">
+        <PropertyRef Name="app_menu_id" />
+      </Principal>
+      <Dependent Role="sys_organization_app_menus">
+        <PropertyRef Name="app_menu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sys_users_Role_ID">
+    <End Role="sys_roles" Type="Self.sys_roles" Multiplicity="0..1" />
+    <End Role="sys_users" Type="Self.sys_users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sys_roles">
+        <PropertyRef Name="role_id" />
+      </Principal>
+      <Dependent Role="sys_users">
+        <PropertyRef Name="role_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sys_web_acess_sys_users">
+    <End Role="sys_users" Type="Self.sys_users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sys_web_acess" Type="Self.sys_web_acess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sys_users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="sys_web_acess">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Test_Lan_Test_Case">
+    <End Role="test_case" Type="Self.test_case" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="test_times" Type="Self.test_times" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="test_case">
+        <PropertyRef Name="case_id" />
+      </Principal>
+      <Dependent Role="test_times">
+        <PropertyRef Name="case_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_test_step_times_id">
+    <End Role="test_times" Type="Self.test_times" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="test_step" Type="Self.test_step" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="test_times">
+        <PropertyRef Name="times_id" />
+      </Principal>
+      <Dependent Role="test_step">
+        <PropertyRef Name="times_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="sys_modules_listuser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="user_id" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="soeModelStoreContainer">
+    <EntitySet Name="api_category" EntityType="Self.api_category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="api_col" EntityType="Self.api_col" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="api_parameters" EntityType="Self.api_parameters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="api_plugin" EntityType="Self.api_plugin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="api_project" EntityType="Self.api_project" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="api_service" EntityType="Self.api_service" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="api_table" EntityType="Self.api_table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ca_places" EntityType="Self.ca_places" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ca_positions" EntityType="Self.ca_positions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cms_lang" EntityType="Self.cms_lang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cms_logs" EntityType="Self.cms_logs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cms_news" EntityType="Self.cms_news" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cms_news_users" EntityType="Self.cms_news_users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cms_slideshow" EntityType="Self.cms_slideshow" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cms_slideshow_image" EntityType="Self.cms_slideshow_image" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cms_topic" EntityType="Self.cms_topic" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cms_topic_flag" EntityType="Self.cms_topic_flag" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_ca_dispatch_books" EntityType="Self.doc_ca_dispatch_books" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_ca_email_groups" EntityType="Self.doc_ca_email_groups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_ca_emails" EntityType="Self.doc_ca_emails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_ca_fields" EntityType="Self.doc_ca_fields" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_ca_groups" EntityType="Self.doc_ca_groups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_ca_issue_places" EntityType="Self.doc_ca_issue_places" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_ca_positions" EntityType="Self.doc_ca_positions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_ca_receive_places" EntityType="Self.doc_ca_receive_places" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_ca_security" EntityType="Self.doc_ca_security" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_ca_send_ways" EntityType="Self.doc_ca_send_ways" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_ca_signers" EntityType="Self.doc_ca_signers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_ca_stamps" EntityType="Self.doc_ca_stamps" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_ca_status" EntityType="Self.doc_ca_status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_ca_tags" EntityType="Self.doc_ca_tags" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_ca_types" EntityType="Self.doc_ca_types" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_ca_urgency" EntityType="Self.doc_ca_urgency" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_codes" EntityType="Self.doc_codes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_completed_confirms" EntityType="Self.doc_completed_confirms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_decision_form_views" EntityType="Self.doc_decision_form_views" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_decision_forms" EntityType="Self.doc_decision_forms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_email_sent" EntityType="Self.doc_email_sent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_file_search" EntityType="Self.doc_file_search" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_files" EntityType="Self.doc_files" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_follows" EntityType="Self.doc_follows" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_logs" EntityType="Self.doc_logs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_master" EntityType="Self.doc_master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_sign_approval" EntityType="Self.doc_sign_approval" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_tags" EntityType="Self.doc_tags" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_title_docs" EntityType="Self.doc_title_docs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_title_users" EntityType="Self.doc_title_users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_titles" EntityType="Self.doc_titles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_views" EntityType="Self.doc_views" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_workflow_groups" EntityType="Self.doc_workflow_groups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doc_workflows" EntityType="Self.doc_workflows" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="file_folder" EntityType="Self.file_folder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="file_info" EntityType="Self.file_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="file_log" EntityType="Self.file_log" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="file_share" EntityType="Self.file_share" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sql_log" EntityType="Self.sql_log" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sys_app_menus" EntityType="Self.sys_app_menus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sys_fire_base" EntityType="Self.sys_fire_base" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sys_group" EntityType="Self.sys_group" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sys_group_type" EntityType="Self.sys_group_type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sys_group_users" EntityType="Self.sys_group_users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sys_logs" EntityType="Self.sys_logs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sys_modules" EntityType="Self.sys_modules" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sys_organization" EntityType="Self.sys_organization" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sys_organization_app_menus" EntityType="Self.sys_organization_app_menus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sys_organization_config_group" EntityType="Self.sys_organization_config_group" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sys_role_modules" EntityType="Self.sys_role_modules" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sys_roles" EntityType="Self.sys_roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sys_sendhub" EntityType="Self.sys_sendhub" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sys_table_des" EntityType="Self.sys_table_des" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sys_tables" EntityType="Self.sys_tables" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sys_token" EntityType="Self.sys_token" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sys_users" EntityType="Self.sys_users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sys_web_acess" EntityType="Self.sys_web_acess" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="test_case" EntityType="Self.test_case" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="test_step" EntityType="Self.test_step" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="test_times" EntityType="Self.test_times" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="trace" EntityType="Self.trace" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_api_category_api_project" Association="Self.FK_api_category_api_project">
+      <End Role="api_project" EntitySet="api_project" />
+      <End Role="api_category" EntitySet="api_category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_api_col_api_table" Association="Self.FK_api_col_api_table">
+      <End Role="api_table" EntitySet="api_table" />
+      <End Role="api_col" EntitySet="api_col" />
+    </AssociationSet>
+    <AssociationSet Name="FK_api_parameters_api_service" Association="Self.FK_api_parameters_api_service">
+      <End Role="api_service" EntitySet="api_service" />
+      <End Role="api_parameters" EntitySet="api_parameters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_api_plugin_api_category" Association="Self.FK_api_plugin_api_category">
+      <End Role="api_category" EntitySet="api_category" />
+      <End Role="api_plugin" EntitySet="api_plugin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_api_service_api_category" Association="Self.FK_api_service_api_category">
+      <End Role="api_category" EntitySet="api_category" />
+      <End Role="api_service" EntitySet="api_service" />
+    </AssociationSet>
+    <AssociationSet Name="FK_api_table_api_project" Association="Self.FK_api_table_api_project">
+      <End Role="api_project" EntitySet="api_project" />
+      <End Role="api_table" EntitySet="api_table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CMS_News_CMS_Topic" Association="Self.FK_CMS_News_CMS_Topic">
+      <End Role="cms_topic" EntitySet="cms_topic" />
+      <End Role="cms_news" EntitySet="cms_news" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CMS_NewsUser_CMS_News" Association="Self.FK_CMS_NewsUser_CMS_News">
+      <End Role="cms_news" EntitySet="cms_news" />
+      <End Role="cms_news_users" EntitySet="cms_news_users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cms_slideshow_topic_id" Association="Self.FK_cms_slideshow_topic_id">
+      <End Role="cms_topic" EntitySet="cms_topic" />
+      <End Role="cms_slideshow" EntitySet="cms_slideshow" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CMS_SlideShowImage_CMS_SlideShow" Association="Self.FK_CMS_SlideShowImage_CMS_SlideShow">
+      <End Role="cms_slideshow" EntitySet="cms_slideshow" />
+      <End Role="cms_slideshow_image" EntitySet="cms_slideshow_image" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_codes_organization_id" Association="Self.FK_doc_codes_organization_id">
+      <End Role="sys_organization" EntitySet="sys_organization" />
+      <End Role="doc_codes" EntitySet="doc_codes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_completed_confirms_doc_master" Association="Self.FK_doc_completed_confirms_doc_master">
+      <End Role="doc_master" EntitySet="doc_master" />
+      <End Role="doc_completed_confirms" EntitySet="doc_completed_confirms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_decision_form_views_doc_decision_forms" Association="Self.FK_doc_decision_form_views_doc_decision_forms">
+      <End Role="doc_decision_forms" EntitySet="doc_decision_forms" />
+      <End Role="doc_decision_form_views" EntitySet="doc_decision_form_views" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_decision_forms_organization_id" Association="Self.FK_doc_decision_forms_organization_id">
+      <End Role="sys_organization" EntitySet="sys_organization" />
+      <End Role="doc_decision_forms" EntitySet="doc_decision_forms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_email_sent_doc_master" Association="Self.FK_doc_email_sent_doc_master">
+      <End Role="doc_master" EntitySet="doc_master" />
+      <End Role="doc_email_sent" EntitySet="doc_email_sent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_file_search_doc_master" Association="Self.FK_doc_file_search_doc_master">
+      <End Role="doc_master" EntitySet="doc_master" />
+      <End Role="doc_file_search" EntitySet="doc_file_search" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_files_doc_master" Association="Self.FK_doc_files_doc_master">
+      <End Role="doc_master" EntitySet="doc_master" />
+      <End Role="doc_files" EntitySet="doc_files" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_follows_doc_master" Association="Self.FK_doc_follows_doc_master">
+      <End Role="doc_master" EntitySet="doc_master" />
+      <End Role="doc_follows" EntitySet="doc_follows" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_logs_doc_master" Association="Self.FK_doc_logs_doc_master">
+      <End Role="doc_master" EntitySet="doc_master" />
+      <End Role="doc_logs" EntitySet="doc_logs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_sign_approval_doc_master" Association="Self.FK_doc_sign_approval_doc_master">
+      <End Role="doc_master" EntitySet="doc_master" />
+      <End Role="doc_sign_approval" EntitySet="doc_sign_approval" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_tags_doc_master" Association="Self.FK_doc_tags_doc_master">
+      <End Role="doc_master" EntitySet="doc_master" />
+      <End Role="doc_tags" EntitySet="doc_tags" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_title_docs_doc_titles" Association="Self.FK_doc_title_docs_doc_titles">
+      <End Role="doc_titles" EntitySet="doc_titles" />
+      <End Role="doc_title_docs" EntitySet="doc_title_docs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_title_users_doc_titles" Association="Self.FK_doc_title_users_doc_titles">
+      <End Role="doc_titles" EntitySet="doc_titles" />
+      <End Role="doc_title_users" EntitySet="doc_title_users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_views_doc_master" Association="Self.FK_doc_views_doc_master">
+      <End Role="doc_master" EntitySet="doc_master" />
+      <End Role="doc_views" EntitySet="doc_views" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doc_workflow_groups_doc_workflows" Association="Self.FK_doc_workflow_groups_doc_workflows">
+      <End Role="doc_workflows" EntitySet="doc_workflows" />
+      <End Role="doc_workflow_groups" EntitySet="doc_workflow_groups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_file_infor_folder_id" Association="Self.FK_file_infor_folder_id">
+      <End Role="file_folder" EntitySet="file_folder" />
+      <End Role="file_info" EntitySet="file_info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sys_fire_base_sys_users" Association="Self.FK_sys_fire_base_sys_users">
+      <End Role="sys_users" EntitySet="sys_users" />
+      <End Role="sys_fire_base" EntitySet="sys_fire_base" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sys_group_users_group_id" Association="Self.FK_sys_group_users_group_id">
+      <End Role="sys_group" EntitySet="sys_group" />
+      <End Role="sys_group_users" EntitySet="sys_group_users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sys_modules_organization_id" Association="Self.FK_sys_modules_organization_id">
+      <End Role="sys_organization" EntitySet="sys_organization" />
+      <End Role="sys_modules" EntitySet="sys_modules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sys_role_modules_sys_roles" Association="Self.FK_sys_role_modules_sys_roles">
+      <End Role="sys_roles" EntitySet="sys_roles" />
+      <End Role="sys_role_modules" EntitySet="sys_role_modules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sys_sendhub_sys_users" Association="Self.FK_sys_sendhub_sys_users">
+      <End Role="sys_users" EntitySet="sys_users" />
+      <End Role="sys_sendhub" EntitySet="sys_sendhub" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sys_token_sys_users" Association="Self.FK_sys_token_sys_users">
+      <End Role="sys_users" EntitySet="sys_users" />
+      <End Role="sys_token" EntitySet="sys_token" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sys_unit_app_menus_sys_app_menus" Association="Self.FK_sys_unit_app_menus_sys_app_menus">
+      <End Role="sys_app_menus" EntitySet="sys_app_menus" />
+      <End Role="sys_organization_app_menus" EntitySet="sys_organization_app_menus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sys_users_Role_ID" Association="Self.FK_sys_users_Role_ID">
+      <End Role="sys_roles" EntitySet="sys_roles" />
+      <End Role="sys_users" EntitySet="sys_users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sys_web_acess_sys_users" Association="Self.FK_sys_web_acess_sys_users">
+      <End Role="sys_users" EntitySet="sys_users" />
+      <End Role="sys_web_acess" EntitySet="sys_web_acess" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Test_Lan_Test_Case" Association="Self.FK_Test_Lan_Test_Case">
+      <End Role="test_case" EntitySet="test_case" />
+      <End Role="test_times" EntitySet="test_times" />
+    </AssociationSet>
+    <AssociationSet Name="FK_test_step_times_id" Association="Self.FK_test_step_times_id">
+      <End Role="test_times" EntitySet="test_times" />
+      <End Role="test_step" EntitySet="test_step" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

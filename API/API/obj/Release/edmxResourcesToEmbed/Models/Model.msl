@@ -1,0 +1,1762 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="soeModelStoreContainer" CdmEntityContainer="DBEntities">
+    <EntitySetMapping Name="api_category">
+      <EntityTypeMapping TypeName="soeModel.api_category">
+        <MappingFragment StoreEntitySet="api_category">
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="category_name" ColumnName="category_name" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="api_col">
+      <EntityTypeMapping TypeName="soeModel.api_col">
+        <MappingFragment StoreEntitySet="api_col">
+          <ScalarProperty Name="col_id" ColumnName="col_id" />
+          <ScalarProperty Name="table_id" ColumnName="table_id" />
+          <ScalarProperty Name="col_name" ColumnName="col_name" />
+          <ScalarProperty Name="col_type" ColumnName="col_type" />
+          <ScalarProperty Name="is_null" ColumnName="is_null" />
+          <ScalarProperty Name="is_key" ColumnName="is_key" />
+          <ScalarProperty Name="is_identity" ColumnName="is_identity" />
+          <ScalarProperty Name="des" ColumnName="des" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="table_forenkey_id" ColumnName="table_forenkey_id" />
+          <ScalarProperty Name="col_forenkey_id" ColumnName="col_forenkey_id" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="api_parameters">
+      <EntityTypeMapping TypeName="soeModel.api_parameters">
+        <MappingFragment StoreEntitySet="api_parameters">
+          <ScalarProperty Name="parameters_type" ColumnName="parameters_type" />
+          <ScalarProperty Name="parameters_id" ColumnName="parameters_id" />
+          <ScalarProperty Name="service_id" ColumnName="service_id" />
+          <ScalarProperty Name="table_id" ColumnName="table_id" />
+          <ScalarProperty Name="parameters_name" ColumnName="parameters_name" />
+          <ScalarProperty Name="des" ColumnName="des" />
+          <ScalarProperty Name="example_value" ColumnName="example_value" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="api_project">
+      <EntityTypeMapping TypeName="soeModel.api_project">
+        <MappingFragment StoreEntitySet="api_project">
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="db_name" ColumnName="db_name" />
+          <ScalarProperty Name="project_name" ColumnName="project_name" />
+          <ScalarProperty Name="project_logo" ColumnName="project_logo" />
+          <ScalarProperty Name="project_des" ColumnName="project_des" />
+          <ScalarProperty Name="keyword" ColumnName="keyword" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="api_service">
+      <EntityTypeMapping TypeName="soeModel.api_service">
+        <MappingFragment StoreEntitySet="api_service">
+          <ScalarProperty Name="proc_name" ColumnName="proc_name" />
+          <ScalarProperty Name="url_file" ColumnName="url_file" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="service_id" ColumnName="service_id" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="service_name" ColumnName="service_name" />
+          <ScalarProperty Name="des" ColumnName="des" />
+          <ScalarProperty Name="is_app" ColumnName="is_app" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="api_table">
+      <EntityTypeMapping TypeName="soeModel.api_table">
+        <MappingFragment StoreEntitySet="api_table">
+          <ScalarProperty Name="group_name" ColumnName="group_name" />
+          <ScalarProperty Name="table_id" ColumnName="table_id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="table_name" ColumnName="table_name" />
+          <ScalarProperty Name="des" ColumnName="des" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ca_places">
+      <EntityTypeMapping TypeName="soeModel.ca_places">
+        <MappingFragment StoreEntitySet="ca_places">
+          <ScalarProperty Name="is_level" ColumnName="is_level" />
+          <ScalarProperty Name="place_id" ColumnName="place_id" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ca_positions">
+      <EntityTypeMapping TypeName="soeModel.ca_positions">
+        <MappingFragment StoreEntitySet="ca_positions">
+          <ScalarProperty Name="position_id" ColumnName="position_id" />
+          <ScalarProperty Name="position_name" ColumnName="position_name" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cms_lang">
+      <EntityTypeMapping TypeName="soeModel.cms_lang">
+        <MappingFragment StoreEntitySet="cms_lang">
+          <ScalarProperty Name="lang_id" ColumnName="lang_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_main" ColumnName="is_main" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cms_logs">
+      <EntityTypeMapping TypeName="soeModel.cms_logs">
+        <MappingFragment StoreEntitySet="cms_logs">
+          <ScalarProperty Name="log_id" ColumnName="log_id" />
+          <ScalarProperty Name="log_title" ColumnName="log_title" />
+          <ScalarProperty Name="log_content" ColumnName="log_content" />
+          <ScalarProperty Name="log_module" ColumnName="log_module" />
+          <ScalarProperty Name="id_key" ColumnName="id_key" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cms_news">
+      <EntityTypeMapping TypeName="soeModel.cms_news">
+        <MappingFragment StoreEntitySet="cms_news">
+          <ScalarProperty Name="news_id" ColumnName="news_id" />
+          <ScalarProperty Name="topic_id" ColumnName="topic_id" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+          <ScalarProperty Name="relate_id" ColumnName="relate_id" />
+          <ScalarProperty Name="lang_id" ColumnName="lang_id" />
+          <ScalarProperty Name="news_type" ColumnName="news_type" />
+          <ScalarProperty Name="is_hot" ColumnName="is_hot" />
+          <ScalarProperty Name="news_name" ColumnName="news_name" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="contents" ColumnName="contents" />
+          <ScalarProperty Name="details" ColumnName="details" />
+          <ScalarProperty Name="keywords" ColumnName="keywords" />
+          <ScalarProperty Name="author" ColumnName="author" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="is_visitor" ColumnName="is_visitor" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="censor" ColumnName="censor" />
+          <ScalarProperty Name="date_censor" ColumnName="date_censor" />
+          <ScalarProperty Name="ip_censor" ColumnName="ip_censor" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cms_news_users">
+      <EntityTypeMapping TypeName="soeModel.cms_news_users">
+        <MappingFragment StoreEntitySet="cms_news_users">
+          <ScalarProperty Name="news_user_id" ColumnName="news_user_id" />
+          <ScalarProperty Name="news_id" ColumnName="news_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="views" ColumnName="views" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cms_slideshow">
+      <EntityTypeMapping TypeName="soeModel.cms_slideshow">
+        <MappingFragment StoreEntitySet="cms_slideshow">
+          <ScalarProperty Name="slideshow_id" ColumnName="slideshow_id" />
+          <ScalarProperty Name="topic_id" ColumnName="topic_id" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+          <ScalarProperty Name="slideshow_name" ColumnName="slideshow_name" />
+          <ScalarProperty Name="is_type" ColumnName="is_type" />
+          <ScalarProperty Name="lang_id" ColumnName="lang_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="keywords" ColumnName="keywords" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cms_slideshow_image">
+      <EntityTypeMapping TypeName="soeModel.cms_slideshow_image">
+        <MappingFragment StoreEntitySet="cms_slideshow_image">
+          <ScalarProperty Name="image_id" ColumnName="image_id" />
+          <ScalarProperty Name="slideshow_id" ColumnName="slideshow_id" />
+          <ScalarProperty Name="image_name" ColumnName="image_name" />
+          <ScalarProperty Name="des" ColumnName="des" />
+          <ScalarProperty Name="is_filepath" ColumnName="is_filepath" />
+          <ScalarProperty Name="is_link" ColumnName="is_link" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_video" ColumnName="is_video" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="is_poster" ColumnName="is_poster" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cms_topic">
+      <EntityTypeMapping TypeName="soeModel.cms_topic">
+        <MappingFragment StoreEntitySet="cms_topic">
+          <ScalarProperty Name="topic_id" ColumnName="topic_id" />
+          <ScalarProperty Name="lang_id" ColumnName="lang_id" />
+          <ScalarProperty Name="topic_name" ColumnName="topic_name" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="topic_flag_id" ColumnName="topic_flag_id" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="is_target" ColumnName="is_target" />
+          <ScalarProperty Name="is_menu" ColumnName="is_menu" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cms_topic_flag">
+      <EntityTypeMapping TypeName="soeModel.cms_topic_flag">
+        <MappingFragment StoreEntitySet="cms_topic_flag">
+          <ScalarProperty Name="topic_flag_id" ColumnName="topic_flag_id" />
+          <ScalarProperty Name="topic_flag_name" ColumnName="topic_flag_name" />
+          <ScalarProperty Name="group_name" ColumnName="group_name" />
+          <ScalarProperty Name="des" ColumnName="des" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_ca_dispatch_books">
+      <EntityTypeMapping TypeName="soeModel.doc_ca_dispatch_books">
+        <MappingFragment StoreEntitySet="doc_ca_dispatch_books">
+          <ScalarProperty Name="dispatch_book_id" ColumnName="dispatch_book_id" />
+          <ScalarProperty Name="dispatch_book_name" ColumnName="dispatch_book_name" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="current_num" ColumnName="current_num" />
+          <ScalarProperty Name="tracking_place" ColumnName="tracking_place" />
+          <ScalarProperty Name="open_date" ColumnName="open_date" />
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="department_id" ColumnName="department_id" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+          <ScalarProperty Name="nav_type" ColumnName="nav_type" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_ca_email_groups">
+      <EntityTypeMapping TypeName="soeModel.doc_ca_email_groups">
+        <MappingFragment StoreEntitySet="doc_ca_email_groups">
+          <ScalarProperty Name="email_group_id" ColumnName="email_group_id" />
+          <ScalarProperty Name="email_group_name" ColumnName="email_group_name" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_ca_emails">
+      <EntityTypeMapping TypeName="soeModel.doc_ca_emails">
+        <MappingFragment StoreEntitySet="doc_ca_emails">
+          <ScalarProperty Name="email_id" ColumnName="email_id" />
+          <ScalarProperty Name="email_name" ColumnName="email_name" />
+          <ScalarProperty Name="full_name" ColumnName="full_name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+          <ScalarProperty Name="email_group_id" ColumnName="email_group_id" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_ca_fields">
+      <EntityTypeMapping TypeName="soeModel.doc_ca_fields">
+        <MappingFragment StoreEntitySet="doc_ca_fields">
+          <ScalarProperty Name="field_id" ColumnName="field_id" />
+          <ScalarProperty Name="field_name" ColumnName="field_name" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_ca_groups">
+      <EntityTypeMapping TypeName="soeModel.doc_ca_groups">
+        <MappingFragment StoreEntitySet="doc_ca_groups">
+          <ScalarProperty Name="doc_group_id" ColumnName="doc_group_id" />
+          <ScalarProperty Name="doc_group_name" ColumnName="doc_group_name" />
+          <ScalarProperty Name="doc_group_code" ColumnName="doc_group_code" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="current_num" ColumnName="current_num" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_ca_issue_places">
+      <EntityTypeMapping TypeName="soeModel.doc_ca_issue_places">
+        <MappingFragment StoreEntitySet="doc_ca_issue_places">
+          <ScalarProperty Name="issue_place_id" ColumnName="issue_place_id" />
+          <ScalarProperty Name="issue_place_name" ColumnName="issue_place_name" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_ca_positions">
+      <EntityTypeMapping TypeName="soeModel.doc_ca_positions">
+        <MappingFragment StoreEntitySet="doc_ca_positions">
+          <ScalarProperty Name="position_id" ColumnName="position_id" />
+          <ScalarProperty Name="position_name" ColumnName="position_name" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+          <ScalarProperty Name="position_type" ColumnName="position_type" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_ca_receive_places">
+      <EntityTypeMapping TypeName="soeModel.doc_ca_receive_places">
+        <MappingFragment StoreEntitySet="doc_ca_receive_places">
+          <ScalarProperty Name="receive_place_id" ColumnName="receive_place_id" />
+          <ScalarProperty Name="receive_place_name" ColumnName="receive_place_name" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_ca_security">
+      <EntityTypeMapping TypeName="soeModel.doc_ca_security">
+        <MappingFragment StoreEntitySet="doc_ca_security">
+          <ScalarProperty Name="security_id" ColumnName="security_id" />
+          <ScalarProperty Name="security_name" ColumnName="security_name" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_ca_send_ways">
+      <EntityTypeMapping TypeName="soeModel.doc_ca_send_ways">
+        <MappingFragment StoreEntitySet="doc_ca_send_ways">
+          <ScalarProperty Name="send_way_id" ColumnName="send_way_id" />
+          <ScalarProperty Name="send_way_name" ColumnName="send_way_name" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_ca_signers">
+      <EntityTypeMapping TypeName="soeModel.doc_ca_signers">
+        <MappingFragment StoreEntitySet="doc_ca_signers">
+          <ScalarProperty Name="signer_id" ColumnName="signer_id" />
+          <ScalarProperty Name="signer_name" ColumnName="signer_name" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="department_id" ColumnName="department_id" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+          <ScalarProperty Name="nav_type" ColumnName="nav_type" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_ca_stamps">
+      <EntityTypeMapping TypeName="soeModel.doc_ca_stamps">
+        <MappingFragment StoreEntitySet="doc_ca_stamps">
+          <ScalarProperty Name="stamp_id" ColumnName="stamp_id" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+          <ScalarProperty Name="stamp_name" ColumnName="stamp_name" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="is_default" ColumnName="is_default" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_ca_status">
+      <EntityTypeMapping TypeName="soeModel.doc_ca_status">
+        <MappingFragment StoreEntitySet="doc_ca_status">
+          <ScalarProperty Name="text_color" ColumnName="text_color" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="status_name" ColumnName="status_name" />
+          <ScalarProperty Name="background_color" ColumnName="background_color" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="is_handle" ColumnName="is_handle" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_ca_tags">
+      <EntityTypeMapping TypeName="soeModel.doc_ca_tags">
+        <MappingFragment StoreEntitySet="doc_ca_tags">
+          <ScalarProperty Name="tag_id" ColumnName="tag_id" />
+          <ScalarProperty Name="tag_name" ColumnName="tag_name" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_ca_types">
+      <EntityTypeMapping TypeName="soeModel.doc_ca_types">
+        <MappingFragment StoreEntitySet="doc_ca_types">
+          <ScalarProperty Name="doc_type_id" ColumnName="doc_type_id" />
+          <ScalarProperty Name="doc_type_name" ColumnName="doc_type_name" />
+          <ScalarProperty Name="doc_type_code" ColumnName="doc_type_code" />
+          <ScalarProperty Name="nav_type" ColumnName="nav_type" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_ca_urgency">
+      <EntityTypeMapping TypeName="soeModel.doc_ca_urgency">
+        <MappingFragment StoreEntitySet="doc_ca_urgency">
+          <ScalarProperty Name="urgency_id" ColumnName="urgency_id" />
+          <ScalarProperty Name="urgency_name" ColumnName="urgency_name" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_codes">
+      <EntityTypeMapping TypeName="soeModel.doc_codes">
+        <MappingFragment StoreEntitySet="doc_codes">
+          <ScalarProperty Name="code_id" ColumnName="code_id" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+          <ScalarProperty Name="idkey" ColumnName="idkey" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="info_col" ColumnName="info_col" />
+          <ScalarProperty Name="is_used" ColumnName="is_used" />
+          <ScalarProperty Name="separator" ColumnName="separator" />
+          <ScalarProperty Name="auto_gen" ColumnName="auto_gen" />
+          <ScalarProperty Name="nav_type" ColumnName="nav_type" />
+          <ScalarProperty Name="num_by_group" ColumnName="num_by_group" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_completed_confirms">
+      <EntityTypeMapping TypeName="soeModel.doc_completed_confirms">
+        <MappingFragment StoreEntitySet="doc_completed_confirms">
+          <ScalarProperty Name="completed_confirm_id" ColumnName="completed_confirm_id" />
+          <ScalarProperty Name="doc_master_id" ColumnName="doc_master_id" />
+          <ScalarProperty Name="follow_id" ColumnName="follow_id" />
+          <ScalarProperty Name="sent_by" ColumnName="sent_by" />
+          <ScalarProperty Name="sent_date" ColumnName="sent_date" />
+          <ScalarProperty Name="sent_message" ColumnName="sent_message" />
+          <ScalarProperty Name="approved_by" ColumnName="approved_by" />
+          <ScalarProperty Name="approved_date" ColumnName="approved_date" />
+          <ScalarProperty Name="approved_message" ColumnName="approved_message" />
+          <ScalarProperty Name="is_agreed" ColumnName="is_agreed" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_decision_form_views">
+      <EntityTypeMapping TypeName="soeModel.doc_decision_form_views">
+        <MappingFragment StoreEntitySet="doc_decision_form_views">
+          <ScalarProperty Name="decision_form_view_id" ColumnName="decision_form_view_id" />
+          <ScalarProperty Name="decision_form_id" ColumnName="decision_form_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="view_date" ColumnName="view_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_decision_forms">
+      <EntityTypeMapping TypeName="soeModel.doc_decision_forms">
+        <MappingFragment StoreEntitySet="doc_decision_forms">
+          <ScalarProperty Name="decision_form_id" ColumnName="decision_form_id" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="signed_date" ColumnName="signed_date" />
+          <ScalarProperty Name="signer" ColumnName="signer" />
+          <ScalarProperty Name="file_path" ColumnName="file_path" />
+          <ScalarProperty Name="file_name" ColumnName="file_name" />
+          <ScalarProperty Name="file_size" ColumnName="file_size" />
+          <ScalarProperty Name="file_type" ColumnName="file_type" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_email_sent">
+      <EntityTypeMapping TypeName="soeModel.doc_email_sent">
+        <MappingFragment StoreEntitySet="doc_email_sent">
+          <ScalarProperty Name="email_sent_id" ColumnName="email_sent_id" />
+          <ScalarProperty Name="email_name" ColumnName="email_name" />
+          <ScalarProperty Name="doc_master_id" ColumnName="doc_master_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="sent_date" ColumnName="sent_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_file_search">
+      <EntityTypeMapping TypeName="soeModel.doc_file_search">
+        <MappingFragment StoreEntitySet="doc_file_search">
+          <ScalarProperty Name="file_search_id" ColumnName="file_search_id" />
+          <ScalarProperty Name="doc_master_id" ColumnName="doc_master_id" />
+          <ScalarProperty Name="file_content_text" ColumnName="file_content_text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_files">
+      <EntityTypeMapping TypeName="soeModel.doc_files">
+        <MappingFragment StoreEntitySet="doc_files">
+          <ScalarProperty Name="file_id" ColumnName="file_id" />
+          <ScalarProperty Name="doc_master_id" ColumnName="doc_master_id" />
+          <ScalarProperty Name="follow_id" ColumnName="follow_id" />
+          <ScalarProperty Name="file_name" ColumnName="file_name" />
+          <ScalarProperty Name="file_path" ColumnName="file_path" />
+          <ScalarProperty Name="file_path_temp" ColumnName="file_path_temp" />
+          <ScalarProperty Name="file_size" ColumnName="file_size" />
+          <ScalarProperty Name="file_type" ColumnName="file_type" />
+          <ScalarProperty Name="doc_file_type" ColumnName="doc_file_type" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="is_drafted" ColumnName="is_drafted" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_follows">
+      <EntityTypeMapping TypeName="soeModel.doc_follows">
+        <MappingFragment StoreEntitySet="doc_follows">
+          <ScalarProperty Name="follow_id" ColumnName="follow_id" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+          <ScalarProperty Name="doc_master_id" ColumnName="doc_master_id" />
+          <ScalarProperty Name="send_by" ColumnName="send_by" />
+          <ScalarProperty Name="send_by_name" ColumnName="send_by_name" />
+          <ScalarProperty Name="send_date" ColumnName="send_date" />
+          <ScalarProperty Name="receive_by" ColumnName="receive_by" />
+          <ScalarProperty Name="receive_by_name" ColumnName="receive_by_name" />
+          <ScalarProperty Name="receive_type" ColumnName="receive_type" />
+          <ScalarProperty Name="view_date" ColumnName="view_date" />
+          <ScalarProperty Name="deadline_date" ColumnName="deadline_date" />
+          <ScalarProperty Name="follow_parent_id" ColumnName="follow_parent_id" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="is_inworkflow" ColumnName="is_inworkflow" />
+          <ScalarProperty Name="workflow_id" ColumnName="workflow_id" />
+          <ScalarProperty Name="workflow_group_id" ColumnName="workflow_group_id" />
+          <ScalarProperty Name="doc_status_id" ColumnName="doc_status_id" />
+          <ScalarProperty Name="parent_doc_status_id" ColumnName="parent_doc_status_id" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="flash_sign" ColumnName="flash_sign" />
+          <ScalarProperty Name="esim_sign" ColumnName="esim_sign" />
+          <ScalarProperty Name="is_stamped" ColumnName="is_stamped" />
+          <ScalarProperty Name="is_recall" ColumnName="is_recall" />
+          <ScalarProperty Name="recall_message" ColumnName="recall_message" />
+          <ScalarProperty Name="recall_date" ColumnName="recall_date" />
+          <ScalarProperty Name="is_signed" ColumnName="is_signed" />
+          <ScalarProperty Name="is_completed" ColumnName="is_completed" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_logs">
+      <EntityTypeMapping TypeName="soeModel.doc_logs">
+        <MappingFragment StoreEntitySet="doc_logs">
+          <ScalarProperty Name="log_id" ColumnName="log_id" />
+          <ScalarProperty Name="doc_master_id" ColumnName="doc_master_id" />
+          <ScalarProperty Name="doc_name" ColumnName="doc_name" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="receiver" ColumnName="receiver" />
+          <ScalarProperty Name="log_type" ColumnName="log_type" />
+          <ScalarProperty Name="is_view" ColumnName="is_view" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_master">
+      <EntityTypeMapping TypeName="soeModel.doc_master">
+        <MappingFragment StoreEntitySet="doc_master">
+          <ScalarProperty Name="doc_master_id" ColumnName="doc_master_id" />
+          <ScalarProperty Name="compendium" ColumnName="compendium" />
+          <ScalarProperty Name="nav_type" ColumnName="nav_type" />
+          <ScalarProperty Name="doc_code" ColumnName="doc_code" />
+          <ScalarProperty Name="doc_date" ColumnName="doc_date" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+          <ScalarProperty Name="receive_date" ColumnName="receive_date" />
+          <ScalarProperty Name="doc_type" ColumnName="doc_type" />
+          <ScalarProperty Name="doc_group" ColumnName="doc_group" />
+          <ScalarProperty Name="urgency" ColumnName="urgency" />
+          <ScalarProperty Name="security" ColumnName="security" />
+          <ScalarProperty Name="issue_place" ColumnName="issue_place" />
+          <ScalarProperty Name="field" ColumnName="field" />
+          <ScalarProperty Name="receive_place" ColumnName="receive_place" />
+          <ScalarProperty Name="send_way" ColumnName="send_way" />
+          <ScalarProperty Name="signer" ColumnName="signer" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="tags" ColumnName="tags" />
+          <ScalarProperty Name="num_of_pages" ColumnName="num_of_pages" />
+          <ScalarProperty Name="num_of_copies" ColumnName="num_of_copies" />
+          <ScalarProperty Name="deadline_date" ColumnName="deadline_date" />
+          <ScalarProperty Name="dispatch_book_num" ColumnName="dispatch_book_num" />
+          <ScalarProperty Name="dispatch_book_code" ColumnName="dispatch_book_code" />
+          <ScalarProperty Name="is_auto_num" ColumnName="is_auto_num" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="sent_by" ColumnName="sent_by" />
+          <ScalarProperty Name="handle_by" ColumnName="handle_by" />
+          <ScalarProperty Name="handle_date" ColumnName="handle_date" />
+          <ScalarProperty Name="is_drafted" ColumnName="is_drafted" />
+          <ScalarProperty Name="department_id" ColumnName="department_id" />
+          <ScalarProperty Name="file_name" ColumnName="file_name" />
+          <ScalarProperty Name="file_path" ColumnName="file_path" />
+          <ScalarProperty Name="file_path_temp" ColumnName="file_path_temp" />
+          <ScalarProperty Name="file_size" ColumnName="file_size" />
+          <ScalarProperty Name="file_type" ColumnName="file_type" />
+          <ScalarProperty Name="first_doc_status_id" ColumnName="first_doc_status_id" />
+          <ScalarProperty Name="doc_status_id" ColumnName="doc_status_id" />
+          <ScalarProperty Name="follow_id" ColumnName="follow_id" />
+          <ScalarProperty Name="effective_date" ColumnName="effective_date" />
+          <ScalarProperty Name="expiration_date" ColumnName="expiration_date" />
+          <ScalarProperty Name="workflow_id" ColumnName="workflow_id" />
+          <ScalarProperty Name="workflow_group_id" ColumnName="workflow_group_id" />
+          <ScalarProperty Name="is_inworkflow" ColumnName="is_inworkflow" />
+          <ScalarProperty Name="workflow_last_person" ColumnName="workflow_last_person" />
+          <ScalarProperty Name="group_id" ColumnName="group_id" />
+          <ScalarProperty Name="leader" ColumnName="leader" />
+          <ScalarProperty Name="warehouse" ColumnName="warehouse" />
+          <ScalarProperty Name="cabinet" ColumnName="cabinet" />
+          <ScalarProperty Name="shelf" ColumnName="shelf" />
+          <ScalarProperty Name="box" ColumnName="box" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="ldt" ColumnName="ldt" />
+          <ScalarProperty Name="saodv" ColumnName="saodv" />
+          <ScalarProperty Name="related_unit" ColumnName="related_unit" />
+          <ScalarProperty Name="composing_unit" ColumnName="composing_unit" />
+          <ScalarProperty Name="num_of_saved" ColumnName="num_of_saved" />
+          <ScalarProperty Name="num_of_issue" ColumnName="num_of_issue" />
+          <ScalarProperty Name="drafter" ColumnName="drafter" />
+          <ScalarProperty Name="is_approved" ColumnName="is_approved" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_sign_approval">
+      <EntityTypeMapping TypeName="soeModel.doc_sign_approval">
+        <MappingFragment StoreEntitySet="doc_sign_approval">
+          <ScalarProperty Name="sign_approval_id" ColumnName="sign_approval_id" />
+          <ScalarProperty Name="doc_master_id" ColumnName="doc_master_id" />
+          <ScalarProperty Name="follow_id" ColumnName="follow_id" />
+          <ScalarProperty Name="file_id" ColumnName="file_id" />
+          <ScalarProperty Name="file_path" ColumnName="file_path" />
+          <ScalarProperty Name="flash_sign" ColumnName="flash_sign" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_tags">
+      <EntityTypeMapping TypeName="soeModel.doc_tags">
+        <MappingFragment StoreEntitySet="doc_tags">
+          <ScalarProperty Name="doc_tag_id" ColumnName="doc_tag_id" />
+          <ScalarProperty Name="doc_master_id" ColumnName="doc_master_id" />
+          <ScalarProperty Name="tag_id" ColumnName="tag_id" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_title_docs">
+      <EntityTypeMapping TypeName="soeModel.doc_title_docs">
+        <MappingFragment StoreEntitySet="doc_title_docs">
+          <ScalarProperty Name="title_doc_id" ColumnName="title_doc_id" />
+          <ScalarProperty Name="title_id" ColumnName="title_id" />
+          <ScalarProperty Name="doc_master_id" ColumnName="doc_master_id" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_title_users">
+      <EntityTypeMapping TypeName="soeModel.doc_title_users">
+        <MappingFragment StoreEntitySet="doc_title_users">
+          <ScalarProperty Name="title_user_id" ColumnName="title_user_id" />
+          <ScalarProperty Name="title_id" ColumnName="title_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_titles">
+      <EntityTypeMapping TypeName="soeModel.doc_titles">
+        <MappingFragment StoreEntitySet="doc_titles">
+          <ScalarProperty Name="title_id" ColumnName="title_id" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+          <ScalarProperty Name="title_name" ColumnName="title_name" />
+          <ScalarProperty Name="title_parent_id" ColumnName="title_parent_id" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_views">
+      <EntityTypeMapping TypeName="soeModel.doc_views">
+        <MappingFragment StoreEntitySet="doc_views">
+          <ScalarProperty Name="view_id" ColumnName="view_id" />
+          <ScalarProperty Name="doc_master_id" ColumnName="doc_master_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="viewed_date" ColumnName="viewed_date" />
+          <ScalarProperty Name="is_app_viewed" ColumnName="is_app_viewed" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_workflow_groups">
+      <EntityTypeMapping TypeName="soeModel.doc_workflow_groups">
+        <MappingFragment StoreEntitySet="doc_workflow_groups">
+          <ScalarProperty Name="workflow_group_id" ColumnName="workflow_group_id" />
+          <ScalarProperty Name="workflow_id" ColumnName="workflow_id" />
+          <ScalarProperty Name="group_id" ColumnName="group_id" />
+          <ScalarProperty Name="return_group_id" ColumnName="return_group_id" />
+          <ScalarProperty Name="return_type" ColumnName="return_type" />
+          <ScalarProperty Name="foward_type" ColumnName="foward_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_workflows">
+      <EntityTypeMapping TypeName="soeModel.doc_workflows">
+        <MappingFragment StoreEntitySet="doc_workflows">
+          <ScalarProperty Name="workflow_id" ColumnName="workflow_id" />
+          <ScalarProperty Name="workflow_name" ColumnName="workflow_name" />
+          <ScalarProperty Name="workflow_type" ColumnName="workflow_type" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+          <ScalarProperty Name="department_id" ColumnName="department_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="file_folder">
+      <EntityTypeMapping TypeName="soeModel.file_folder">
+        <MappingFragment StoreEntitySet="file_folder">
+          <ScalarProperty Name="folder_id" ColumnName="folder_id" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="folder_name" ColumnName="folder_name" />
+          <ScalarProperty Name="des" ColumnName="des" />
+          <ScalarProperty Name="keywords" ColumnName="keywords" />
+          <ScalarProperty Name="is_public" ColumnName="is_public" />
+          <ScalarProperty Name="is_sub" ColumnName="is_sub" />
+          <ScalarProperty Name="is_upload" ColumnName="is_upload" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="file_number" ColumnName="file_number" />
+          <ScalarProperty Name="views" ColumnName="views" />
+          <ScalarProperty Name="capacity" ColumnName="capacity" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="file_info">
+      <EntityTypeMapping TypeName="soeModel.file_info">
+        <MappingFragment StoreEntitySet="file_info">
+          <ScalarProperty Name="file_id" ColumnName="file_id" />
+          <ScalarProperty Name="folder_id" ColumnName="folder_id" />
+          <ScalarProperty Name="file_name" ColumnName="file_name" />
+          <ScalarProperty Name="is_filepath" ColumnName="is_filepath" />
+          <ScalarProperty Name="capacity" ColumnName="capacity" />
+          <ScalarProperty Name="is_public" ColumnName="is_public" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="is_image" ColumnName="is_image" />
+          <ScalarProperty Name="keywords" ColumnName="keywords" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="views" ColumnName="views" />
+          <ScalarProperty Name="download" ColumnName="download" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="file_log">
+      <EntityTypeMapping TypeName="soeModel.file_log">
+        <MappingFragment StoreEntitySet="file_log">
+          <ScalarProperty Name="file_log_id" ColumnName="file_log_id" />
+          <ScalarProperty Name="file_id" ColumnName="file_id" />
+          <ScalarProperty Name="folder_id" ColumnName="folder_id" />
+          <ScalarProperty Name="contents" ColumnName="contents" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="log_type" ColumnName="log_type" />
+          <ScalarProperty Name="is_view" ColumnName="is_view" />
+          <ScalarProperty Name="date_view" ColumnName="date_view" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="file_share">
+      <EntityTypeMapping TypeName="soeModel.file_share">
+        <MappingFragment StoreEntitySet="file_share">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="file_id" ColumnName="file_id" />
+          <ScalarProperty Name="folder_id" ColumnName="folder_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_view" ColumnName="is_view" />
+          <ScalarProperty Name="date_view" ColumnName="date_view" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sql_log">
+      <EntityTypeMapping TypeName="soeModel.sql_log">
+        <MappingFragment StoreEntitySet="sql_log">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="controller" ColumnName="controller" />
+          <ScalarProperty Name="log_content" ColumnName="log_content" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="milliseconds" ColumnName="milliseconds" />
+          <ScalarProperty Name="full_name" ColumnName="full_name" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="token_id" ColumnName="token_id" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="search_name" ColumnName="search_name" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_app_menus">
+      <EntityTypeMapping TypeName="soeModel.sys_app_menus">
+        <MappingFragment StoreEntitySet="sys_app_menus">
+          <ScalarProperty Name="app_menu_id" ColumnName="app_menu_id" />
+          <ScalarProperty Name="app_menu_name" ColumnName="app_menu_name" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_fire_base">
+      <EntityTypeMapping TypeName="soeModel.sys_fire_base">
+        <MappingFragment StoreEntitySet="sys_fire_base">
+          <ScalarProperty Name="id_key" ColumnName="id_key" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="token_cm_id" ColumnName="token_cm_id" />
+          <ScalarProperty Name="token_id" ColumnName="token_id" />
+          <ScalarProperty Name="date_add" ColumnName="date_add" />
+          <ScalarProperty Name="d_name" ColumnName="d_name" />
+          <ScalarProperty Name="f_name" ColumnName="f_name" />
+          <ScalarProperty Name="is_type" ColumnName="is_type" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_group">
+      <EntityTypeMapping TypeName="soeModel.sys_group">
+        <MappingFragment StoreEntitySet="sys_group">
+          <ScalarProperty Name="group_id" ColumnName="group_id" />
+          <ScalarProperty Name="group_name" ColumnName="group_name" />
+          <ScalarProperty Name="des" ColumnName="des" />
+          <ScalarProperty Name="is_system" ColumnName="is_system" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+          <ScalarProperty Name="group_type_id" ColumnName="group_type_id" />
+          <ScalarProperty Name="action_type" ColumnName="action_type" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_group_type">
+      <EntityTypeMapping TypeName="soeModel.sys_group_type">
+        <MappingFragment StoreEntitySet="sys_group_type">
+          <ScalarProperty Name="text_color" ColumnName="text_color" />
+          <ScalarProperty Name="group_type_id" ColumnName="group_type_id" />
+          <ScalarProperty Name="type_name" ColumnName="type_name" />
+          <ScalarProperty Name="background_color" ColumnName="background_color" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_group_users">
+      <EntityTypeMapping TypeName="soeModel.sys_group_users">
+        <MappingFragment StoreEntitySet="sys_group_users">
+          <ScalarProperty Name="group_user_id" ColumnName="group_user_id" />
+          <ScalarProperty Name="group_id" ColumnName="group_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_logs">
+      <EntityTypeMapping TypeName="soeModel.sys_logs">
+        <MappingFragment StoreEntitySet="sys_logs">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="controller" ColumnName="controller" />
+          <ScalarProperty Name="log_date" ColumnName="log_date" />
+          <ScalarProperty Name="log_content" ColumnName="log_content" />
+          <ScalarProperty Name="full_name" ColumnName="full_name" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="token_id" ColumnName="token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+          <ScalarProperty Name="is_type" ColumnName="is_type" />
+          <ScalarProperty Name="module" ColumnName="module" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="search_name" ColumnName="search_name" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_modules">
+      <EntityTypeMapping TypeName="soeModel.sys_modules">
+        <MappingFragment StoreEntitySet="sys_modules">
+          <ScalarProperty Name="module_id" ColumnName="module_id" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="module_name" ColumnName="module_name" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="is_link" ColumnName="is_link" />
+          <ScalarProperty Name="is_filepath" ColumnName="is_filepath" />
+          <ScalarProperty Name="is_stand" ColumnName="is_stand" />
+          <ScalarProperty Name="is_target" ColumnName="is_target" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_admin" ColumnName="is_admin" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+          <ScalarProperty Name="is_size" ColumnName="is_size" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_organization">
+      <EntityTypeMapping TypeName="soeModel.sys_organization">
+        <MappingFragment StoreEntitySet="sys_organization">
+          <ScalarProperty Name="file_link" ColumnName="file_link" />
+          <ScalarProperty Name="api_link" ColumnName="api_link" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="organization_name" ColumnName="organization_name" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="background_image" ColumnName="background_image" />
+          <ScalarProperty Name="is_url" ColumnName="is_url" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="organization_type" ColumnName="organization_type" />
+          <ScalarProperty Name="text_color" ColumnName="text_color" />
+          <ScalarProperty Name="background_color" ColumnName="background_color" />
+          <ScalarProperty Name="short_name" ColumnName="short_name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="coord_x" ColumnName="coord_x" />
+          <ScalarProperty Name="coord_y" ColumnName="coord_y" />
+          <ScalarProperty Name="place_id" ColumnName="place_id" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_organization_app_menus">
+      <EntityTypeMapping TypeName="soeModel.sys_organization_app_menus">
+        <MappingFragment StoreEntitySet="sys_organization_app_menus">
+          <ScalarProperty Name="organization_app_menu_id" ColumnName="organization_app_menu_id" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+          <ScalarProperty Name="app_menu_id" ColumnName="app_menu_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_organization_config_group">
+      <EntityTypeMapping TypeName="soeModel.sys_organization_config_group">
+        <MappingFragment StoreEntitySet="sys_organization_config_group">
+          <ScalarProperty Name="organization_config_group_id" ColumnName="organization_config_group_id" />
+          <ScalarProperty Name="group_type_id" ColumnName="group_type_id" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+          <ScalarProperty Name="is_approved" ColumnName="is_approved" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_role_modules">
+      <EntityTypeMapping TypeName="soeModel.sys_role_modules">
+        <MappingFragment StoreEntitySet="sys_role_modules">
+          <ScalarProperty Name="is_permission" ColumnName="is_permission" />
+          <ScalarProperty Name="is_level" ColumnName="is_level" />
+          <ScalarProperty Name="role_module_id" ColumnName="role_module_id" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="module_id" ColumnName="module_id" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_roles">
+      <EntityTypeMapping TypeName="soeModel.sys_roles">
+        <MappingFragment StoreEntitySet="sys_roles">
+          <ScalarProperty Name="text_color" ColumnName="text_color" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="role_name" ColumnName="role_name" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="background_color" ColumnName="background_color" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_sendhub">
+      <EntityTypeMapping TypeName="soeModel.sys_sendhub">
+        <MappingFragment StoreEntitySet="sys_sendhub">
+          <ScalarProperty Name="senhub_id" ColumnName="senhub_id" />
+          <ScalarProperty Name="user_send" ColumnName="user_send" />
+          <ScalarProperty Name="receiver" ColumnName="receiver" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="contents" ColumnName="contents" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="is_type" ColumnName="is_type" />
+          <ScalarProperty Name="date_send" ColumnName="date_send" />
+          <ScalarProperty Name="seen" ColumnName="seen" />
+          <ScalarProperty Name="date_seen" ColumnName="date_seen" />
+          <ScalarProperty Name="id_key" ColumnName="id_key" />
+          <ScalarProperty Name="group_id" ColumnName="group_id" />
+          <ScalarProperty Name="token_id" ColumnName="token_id" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_table_des">
+      <EntityTypeMapping TypeName="soeModel.sys_table_des">
+        <MappingFragment StoreEntitySet="sys_table_des">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="db_name" ColumnName="db_name" />
+          <ScalarProperty Name="table_name" ColumnName="table_name" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="des" ColumnName="des" />
+          <ScalarProperty Name="is_pag" ColumnName="is_pag" />
+          <ScalarProperty Name="is_formdata" ColumnName="is_formdata" />
+          <ScalarProperty Name="template" ColumnName="template" />
+          <ScalarProperty Name="config" ColumnName="config" />
+          <ScalarProperty Name="code_vue" ColumnName="code_vue" />
+          <ScalarProperty Name="code_api" ColumnName="code_api" />
+          <ScalarProperty Name="code_sql" ColumnName="code_sql" />
+          <ScalarProperty Name="code_flutter_view" ColumnName="code_flutter_view" />
+          <ScalarProperty Name="code_flutter_controller" ColumnName="code_flutter_controller" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_tables">
+      <EntityTypeMapping TypeName="soeModel.sys_tables">
+        <MappingFragment StoreEntitySet="sys_tables">
+          <ScalarProperty Name="col_id" ColumnName="col_id" />
+          <ScalarProperty Name="db_name" ColumnName="db_name" />
+          <ScalarProperty Name="table_name" ColumnName="table_name" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="des" ColumnName="des" />
+          <ScalarProperty Name="c_type" ColumnName="c_type" />
+          <ScalarProperty Name="c_length" ColumnName="c_length" />
+          <ScalarProperty Name="is_null" ColumnName="is_null" />
+          <ScalarProperty Name="required" ColumnName="required" />
+          <ScalarProperty Name="is_key" ColumnName="is_key" />
+          <ScalarProperty Name="is_value" ColumnName="is_value" />
+          <ScalarProperty Name="show" ColumnName="show" />
+          <ScalarProperty Name="show_form" ColumnName="show_form" />
+          <ScalarProperty Name="is_identity" ColumnName="is_identity" />
+          <ScalarProperty Name="search" ColumnName="search" />
+          <ScalarProperty Name="input" ColumnName="input" />
+          <ScalarProperty Name="re_table" ColumnName="re_table" />
+          <ScalarProperty Name="re_col" ColumnName="re_col" />
+          <ScalarProperty Name="css" ColumnName="css" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_token">
+      <EntityTypeMapping TypeName="soeModel.sys_token">
+        <MappingFragment StoreEntitySet="sys_token">
+          <ScalarProperty Name="token_id" ColumnName="token_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="full_name" ColumnName="full_name" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="date_end" ColumnName="date_end" />
+          <ScalarProperty Name="from_device" ColumnName="from_device" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_users">
+      <EntityTypeMapping TypeName="soeModel.sys_users">
+        <MappingFragment StoreEntitySet="sys_users">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="user_key" ColumnName="user_key" />
+          <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+          <ScalarProperty Name="department_id" ColumnName="department_id" />
+          <ScalarProperty Name="avatar" ColumnName="avatar" />
+          <ScalarProperty Name="is_password" ColumnName="is_password" />
+          <ScalarProperty Name="full_name" ColumnName="full_name" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="key_encript" ColumnName="key_encript" />
+          <ScalarProperty Name="wrong_pass_count" ColumnName="wrong_pass_count" />
+          <ScalarProperty Name="position_id" ColumnName="position_id" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+          <ScalarProperty Name="token_id" ColumnName="token_id" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="is_admin" ColumnName="is_admin" />
+          <ScalarProperty Name="app_modules" ColumnName="app_modules" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_web_acess">
+      <EntityTypeMapping TypeName="soeModel.sys_web_acess">
+        <MappingFragment StoreEntitySet="sys_web_acess">
+          <ScalarProperty Name="web_acess_id" ColumnName="web_acess_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="full_name" ColumnName="full_name" />
+          <ScalarProperty Name="is_time" ColumnName="is_time" />
+          <ScalarProperty Name="is_endtime" ColumnName="is_endtime" />
+          <ScalarProperty Name="from_ip" ColumnName="from_ip" />
+          <ScalarProperty Name="from_device" ColumnName="from_device" />
+          <ScalarProperty Name="search_name" ColumnName="search_name" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="soeModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="test_case">
+      <EntityTypeMapping TypeName="soeModel.test_case">
+        <MappingFragment StoreEntitySet="test_case">
+          <ScalarProperty Name="case_id" ColumnName="case_id" />
+          <ScalarProperty Name="case_name" ColumnName="case_name" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="work_id" ColumnName="work_id" />
+          <ScalarProperty Name="keywords" ColumnName="keywords" />
+          <ScalarProperty Name="des" ColumnName="des" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="is_pass" ColumnName="is_pass" />
+          <ScalarProperty Name="test_number" ColumnName="test_number" />
+          <ScalarProperty Name="number_completed" ColumnName="number_completed" />
+          <ScalarProperty Name="is_pass_step" ColumnName="is_pass_step" />
+          <ScalarProperty Name="file_test" ColumnName="file_test" />
+          <ScalarProperty Name="code_test" ColumnName="code_test" />
+          <ScalarProperty Name="date_test" ColumnName="date_test" />
+          <ScalarProperty Name="is_url" ColumnName="is_url" />
+          <ScalarProperty Name="show_chrome" ColumnName="show_chrome" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="test_step">
+      <EntityTypeMapping TypeName="soeModel.test_step">
+        <MappingFragment StoreEntitySet="test_step">
+          <ScalarProperty Name="step_id" ColumnName="step_id" />
+          <ScalarProperty Name="step_name" ColumnName="step_name" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="times_id" ColumnName="times_id" />
+          <ScalarProperty Name="case_id" ColumnName="case_id" />
+          <ScalarProperty Name="des" ColumnName="des" />
+          <ScalarProperty Name="is_pass" ColumnName="is_pass" />
+          <ScalarProperty Name="date_start" ColumnName="date_start" />
+          <ScalarProperty Name="date_end" ColumnName="date_end" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="test_times">
+      <EntityTypeMapping TypeName="soeModel.test_times">
+        <MappingFragment StoreEntitySet="test_times">
+          <ScalarProperty Name="times_id" ColumnName="times_id" />
+          <ScalarProperty Name="case_id" ColumnName="case_id" />
+          <ScalarProperty Name="des" ColumnName="des" />
+          <ScalarProperty Name="is_pass" ColumnName="is_pass" />
+          <ScalarProperty Name="is_pass_step" ColumnName="is_pass_step" />
+          <ScalarProperty Name="date_start" ColumnName="date_start" />
+          <ScalarProperty Name="date_end" ColumnName="date_end" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+          <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+          <ScalarProperty Name="modified_token_id" ColumnName="modified_token_id" />
+          <ScalarProperty Name="modified_ip" ColumnName="modified_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="traces">
+      <EntityTypeMapping TypeName="soeModel.trace">
+        <MappingFragment StoreEntitySet="trace">
+          <ScalarProperty Name="row_number" ColumnName="row_number" />
+          <ScalarProperty Name="event_class" ColumnName="event_class" />
+          <ScalarProperty Name="application_name" ColumnName="application_name" />
+          <ScalarProperty Name="nt_username" ColumnName="nt_username" />
+          <ScalarProperty Name="login_name" ColumnName="login_name" />
+          <ScalarProperty Name="cpu" ColumnName="cpu" />
+          <ScalarProperty Name="reads" ColumnName="reads" />
+          <ScalarProperty Name="writes" ColumnName="writes" />
+          <ScalarProperty Name="duration" ColumnName="duration" />
+          <ScalarProperty Name="client_process_id" ColumnName="client_process_id" />
+          <ScalarProperty Name="spid" ColumnName="spid" />
+          <ScalarProperty Name="start_time" ColumnName="start_time" />
+          <ScalarProperty Name="end_time" ColumnName="end_time" />
+          <ScalarProperty Name="binary_data" ColumnName="binary_data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sys_modules_listuser" FunctionName="soeModel.Store.sys_modules_listuser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="soeModel.sys_modules_listuser_Result">
+          <ScalarProperty Name="module_id" ColumnName="module_id" />
+          <ScalarProperty Name="is_size" ColumnName="is_size" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="module_name" ColumnName="module_name" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="is_link" ColumnName="is_link" />
+          <ScalarProperty Name="is_filepath" ColumnName="is_filepath" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="is_stand" ColumnName="is_stand" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="api_plugin">
+      <EntityTypeMapping TypeName="soeModel.api_plugin">
+        <MappingFragment StoreEntitySet="api_plugin">
+          <ScalarProperty Name="created_token_id" ColumnName="created_token_id" />
+          <ScalarProperty Name="created_ip" ColumnName="created_ip" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_order" ColumnName="is_order" />
+          <ScalarProperty Name="is_app" ColumnName="is_app" />
+          <ScalarProperty Name="is_url" ColumnName="is_url" />
+          <ScalarProperty Name="keywords" ColumnName="keywords" />
+          <ScalarProperty Name="file_url" ColumnName="file_url" />
+          <ScalarProperty Name="images" ColumnName="images" />
+          <ScalarProperty Name="des" ColumnName="des" />
+          <ScalarProperty Name="plugin_name" ColumnName="plugin_name" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="plugin_id" ColumnName="plugin_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

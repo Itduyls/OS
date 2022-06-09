@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="65ef7526580344f2b9c3a68d56446455" Name="Diagram1" ZoomLevel="73">
+        <EntityTypeShape EntityType="soeModel.api_category" Width="1.5" PointX="27" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.api_col" Width="1.5" PointX="29.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.api_parameters" Width="1.5" PointX="31.5" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.api_project" Width="1.5" PointX="24.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.api_service" Width="1.5" PointX="29.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.api_table" Width="1.5" PointX="27" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.ca_places" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.ca_positions" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.cms_lang" Width="1.5" PointX="5.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.cms_logs" Width="1.5" PointX="24.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.cms_news" Width="1.5" PointX="22" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.cms_news_users" Width="1.5" PointX="24.25" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.cms_slideshow" Width="1.5" PointX="22" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.cms_slideshow_image" Width="1.5" PointX="24.25" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.cms_topic" Width="1.5" PointX="19.75" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.cms_topic_flag" Width="1.5" PointX="26.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_ca_dispatch_books" Width="1.5" PointX="26.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_ca_email_groups" Width="1.5" PointX="26.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_ca_emails" Width="1.5" PointX="28.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_ca_fields" Width="1.5" PointX="28.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_ca_groups" Width="1.5" PointX="28.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_ca_issue_places" Width="1.5" PointX="29.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_ca_positions" Width="1.5" PointX="30.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_ca_receive_places" Width="1.5" PointX="17.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_ca_security" Width="1.5" PointX="30.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_ca_send_ways" Width="1.5" PointX="30.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_ca_signers" Width="1.5" PointX="30.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_ca_stamps" Width="1.5" PointX="31.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_ca_status" Width="1.5" PointX="7.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_ca_tags" Width="1.5" PointX="9.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_ca_types" Width="1.5" PointX="17.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_ca_urgency" Width="1.5" PointX="19.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_codes" Width="1.5" PointX="15" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_completed_confirms" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_decision_form_views" Width="1.5" PointX="17.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_decision_forms" Width="1.5" PointX="15" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_email_sent" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_file_search" Width="1.5" PointX="3" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_files" Width="1.5" PointX="3" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_follows" Width="1.5" PointX="3" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_logs" Width="1.5" PointX="3" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_master" Width="1.5" PointX="0.75" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_sign_approval" Width="1.5" PointX="3" PointY="33.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_tags" Width="1.5" PointX="3" PointY="38.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_title_docs" Width="1.5" PointX="22" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_title_users" Width="1.5" PointX="22" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_titles" Width="1.5" PointX="19.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_views" Width="1.5" PointX="3" PointY="41.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_workflow_groups" Width="1.5" PointX="8" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.doc_workflows" Width="1.5" PointX="5.75" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.file_folder" Width="1.5" PointX="12.75" PointY="26.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.file_info" Width="1.5" PointX="15" PointY="26.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.file_log" Width="1.5" PointX="31.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.file_share" Width="1.5" PointX="11.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.sql_log" Width="1.5" PointX="13.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.sys_app_menus" Width="1.5" PointX="12.75" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.sys_fire_base" Width="1.5" PointX="10.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.sys_group" Width="1.5" PointX="24.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.sys_group_type" Width="1.5" PointX="32.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.sys_group_users" Width="1.5" PointX="27" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.sys_logs" Width="1.5" PointX="32.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.sys_modules" Width="1.5" PointX="15" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.sys_organization" Width="1.5" PointX="12.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.sys_organization_app_menus" Width="1.5" PointX="15" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.sys_organization_config_group" Width="1.5" PointX="32.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.sys_role_modules" Width="1.5" PointX="8" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.sys_roles" Width="1.5" PointX="5.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.sys_sendhub" Width="1.5" PointX="10.25" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.sys_table_des" Width="1.5" PointX="26.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.sys_tables" Width="1.5" PointX="32.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.sys_token" Width="1.5" PointX="10.25" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.sys_users" Width="1.5" PointX="8" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.sys_web_acess" Width="1.5" PointX="10.25" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.sysdiagram" Width="1.5" PointX="21.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.test_case" Width="1.5" PointX="17.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.test_step" Width="1.5" PointX="22.25" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.test_times" Width="1.5" PointX="20" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="soeModel.trace" Width="1.5" PointX="33.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="soeModel.FK_api_category_api_project" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_api_service_api_category" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_api_col_api_table" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_api_parameters_api_service" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_api_table_api_project" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_CMS_News_CMS_Topic" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_CMS_NewsUser_CMS_News" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_cms_slideshow_topic_id" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_CMS_SlideShowImage_CMS_SlideShow" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_doc_codes_organization_id" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_doc_completed_confirms_doc_master" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_doc_decision_form_views_doc_decision_forms" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_doc_decision_forms_organization_id" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_doc_email_sent_doc_master" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_doc_file_search_doc_master" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_doc_files_doc_master" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_doc_follows_doc_master" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_doc_logs_doc_master" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_doc_sign_approval_doc_master" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_doc_tags_doc_master" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_doc_views_doc_master" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_doc_title_docs_doc_titles" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_doc_title_users_doc_titles" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_doc_workflow_groups_doc_workflows" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_file_infor_folder_id" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_sys_unit_app_menus_sys_app_menus" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_sys_fire_base_sys_users" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_sys_group_users_group_id" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_sys_modules_organization_id" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_sys_role_modules_sys_roles" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_sys_users_Role_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_sys_sendhub_sys_users" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_sys_token_sys_users" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_sys_web_acess_sys_users" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_Test_Lan_Test_Case" ManuallyRouted="false" />
+        <AssociationConnector Association="soeModel.FK_test_step_times_id" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="soeModel.api_plugin" Width="1.5" PointX="29.25" PointY="36.125" />
+        <AssociationConnector Association="soeModel.FK_api_plugin_api_category" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

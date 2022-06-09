@@ -1,0 +1,811 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7AE511D0-F46E-4EF4-94B2-A31D9CBFC40B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>API</RootNamespace>
+    <AssemblyName>API</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44370</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=5.8.8.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.5.8.8\lib\net45\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.42.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.42\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Magick.NET-Q16-AnyCPU, Version=10.1.0.0, Culture=neutral, PublicKeyToken=2004825badfa91ec, processorArchitecture=MSIL">
+      <HintPath>..\packages\Magick.NET-Q16-AnyCPU.10.1.0\lib\netstandard20\Magick.NET-Q16-AnyCPU.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Magick.NET.Core, Version=10.1.0.0, Culture=neutral, PublicKeyToken=2004825badfa91ec, processorArchitecture=MSIL">
+      <HintPath>..\packages\Magick.NET.Core.10.1.0\lib\net20\Magick.NET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationBlocks.Data.2.0.0\lib\net45\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.3\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.5.3.0\lib\net461\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.5.3.0\lib\net461\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.3.0\lib\net461\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.2.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.2.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Jwt, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Jwt.4.0.1\lib\net45\Microsoft.Owin.Security.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.5.3.0\lib\net461\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.7\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\**" />
+    <Compile Include="Controllers\api_categoryController.cs" />
+    <Compile Include="Controllers\api_pluginController.cs" />
+    <Compile Include="Controllers\api_projectController.cs" />
+    <Compile Include="Controllers\api_tableController.cs" />
+    <Compile Include="Controllers\CacheController.cs" />
+    <Compile Include="Controllers\ca_dispatch_booksController.cs" />
+    <Compile Include="Controllers\ca_emailsController.cs" />
+    <Compile Include="Controllers\ca_email_groupsController.cs" />
+    <Compile Include="Controllers\ca_fieldsController.cs" />
+    <Compile Include="Controllers\ca_groupsController.cs" />
+    <Compile Include="Controllers\ca_issue_placesController.cs" />
+    <Compile Include="Controllers\ca_placesController.cs" />
+    <Compile Include="Controllers\ca_positionsController.cs" />
+    <Compile Include="Controllers\ca_receive_placesController.cs" />
+    <Compile Include="Controllers\ca_securityController.cs" />
+    <Compile Include="Controllers\ca_send_waysController.cs" />
+    <Compile Include="Controllers\ca_signersController.cs" />
+    <Compile Include="Controllers\ca_stampsController.cs" />
+    <Compile Include="Controllers\ca_statusController.cs" />
+    <Compile Include="Controllers\ca_tagsController.cs" />
+    <Compile Include="Controllers\ca_typesController.cs" />
+    <Compile Include="Controllers\ca_urgencyController.cs" />
+    <Compile Include="Controllers\CMS_LangController.cs" />
+    <Compile Include="Controllers\CMS_NewsController.cs" />
+    <Compile Include="Controllers\DepartmentController.cs" />
+    <Compile Include="Controllers\doc_followsController.cs" />
+    <Compile Include="Controllers\doc_masterController.cs" />
+    <Compile Include="Controllers\ExcelController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ModulesController.cs" />
+    <Compile Include="Controllers\positionsController.cs" />
+    <Compile Include="Controllers\ProcController.cs" />
+    <Compile Include="Controllers\PublicController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Controllers\SlideShowController.cs" />
+    <Compile Include="Controllers\SQLController.cs" />
+    <Compile Include="Controllers\TestCaseController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Filter\**" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\**" />
+    <Compile Include="Models\api_category.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\api_col.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\api_parameters.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\api_plugin.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\api_project.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\api_service.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\api_table.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ca_places.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ca_positions.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cms_lang.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cms_logs.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cms_news.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cms_news_users.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cms_slideshow.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cms_slideshow_image.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cms_topic.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cms_topic_flag.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_ca_dispatch_books.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_ca_emails.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_ca_email_groups.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_ca_fields.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_ca_groups.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_ca_issue_places.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_ca_positions.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_ca_receive_places.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_ca_security.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_ca_send_ways.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_ca_signers.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_ca_stamps.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_ca_status.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_ca_tags.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_ca_types.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_ca_urgency.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_codes.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_completed_confirms.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_decision_forms.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_decision_form_views.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_email_sent.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_files.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_file_search.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_follows.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_logs.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_master.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_sign_approval.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_tags.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_titles.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_title_docs.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_title_users.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_views.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_workflows.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\doc_workflow_groups.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\file_folder.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\file_info.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\file_log.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\file_share.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InfoColumn.cs" />
+    <Compile Include="Models\Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sqlPar.cs" />
+    <Compile Include="Models\sql_log.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_app_menus.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_fire_base.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_group.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_group_type.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_group_users.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_logs.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_modules.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_modules_listuser_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_organization.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_organization_app_menus.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_organization_config_group.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_roles.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_role_modules.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_sendhub.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_tables.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_table_des.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_token.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_users.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_web_acess.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\test_case.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\test_step.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\test_times.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\trace.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Config\Config.json" />
+    <Content Include="Content\**" />
+    <Content Include="Error\401.html" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\**" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.cs</LastGenOutput>
+    </Content>
+    <Content Include="Portals\BodyPart_011741a0-f7e8-4828-a94d-ed63991474cf" />
+    <Content Include="Portals\BodyPart_02261f88-244c-4e89-a6c1-6e3d8e9b8614" />
+    <Content Include="Portals\BodyPart_05b4daf3-bbcb-45aa-900f-5888d6f7670d" />
+    <Content Include="Portals\BodyPart_0e81ac9d-83eb-487f-8901-c1165c43b451" />
+    <Content Include="Portals\BodyPart_19f07d2b-dbda-4620-ad15-3bcbae8389e3" />
+    <Content Include="Portals\BodyPart_27af3ed3-7038-4568-8031-3fc23722390c" />
+    <Content Include="Portals\BodyPart_2c47b40d-837a-4f77-9e8d-03e9d0189a38" />
+    <Content Include="Portals\BodyPart_305b54c0-3347-4339-a21e-51df5a572d35" />
+    <Content Include="Portals\BodyPart_34bd2583-32ab-44e7-9d3b-da64b37cf758" />
+    <Content Include="Portals\BodyPart_359146ee-3337-453d-a2ce-ea10e2a945cb" />
+    <Content Include="Portals\BodyPart_48cd74b8-6162-43da-86c2-b649402e73bb" />
+    <Content Include="Portals\BodyPart_48df5f05-bb24-470f-ad76-6839dbfc3b20" />
+    <Content Include="Portals\BodyPart_4cd071db-edf3-4d10-a322-782ad27b64ae" />
+    <Content Include="Portals\BodyPart_621d0887-ff05-40d7-9b97-bceb601b3ff2" />
+    <Content Include="Portals\BodyPart_62f9cf18-ccf3-45a3-a2b4-34efb49df2a4" />
+    <Content Include="Portals\BodyPart_69c72c03-ba7a-4c18-b33c-9c74b9fb19b0" />
+    <Content Include="Portals\BodyPart_7485564d-23a4-4b17-85db-75c615c55e5c" />
+    <Content Include="Portals\BodyPart_761b435d-c2d1-4b82-94ca-78b5c7ddad77" />
+    <Content Include="Portals\BodyPart_7ba90c5c-688a-41e3-8a4a-d5f70ff50a8f" />
+    <Content Include="Portals\BodyPart_7f5baadf-e94d-456d-a8e3-1a936888cc0f" />
+    <Content Include="Portals\BodyPart_8017cc7f-95f0-4ddc-bdbc-07538be84389" />
+    <Content Include="Portals\BodyPart_8550711e-cd50-42b6-b782-4a05e16e2359" />
+    <Content Include="Portals\BodyPart_9e17a07c-2f25-46cd-bb92-12d3decfaad2" />
+    <Content Include="Portals\BodyPart_9eef1877-f469-413c-b31b-fa8a60fd8f29" />
+    <Content Include="Portals\BodyPart_9f0375e9-24fb-43f4-af4e-e9dd716f2d71" />
+    <Content Include="Portals\BodyPart_ab3f6d88-4b3c-4f57-9b27-70f56f266849" />
+    <Content Include="Portals\BodyPart_b2cb6376-f3ad-45c0-8b14-13388460c227" />
+    <Content Include="Portals\BodyPart_b6ece4d4-6661-462d-8764-8b9a65239d36" />
+    <Content Include="Portals\BodyPart_b81878c9-1301-493f-b13b-6f29d14ff9a2" />
+    <Content Include="Portals\BodyPart_bd0eb50c-9a45-49b8-8a8d-b0318cb0a3a7" />
+    <Content Include="Portals\BodyPart_c10d2e9b-b07e-44ce-89b9-b7169c1f88c4" />
+    <Content Include="Portals\BodyPart_cba9e3d6-94e8-49a4-8c0a-cc03262ca287" />
+    <Content Include="Portals\BodyPart_ce4ee5a6-0668-4b12-92d5-2e616a833a43" />
+    <Content Include="Portals\BodyPart_d2974c75-e7c6-48b1-b7fd-c85d1c43ea33" />
+    <Content Include="Portals\BodyPart_dd3bf007-67f2-484a-8b10-2bd4bfc1588d" />
+    <Content Include="Portals\BodyPart_e1b8e5e5-48d2-4a58-b41b-a285cf3649d9" />
+    <Content Include="Portals\BodyPart_e4715ed5-6ac1-40cb-8035-fcf4fc2effc7" />
+    <Content Include="Portals\BodyPart_e988ed2a-038d-4be3-9257-a5149ed86287" />
+    <Content Include="Portals\BodyPart_ec6b20b5-c0e6-4a5d-ae5c-466354fb0365" />
+    <Content Include="Portals\BodyPart_f875095a-5f25-4633-99f6-1cea2faeb3ef" />
+    <Content Include="Portals\BodyPart_ff878560-c533-4cc8-851b-ab28fbd9e958" />
+    <Content Include="Portals\connectString.json" />
+    <Content Include="Portals\Export\administrator.xlsx" />
+    <Content Include="Portals\Export\DANH SACH MUC DO0987729288.xlsx" />
+    <Content Include="Portals\Export\DANH SACH NGON NGUadministrator.xlsx" />
+    <Content Include="Portals\Export\DANH SACH NGUOI DUNGadministrator.xlsx" />
+    <Content Include="Portals\Export\DANH SACH NHOM NGUOI DUNGadministrator.xlsx" />
+    <Content Include="Portals\Export\DANH SACH TABLES0987729288.xlsx" />
+    <Content Include="Portals\Export\DANH SACH UU TIEN0987729288.xlsx" />
+    <Content Include="Portals\Export\LICH SU TRUY CAPadministrator.xlsx" />
+    <Content Include="Portals\Export\LOGSadministrator.xlsx" />
+    <Content Include="Portals\Export\Moduleadministrator.xlsx" />
+    <Content Include="Portals\Export\SQLLOGS0987729288.xlsx" />
+    <Content Include="Portals\Export\SQLLOGSadministrator.xlsx" />
+    <Content Include="Portals\Export\TABLE0987729288.xlsx" />
+    <Content Include="Portals\Folder\8\DoanTienDat-LapTrinhVien.Net.pdf" />
+    <Content Include="Portals\Folder\8\Giải pháp Internet FTTH của CMC.pdf" />
+    <Content Include="Portals\Folder\8\Hua-Van-Duy.Net-220222.221509.pdf" />
+    <Content Include="Portals\Folder\8\Le-Doan-Anh-Quan-TopCV.vn-090322.133406.pdf" />
+    <Content Include="Portals\Folder\8\NguyenHoangAnh.pdf" />
+    <Content Include="Portals\Folder\8\PhieuHenLamViecDuHoSo_22_2_2022_09_38_52.doc" />
+    <Content Include="Portals\Folder\8\TTSANGLAR_MAI THẾ DŨNG.pdf" />
+    <Content Include="Portals\Folder\8\Điểm số và thứ hạng của doanh nghiệp theo chỉ số thành phần cốt lõi_6779758476.xls" />
+    <Content Include="Portals\Python\login.py" />
+    <Content Include="Portals\Python\logintest.py" />
+    <Content Include="Portals\Template\DANH SACH NHOM NGUOI DUNG.xlsx" />
+    <Content Include="Portals\Template\Module.xlsx" />
+    <EntityDeploy Include="Models\Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model.edmx.diagram">
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile3.pubxml" />
+    <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Portals\Donvi\admi20081311352421.png" />
+    <Content Include="Portals\Duan\background_default.png" />
+    <Content Include="Portals\Duan\bg.png" />
+    <Content Include="Portals\Duan\bg1.jpg" />
+    <Content Include="Portals\Duan\logo_vuong.png" />
+    <Content Include="Portals\Duan\myschool.png" />
+    <Content Include="Portals\Duan\pngegg.png" />
+    <Content Include="Portals\Folder\8\pexels-asad-photo-maldives-1024967.jpg" />
+    <Content Include="Portals\Folder\8\pexels-asad-photo-maldives-1024967_thumb.jpg" />
+    <Content Include="Portals\Folder\8\pexels-eberhard-grossgasteiger-1624496.jpg" />
+    <Content Include="Portals\Folder\8\pexels-eberhard-grossgasteiger-1624496_thumb.jpg" />
+    <Content Include="Portals\Folder\8\pexels-eberhard-grossgasteiger-443446.jpg" />
+    <Content Include="Portals\Folder\8\pexels-eberhard-grossgasteiger-443446_thumb.jpg" />
+    <Content Include="Portals\Folder\8\pexels-frans-van-heerden-1590511.jpg" />
+    <Content Include="Portals\Folder\8\pexels-frans-van-heerden-1590511_thumb.jpg" />
+    <Content Include="Portals\Folder\8\pexels-guillaume-meurice-1591447.jpg" />
+    <Content Include="Portals\Folder\8\pexels-guillaume-meurice-1591447_thumb.jpg" />
+    <Content Include="Portals\Folder\8\pexels-james-wheeler-1519088.jpg" />
+    <Content Include="Portals\Folder\8\pexels-james-wheeler-1519088_thumb.jpg" />
+    <Content Include="Portals\Folder\8\pexels-james-wheeler-417074.jpg" />
+    <Content Include="Portals\Folder\8\pexels-james-wheeler-417074_thumb.jpg" />
+    <Content Include="Portals\Folder\8\pexels-julius-silver-753626.jpg" />
+    <Content Include="Portals\Folder\8\pexels-julius-silver-753626_thumb.jpg" />
+    <Content Include="Portals\Folder\8\pexels-mike-145685.jpg" />
+    <Content Include="Portals\Folder\8\pexels-mike-145685_thumb.jpg" />
+    <Content Include="Portals\Folder\8\pexels-oliver-sjöström-1020016.jpg" />
+    <Content Include="Portals\Folder\8\pexels-oliver-sjöström-1020016_thumb.jpg" />
+    <Content Include="Portals\Folder\8\pexels-oliver-sjöström-1433052.jpg" />
+    <Content Include="Portals\Folder\8\pexels-oliver-sjöström-1433052_thumb.jpg" />
+    <Content Include="Portals\Folder\8\pexels-pixabay-210186.jpg" />
+    <Content Include="Portals\Folder\8\pexels-pixabay-210186_thumb.jpg" />
+    <Content Include="Portals\Folder\8\pexels-pixabay-33109.jpg" />
+    <Content Include="Portals\Folder\8\pexels-pixabay-33109_thumb.jpg" />
+    <Content Include="Portals\Folder\8\pexels-pixabay-36717.jpg" />
+    <Content Include="Portals\Folder\8\pexels-pixabay-36717_thumb.jpg" />
+    <Content Include="Portals\Folder\8\pexels-pixabay-38537.jpg" />
+    <Content Include="Portals\Folder\8\pexels-pixabay-38537_thumb.jpg" />
+    <Content Include="Portals\Folder\8\pexels-pixabay-45853.jpg" />
+    <Content Include="Portals\Folder\8\pexels-pixabay-45853_thumb.jpg" />
+    <Content Include="Portals\Folder\8\pexels-pixabay-459203.jpg" />
+    <Content Include="Portals\Folder\8\pexels-pixabay-459203_thumb.jpg" />
+    <Content Include="Portals\Folder\8\pexels-pixabay-50594.jpg" />
+    <Content Include="Portals\Folder\8\pexels-pixabay-50594_thumb.jpg" />
+    <Content Include="Portals\Folder\8\pexels-pixabay-52961.jpg" />
+    <Content Include="Portals\Folder\8\pexels-pixabay-52961_thumb.jpg" />
+    <Content Include="Portals\Folder\8\pexels-pixabay-534049.jpg" />
+    <Content Include="Portals\Folder\8\pexels-pixabay-534049_thumb.jpg" />
+    <Content Include="Portals\Folder\8\pexels-pixabay-68507.jpg" />
+    <Content Include="Portals\Folder\8\pexels-pixabay-68507_thumb.jpg" />
+    <Content Include="Portals\Folder\8\pexels-yuliya-strizhkina-1198802.jpg" />
+    <Content Include="Portals\Folder\8\pexels-yuliya-strizhkina-1198802_thumb.jpg" />
+    <Content Include="Portals\Folder\8\pexels-zhang-kaiyv-1139556.jpg" />
+    <Content Include="Portals\Folder\8\pexels-zhang-kaiyv-1139556_thumb.jpg" />
+    <Content Include="Portals\Lang\Braxin.png" />
+    <Content Include="Portals\Lang\crostia.png" />
+    <Content Include="Portals\Lang\duc.png" />
+    <Content Include="Portals\Lang\Screenshot_2.png" />
+    <Content Include="Portals\Lang\Screenshot_3.png" />
+    <Content Include="Portals\Lang\Screenshot_4.png" />
+    <Content Include="Portals\Lang\Screenshot_5.png" />
+    <Content Include="Portals\Lang\Screenshot_6.png" />
+    <Content Include="Portals\Lang\Screenshot_7.png" />
+    <Content Include="Portals\Lang\Screenshot_8.png" />
+    <Content Include="Portals\Lang\Screenshot_9.png" />
+    <Content Include="Portals\TestCase\1\3\0.png" />
+    <Content Include="Portals\TestCase\1\4\0.png" />
+    <Content Include="Portals\TestCase\1\5\0.png" />
+    <Content Include="Portals\TestCase\1\6\0.png" />
+    <Content Include="Portals\TestCase\1\7\0.png" />
+    <Content Include="Portals\Users\21110310484106.jpg" />
+    <Content Include="Portals\Users\43e3c06e07572fb087e948559456ec4d - Cop21110506081921.jpg" />
+    <Content Include="Portals\Users\47175959_104884587212651_1799693311087214592_21013016394846.jpg" />
+    <Content Include="Portals\Users\7b9ea210-9906-11ec-b3e1-f13c23c7f925.jpg" />
+    <Content Include="Portals\Users\7b9ea210-9906-11ec-b3e1-f13c23c7f9251035.jpg" />
+    <Content Include="Portals\Users\7b9ea210-9906-11ec-b3e1-f13c23c7f9252610.jpg" />
+    <Content Include="Portals\Users\7b9ea210-9906-11ec-b3e1-f13c23c7f9253207.jpg" />
+    <Content Include="Portals\Users\7b9ea210-9906-11ec-b3e1-f13c23c7f9253211.jpg" />
+    <Content Include="Portals\Users\7b9ea210-9906-11ec-b3e1-f13c23c7f9254911.jpg" />
+    <Content Include="Portals\Users\7b9ea210-9906-11ec-b3e1-f13c23c7f9257030.jpg" />
+    <Content Include="Portals\Users\7b9ea210-9906-11ec-b3e1-f13c23c7f9257374.jpg" />
+    <Content Include="Portals\Users\b72b575e8fcb73952ad20081314445113.jpg" />
+    <Content Include="Portals\Users\chung.jpg" />
+    <Content Include="Portals\Users\cong.jpg" />
+    <Content Include="Portals\Users\Duong.jpg" />
+    <Content Include="Portals\Users\hai.png" />
+    <Content Include="Portals\Users\scaled_image_picker15730887920541615421013009391328.jpg" />
+    <Content Include="Portals\Users\scaled_image_picker80032037862131607022020813371963.jpg" />
+    <Content Include="Portals\Users\ảnh sắp up av21110210285375.jpg" />
+    <Content Include="Scripts\**" />
+    <Content Include="Views\**" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Portals\Module\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55351</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:9024/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Magick.NET-Q16-AnyCPU.10.1.0\build\netstandard20\Magick.NET-Q16-AnyCPU.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Magick.NET-Q16-AnyCPU.10.1.0\build\netstandard20\Magick.NET-Q16-AnyCPU.targets'))" />
+    <Error Condition="!Exists('..\packages\Magick.NET-Q16-AnyCPU.10.1.0\build\netstandard20\Magick.NET-Q16-AnyCPU.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Magick.NET-Q16-AnyCPU.10.1.0\build\netstandard20\Magick.NET-Q16-AnyCPU.targets'))" />
+  </Target>
+  <Import Project="..\packages\Magick.NET-Q16-AnyCPU.10.1.0\build\netstandard20\Magick.NET-Q16-AnyCPU.targets" Condition="Exists('..\packages\Magick.NET-Q16-AnyCPU.10.1.0\build\netstandard20\Magick.NET-Q16-AnyCPU.targets')" />
+  <Import Project="..\packages\Magick.NET-Q16-AnyCPU.10.1.0\build\netstandard20\Magick.NET-Q16-AnyCPU.targets" Condition="Exists('..\packages\Magick.NET-Q16-AnyCPU.10.1.0\build\netstandard20\Magick.NET-Q16-AnyCPU.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
